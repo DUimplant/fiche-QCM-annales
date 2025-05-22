@@ -1,83 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Révision DU</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QCM & Fiches – Audioprothèse</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px;
-      background: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
+      color: #333;
     }
+
+    header {
+      background-color: #7e5bef; /* Violet moderne */
+      color: white;
+      text-align: center;
+      padding: 16px 0;
+    }
+
     h1 {
-      color: #2c3e50;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
+      margin: 0;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
-    h2 {
-      color: #34495e;
-      margin-top: 40px;
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
-    .grid {
+
+    .columns {
       display: flex;
-      gap: 50px;
-      margin-top: 20px;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
     }
+
     .column {
       flex: 1;
+      min-width: 260px;
     }
-    ul {
-      list-style: none;
-      padding-left: 0;
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #6f42c1;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 24px 0 14px;
     }
-    li {
-      margin: 8px 0;
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      flex: 1;
+      border-bottom: 2px solid #007BFF;
     }
-    a {
+
+    .section-title::before {
+      margin-right: 12px;
+    }
+
+    .section-title::after {
+      margin-left: 12px;
+    }
+
+    .link-card {
+      background: white;
+      border-radius: 6px;
+      padding: 7px 12px;
+      margin-bottom: 6px;
       text-decoration: none;
-      color: #007acc;
+      display: block;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      color: #007BFF;
+      font-weight: 500;
+      font-size: 15px;
+      transition: background 0.2s ease;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .link-card:hover {
+      background: #e9f1ff;
+    }
+
+    .annales {
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      margin: 40px 0 20px;
     }
   </style>
 </head>
 <body>
 
-  <h1>📚 Révision DU – Audioprothèses Implantables</h1>
+<header>
+  <h1>📚 Révision DU – Audioprothèses Implantables <span style="display:inline-block; transform:scaleX(-1);">📚</span></h1>
+</header>
 
-  <div class="grid">
+<main>
+  <div class="columns">
     <div class="column">
-      <h2>📄 Fiches de cours</h2>
-      <ul>
-        <li><a href="Fiche 1-Anatomie et physiologie.pdf" target="_blank">Fiche 1 – Anatomie et physiologie</a></li>
-        <li><a href="Fiche 2-Etiologies des surdites.pdf" target="_blank">Fiche 2 – Étiologies des surdités</a></li>
-        <li><a href="Fiche 3-Bilans-fact pronostiques-indications HAS.pdf" target="_blank">Fiche 3 – Bilans, facteurs pronostiques et HAS</a></li>
-        <li><a href="Fiche 4-Implants cochléaires et alternatives.pdf" target="_blank">Fiche 4 – Implants cochléaires et alternatives</a></li>
-        <li><a href="Fiche 5-Implants cochléaires des différents fabricants.pdf" target="_blank">Fiche 5 – Implants cochléaires des fabricants</a></li>
-      </ul>
+      <div class="section-title">📄 Fiches de cours</div>
+      <a href="Fiche 1-Anatomie et physiologie.pdf" class="link-card">Fiche 1 – Anatomie et Physiologie</a>
+      <a href="Fiche 2-Etiologies des surdites.pdf" class="link-card">Fiche 2 – Étiologies des surdités</a>
+      <a href="Fiche 3-Bilans-fact pronostiques-indications HAS.pdf" class="link-card">Fiche 3 – Bilans, facteurs pronostiques et HAS</a>
+      <a href="Fiche 4-Implants cochléaires et alternatives.pdf" class="link-card">Fiche 4 – Implants cochléaires et alternatives</a>
+      <a href="Fiche 5-Implants cochléaires des différents fabricants.pdf" class="link-card">Fiche 5 – Implants cochléaires des fabricants et réglages</a>
     </div>
 
     <div class="column">
-      <h2>✅ QCM Chat GPT</h2>
-      <ul>
-        <li><a href="QCM_Fiche1.html" target="_blank">QCM Fiche 1 – Anatomie</a></li>
-        <li><a href="QCM_Fiche2.html" target="_blank">QCM Fiche 2 – Étiologies</a></li>
-        <li><a href="QCM_Fiche3.html" target="_blank">QCM Fiche 3 – Bilans & HAS</a></li>
-        <li><a href="QCM_Fiche4.html" target="_blank">QCM Fiche 4 – Implants & alternatives</a></li>
-        <li><a href="QCM_Fiche5.html" target="_blank">QCM Fiche 5 – Fabricants & réglages</a></li>
-      </ul>
+      <div class="section-title">🧠 QCM Chat GPT</div>
+      <a href="QCM_Fiche1.html" class="link-card">QCM Fiche 1 – Anatomie</a>
+      <a href="QCM_Fiche2.html" class="link-card">QCM Fiche 2 – Etiologies</a>
+      <a href="QCM_Fiche3.html" class="link-card">QCM Fiche 3 – Bilans & HAS</a>
+      <a href="QCM_Fiche4.html" class="link-card">QCM Fiche 4 – Implants & alternatives </a>
+      <a href="QCM_Fiche5.html" class="link-card">QCM Fiche 5 – Fabricants & réglages</a>
     </div>
   </div>
 
-  <h2>📝 Annales</h2>
-<ul>
-  <li><a href="DU_Annale_2015-2016.html" target="_blank">Annale DU 2015-2016 – QCM interactif</a></li>
-  <li><a href="DU_Annale_2016-2017.html" target="_blank">Annale DU 2016-2017 – QCM interactif</a></li>
-</ul>
+  <div class="annales">
+    <div class="section-title">📝 Annales</div>
+    <a href="DU_Annale_2015-2016.html" class="link-card">Annale 2015-2016</a>
+    <a href="DU_Annale_2016-2017.html" class="link-card">Annale 2016-2017</a>
+  </div>
+</main>
 
+<footer>
+  &copy; 2025 – Audioprothèses Implantables · Créé avec ❤️ pour vos révisions implantables
+</footer>
 
 </body>
 </html>
