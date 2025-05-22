@@ -10,24 +10,24 @@
       margin: 0;
       background-color: #f4f6f8;
       color: #333;
-      padding-bottom: 80px; /* pour éviter que le footer soit caché sur mobile */
     }
 
     header {
-      background-color: #6f42c1; /* violet moderne */
+      background-color: #7e57c2; /* violet moderne */
       color: white;
       text-align: center;
-      padding: 12px 20px;
+      padding: 12px 0;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(20px, 5vw, 28px); /* responsive : 20px à 28px */
+      font-size: clamp(18px, 5vw, 26px); /* Responsive */
       font-weight: 600;
       letter-spacing: 0.5px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      text-align: center;
+      line-height: 1.3;
+      white-space: normal;
+      word-break: break-word;
     }
 
     main {
@@ -51,19 +51,18 @@
     .section-title {
       display: flex;
       align-items: center;
-      justify-content: center;
+      text-align: center;
       color: #6f42c1;
-      font-size: 25px;
+      font-size: 22px;
       font-weight: 600;
       margin: 20px 0 14px;
-      position: relative;
     }
 
     .section-title::before,
     .section-title::after {
       content: "";
       flex: 1;
-      border-bottom: 2px solid #007BFF;
+      border-bottom: 2px solid #007BFF; /* lignes bleues */
     }
 
     .section-title::before {
@@ -100,42 +99,45 @@
       text-align: center;
       font-size: 13px;
       color: #999;
-      margin: 40px 0 20px;
-      padding-bottom: 10px;
+      margin: 60px 20px 80px; /* augmente le bas pour éviter la barre mobile */
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>📚 Révision DU – Audioprothèses Implantables <span style="display:inline-block; transform:scaleX(-1);">📚</span></h1>
+  <h1>
+    <span style="margin-right: 6px;">📚</span>
+    Révision DU – Audioprothèses Implantables
+    <span style="margin-left: 6px; display:inline-block; transform:scaleX(-1);">📚</span>
+  </h1>
 </header>
 
 <main>
   <div class="columns">
     <div class="column">
       <div class="section-title">📄 Fiches de cours</div>
-      <a href="Fiche 1-Anatomie et physiologie.pdf" class="link-card">Fiche 1 – Anatomie</a>
-      <a href="Fiche 2-Etiologies des surdites.pdf" class="link-card">Fiche 2 – Étiologies</a>
-      <a href="Fiche 3-Bilans-fact pronostiques-indications ....pdf" class="link-card">Fiche 3 – Bilan</a>
-      <a href="Fiche 4-Implants cochléaires et alternatives.pdf" class="link-card">Fiche 4 – Implants</a>
-      <a href="Fiche 5-Implants cochléaires des différents fabricants.pdf" class="link-card">Fiche 5 – Fabricants</a>
+      <a href="fiche1.html" class="link-card">Fiche 1 – Anatomie</a>
+      <a href="fiche2.html" class="link-card">Fiche 2 – Étiologies</a>
+      <a href="fiche3.html" class="link-card">Fiche 3 – Bilan</a>
+      <a href="fiche4.html" class="link-card">Fiche 4 – Implants</a>
+      <a href="fiche5.html" class="link-card">Fiche 5 – Fabricants</a>
     </div>
 
     <div class="column">
       <div class="section-title">🧠 QCM Chat GPT</div>
-      <a href="QCM_Fiche1.html" class="link-card">QCM – Fiche 1</a>
-      <a href="QCM_Fiche2.html" class="link-card">QCM – Fiche 2</a>
-      <a href="QCM_Fiche3.html" class="link-card">QCM – Fiche 3</a>
-      <a href="QCM_Fiche4.html" class="link-card">QCM – Fiche 4</a>
-      <a href="QCM_Fiche5.html" class="link-card">QCM – Fiche 5</a>
+      <a href="qcm_fiche1.html" class="link-card">QCM – Fiche 1</a>
+      <a href="qcm_fiche2.html" class="link-card">QCM – Fiche 2</a>
+      <a href="qcm_fiche3.html" class="link-card">QCM – Fiche 3</a>
+      <a href="qcm_fiche4.html" class="link-card">QCM – Fiche 4</a>
+      <a href="qcm_fiche5.html" class="link-card">QCM – Fiche 5</a>
     </div>
   </div>
 
   <div class="annales">
     <div class="section-title">📝 Annales</div>
-    <a href="DU_Annale_2015-2016.html" class="link-card">Annale 2015-2016</a>
-    <a href="DU_Annale_2016-2017.html" class="link-card">Annale 2016-2017</a>
+    <a href="annale2015.html" class="link-card">Annale 2015-2016</a>
+    <a href="annale2020.html" class="link-card">Annale 2020</a>
   </div>
 </main>
 
@@ -145,4 +147,3 @@
 
 </body>
 </html>
-
