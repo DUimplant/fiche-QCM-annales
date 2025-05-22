@@ -10,20 +10,24 @@
       margin: 0;
       background-color: #f4f6f8;
       color: #333;
+      padding-bottom: 80px; /* pour éviter que le footer soit caché sur mobile */
     }
 
     header {
-      background-color: #7e5bef; /* Violet moderne */
+      background-color: #6f42c1; /* violet moderne */
       color: white;
       text-align: center;
-      padding: 16px 0;
+      padding: 12px 20px;
     }
 
     h1 {
       margin: 0;
-      font-size: 30px;
+      font-size: clamp(20px, 5vw, 28px); /* responsive : 20px à 28px */
       font-weight: 600;
       letter-spacing: 0.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     main {
@@ -47,11 +51,12 @@
     .section-title {
       display: flex;
       align-items: center;
-      text-align: center;
+      justify-content: center;
       color: #6f42c1;
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 600;
-      margin: 24px 0 14px;
+      margin: 20px 0 14px;
+      position: relative;
     }
 
     .section-title::before,
@@ -72,8 +77,8 @@
     .link-card {
       background: white;
       border-radius: 6px;
-      padding: 7px 12px;
-      margin-bottom: 6px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
       text-decoration: none;
       display: block;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -96,6 +101,7 @@
       font-size: 13px;
       color: #999;
       margin: 40px 0 20px;
+      padding-bottom: 10px;
     }
   </style>
 </head>
@@ -109,20 +115,20 @@
   <div class="columns">
     <div class="column">
       <div class="section-title">📄 Fiches de cours</div>
-      <a href="Fiche 1-Anatomie et physiologie.pdf" class="link-card">Fiche 1 – Anatomie et Physiologie</a>
-      <a href="Fiche 2-Etiologies des surdites.pdf" class="link-card">Fiche 2 – Étiologies des surdités</a>
-      <a href="Fiche 3-Bilans-fact pronostiques-indications HAS.pdf" class="link-card">Fiche 3 – Bilans, facteurs pronostiques et HAS</a>
-      <a href="Fiche 4-Implants cochléaires et alternatives.pdf" class="link-card">Fiche 4 – Implants cochléaires et alternatives</a>
-      <a href="Fiche 5-Implants cochléaires des différents fabricants.pdf" class="link-card">Fiche 5 – Implants cochléaires des fabricants et réglages</a>
+      <a href="Fiche 1-Anatomie et physiologie.pdf" class="link-card">Fiche 1 – Anatomie</a>
+      <a href="Fiche 2-Etiologies des surdites.pdf" class="link-card">Fiche 2 – Étiologies</a>
+      <a href="Fiche 3-Bilans-fact pronostiques-indications ....pdf" class="link-card">Fiche 3 – Bilan</a>
+      <a href="Fiche 4-Implants cochléaires et alternatives.pdf" class="link-card">Fiche 4 – Implants</a>
+      <a href="Fiche 5-Implants cochléaires des différents fabricants.pdf" class="link-card">Fiche 5 – Fabricants</a>
     </div>
 
     <div class="column">
       <div class="section-title">🧠 QCM Chat GPT</div>
-      <a href="QCM_Fiche1.html" class="link-card">QCM Fiche 1 – Anatomie</a>
-      <a href="QCM_Fiche2.html" class="link-card">QCM Fiche 2 – Etiologies</a>
-      <a href="QCM_Fiche3.html" class="link-card">QCM Fiche 3 – Bilans & HAS</a>
-      <a href="QCM_Fiche4.html" class="link-card">QCM Fiche 4 – Implants & alternatives </a>
-      <a href="QCM_Fiche5.html" class="link-card">QCM Fiche 5 – Fabricants & réglages</a>
+      <a href="QCM_Fiche1.html" class="link-card">QCM – Fiche 1</a>
+      <a href="QCM_Fiche2.html" class="link-card">QCM – Fiche 2</a>
+      <a href="QCM_Fiche3.html" class="link-card">QCM – Fiche 3</a>
+      <a href="QCM_Fiche4.html" class="link-card">QCM – Fiche 4</a>
+      <a href="QCM_Fiche5.html" class="link-card">QCM – Fiche 5</a>
     </div>
   </div>
 
@@ -139,3 +145,4 @@
 
 </body>
 </html>
+
