@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>QCM fiche 3</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .question { margin-bottom: 40px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+        button { margin-top: 10px; padding: 8px 15px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer;}
+        button:disabled { background: grey; }
+        .result { margin-top: 10px; padding: 10px; background-color: #e9ecef; border-left: 5px solid #007BFF; }
+    </style>
+</head>
+<body>
+<h1><h1> QCM Fiche 3 : Bilans pré-implantation cochléaire, facteurs pronostiques et indications HAS</h1>
+<p style="font-size: 18px; margin-top: 5px;">20 questions (barème : 1 point par QCM juste, 0,5 point pour une erreur, 0 pour deux erreurs ou plus.</p>
+<p style="font-size: 18px; margin-top: 5px;">Après validation votre score s'affiche, si les items passent au vert vous avez juste, si les items passent au rouge vous avez tort.</p>
+
+<div id="questions">
+
+<!-- Question 1 -->
+<div class="question" id="q1">
+    <h3>1. Parmi les objectifs du bilan pré-implantation cochléaire, on retrouve :</h3>
+    <label><input type="checkbox"> A. Confirmer l’indication médicale de l’implant cochléaire.</label><br>
+    <label><input type="checkbox"> B. Évaluer les potentiels évoqués visuels.</label><br>
+    <label><input type="checkbox"> C. Apprécier l’état du nerf auditif.</label><br>
+    <label><input type="checkbox"> D. Organiser la rééducation orthophonique.</label><br>
+    <label><input type="checkbox"> E. Vérifier les seuils d’audition pour les aides auditives conventionnelles.</label><br>
+    <button id="validateBtn1" onclick="validateQuestion(1, [0,2,3,4], [
+        'A. Vrai : Confirmer l’indication est un objectif central du bilan.',
+        'B. Faux : Les PEV ne sont pas utilisés ici, seuls les PEA peuvent l’être si suspicion rétrocochléaire.',
+        'C. Vrai : Le nerf cochléaire est évalué via l’IRM.',
+        'D. Vrai : La rééducation est anticipée avant l’implant.',
+        'E. Vrai : Elle permet d’estimer le bénéfice résiduel de l’appareillage.'
+    ])">Valider</button>
+    <div class="result" id="result1"></div>
+</div>
+
+<!-- Question 2 -->
+<div class="question" id="q2">
+    <h3>2. Concernant l’audiométrie vocale dans le cadre du bilan pré-implantation :</h3>
+    <label><input type="checkbox"> A. Elle se réalise uniquement avec les aides auditives.</label><br>
+    <label><input type="checkbox"> B. Elle inclut les listes dissyllabiques de Fournier à 60 dB SPL.</label><br>
+    <label><input type="checkbox"> C. Elle permet d’évaluer l’intelligibilité dans le calme et dans le bruit.</label><br>
+    <label><input type="checkbox"> D. Elle n’est pas utilisée en champ libre.</label><br>
+    <label><input type="checkbox"> E. Elle contribue à déterminer l’indication selon les critères HAS.</label><br>
+    <button id="validateBtn2" onclick="validateQuestion(2, [1,2,4], [
+        'A. Faux : Elle est réalisée avec et sans appareillage pour comparer.',
+        'B. Vrai : Ces listes sont standards en français pour cette indication.',
+        'C. Vrai : L’intelligibilité est testée dans les deux environnements.',
+        'D. Faux : Le champ libre est essentiel à l’évaluation.',
+        'E. Vrai : Le score vocal conditionne l’indication (< 50 % à 60dB HL).'
+    ])">Valider</button>
+    <div class="result" id="result2"></div>
+</div>
+
+<!-- Question 3 -->
+<div class="question" id="q3">
+    <h3>3. L’audiométrie en champ libre permet de :</h3>
+    <label><input type="checkbox"> A. Comparer les performances sans aide auditive et avec aide auditive.</label><br>
+    <label><input type="checkbox"> B. Évaluer l’audition binaurale uniquement.</label><br>
+    <label><input type="checkbox"> C. Tester les capacités en condition naturelle de communication.</label><br>
+    <label><input type="checkbox"> D. Mesurer l’intelligibilité uniquement dans le silence.</label><br>
+    <label><input type="checkbox"> E. Observer l’effet de la lecture labiale seule et combinée.</label><br>
+    <button id="validateBtn3" onclick="validateQuestion(3, [0,2,4], [
+        'A. Vrai : On compare les performances avec/sans appareillage.',
+        'B. Faux : Elle évalue la communication globale, pas seulement binaurale.',
+        'C. Vrai : Elle simule les situations réelles d’écoute.',
+        'D. Faux : Elle peut aussi inclure des tests dans le bruit.',
+        'E. Vrai : Elle permet de mesurer l’apport de la lecture labiale.'
+    ])">Valider</button>
+    <div class="result" id="result3"></div>
+</div>
+
+<!-- Question 4 -->
+<div class="question" id="q4">
+    <h3>4. Concernant l’imagerie dans le bilan pré-implantation :</h3>
+    <label><input type="checkbox"> A. Le scanner des rochers analyse les structures osseuses.</label><br>
+    <label><input type="checkbox"> B. L’IRM permet d’évaluer le nerf cochléaire.</label><br>
+    <label><input type="checkbox"> C. L’imagerie est optionnelle si le patient est motivé.</label><br>
+    <label><input type="checkbox"> D. Le scanner détecte les ossifications post-méningitiques.</label><br>
+    <label><input type="checkbox"> E. L’IRM visualise la perméabilité du canal cochléaire.</label><br>
+    <button id="validateBtn4" onclick="validateQuestion(4, [0,1,3,4], [
+        'A. Vrai : Le scanner permet une analyse fine de l’os temporal.',
+        'B. Vrai : L’IRM visualise le nerf auditif dans le conduit auditif interne.',
+        'C. Faux : L’imagerie est systématique dans ce bilan.',
+        'D. Vrai : Le scanner est utile pour détecter des ossifications post-méningite.',
+        'E. Vrai : La perméabilité cochléaire est analysée en IRM.'
+    ])">Valider</button>
+    <div class="result" id="result4"></div>
+</div>
+
+<!-- Question 5 -->
+<div class="question" id="q5">
+    <h3>5. Dans le bilan orthophonique, on réalise :</h3>
+    <label><input type="checkbox"> A. Un test de reconnaissance de phonèmes.</label><br>
+    <label><input type="checkbox"> B. L’évaluation de la lecture labiale seule et combinée.</label><br>
+    <label><input type="checkbox"> C. Des questionnaires comme l’ERSA.</label><br>
+    <label><input type="checkbox"> D. Une IRM pour analyser le cortex auditif.</label><br>
+    <label><input type="checkbox"> E. Une évaluation de la compréhension dans le bruit.</label><br>
+    <button id="validateBtn5" onclick="validateQuestion(5, [0,1,2], [
+        'A. Vrai : La reconnaissance phonémique est un test clé en orthophonie.',
+        'B. Vrai : Lecture labiale seule et combinée est évaluée pour prédire le bénéfice post-implant.',
+        'C. Vrai : L’ERSA ou IOI-HA permettent d’auto-évaluer la communication.',
+        'D. Faux : L’IRM n’est pas réalisée par l’orthophoniste.',
+        'E. Faux : La compréhension dans le bruit relève de l’audiométrie vocale.'
+    ])">Valider</button>
+    <div class="result" id="result5"></div>
+</div>
+
+<!-- Question 6 -->
+<div class="question" id="q6">
+    <h3>6. L’IRM dans le bilan pré-implantation permet de :</h3>
+    <label><input type="checkbox"> A. Analyser les structures osseuses fines du labyrinthe.</label><br>
+    <label><input type="checkbox"> B. Visualiser le nerf cochléaire et son calibre.</label><br>
+    <label><input type="checkbox"> C. Détecter un schwannome vestibulaire.</label><br>
+    <label><input type="checkbox"> D. Voir des ossifications post-méningitiques.</label><br>
+    <label><input type="checkbox"> E. Analyser le cortex auditif primaire.</label><br>
+    <button id="validateBtn6" onclick="validateQuestion(6, [1,2], [
+        'A. Faux : L’analyse osseuse relève du scanner, pas de l’IRM.',
+        'B. Vrai : L’IRM permet de visualiser le nerf cochléaire et son intégrité.',
+        'C. Vrai : Elle est utilisée pour rechercher un neurinome de l’acoustique.',
+        'D. Faux : Les ossifications post-infectieuses sont mieux vues au scanner.',
+        'E. Faux : Le cortex auditif n’est pas analysé ici, ce n’est pas une IRM fonctionnelle.'
+    ])">Valider</button>
+    <div class="result" id="result6"></div>
+</div>
+
+<!-- Question 7 -->
+<div class="question" id="q7">
+    <h3>7. Dans le bilan psychologique, on évalue :</h3>
+    <label><input type="checkbox"> A. Le niveau de QI.</label><br>
+    <label><input type="checkbox"> B. La motivation et les attentes du patient.</label><br>
+    <label><input type="checkbox"> C. Le degré d’acceptation de la surdité.</label><br>
+    <label><input type="checkbox"> D. L’environnement familial et social.</label><br>
+    <label><input type="checkbox"> E. Les contre-indications psychiatriques potentielles.</label><br>
+    <button id="validateBtn7" onclick="validateQuestion(7, [1,2,3,4], [
+        'A. Faux : Le QI n’est pas mesuré, ce n’est pas un critère pertinent ici.',
+        'B. Vrai : La motivation est un facteur pronostique clé.',
+        'C. Vrai : On évalue le deuil de l’audition naturelle.',
+        'D. Vrai : Le soutien familial est important dans le succès post-implant.',
+        'E. Vrai : Une pathologie psychiatrique instable est une contre-indication relative ou absolue.'
+    ])">Valider</button>
+    <div class="result" id="result7"></div>
+</div>
+
+<!-- Question 8 -->
+<div class="question" id="q8">
+    <h3>8. En ce qui concerne le bilan génétique :</h3>
+    <label><input type="checkbox"> A. Il est systématique avant tout implant cochléaire.</label><br>
+    <label><input type="checkbox"> B. Il est réalisé en cas de surdité familiale ou syndromique.</label><br>
+    <label><input type="checkbox"> C. Il utilise des techniques comme le CGH-array ou NGS.</label><br>
+    <label><input type="checkbox"> D. Il permet une évaluation pronostique de la progression auditive.</label><br>
+    <label><input type="checkbox"> E. Il remplace les autres explorations étiologiques.</label><br>
+    <button id="validateBtn8" onclick="validateQuestion(8, [1,2,3], [
+        'A. Faux : Il est ciblé et non systématique.',
+        'B. Vrai : Il est réalisé devant une suspicion familiale ou syndromique.',
+        'C. Vrai : Les technologies CGH-array et NGS sont standard.',
+        'D. Vrai : Certaines mutations permettent de prévoir l’évolution.',
+        'E. Faux : Il est complémentaire aux autres examens, pas substitutif.'
+    ])">Valider</button>
+    <div class="result" id="result8"></div>
+</div>
+
+<!-- Question 9 -->
+<div class="question" id="q9">
+    <h3>9. Le staff pluridisciplinaire a pour rôles :</h3>
+    <label><input type="checkbox"> A. Décider seul de l’indication d’implantation.</label><br>
+    <label><input type="checkbox"> B. Analyser collégialement les bilans de chaque patient.</label><br>
+    <label><input type="checkbox"> C. Intégrer différents professionnels de santé.</label><br>
+    <label><input type="checkbox"> D. Proposer un projet thérapeutique personnalisé.</label><br>
+    <label><input type="checkbox"> E. Éliminer les patients anxieux du parcours.</label><br>
+    <button id="validateBtn9" onclick="validateQuestion(9, [1,2,3], [
+        'A. Faux : La décision est partagée avec le patient et selon le consensus.',
+        'B. Vrai : Tous les bilans sont discutés en staff pluridisciplinaire.',
+        'C. Vrai : Il réunit ORL, audio, orthophoniste, psychologue, radiologue…',
+        'D. Vrai : Le projet thérapeutique est adapté au patient.',
+        'E. Faux : L’anxiété ne contre-indique pas systématiquement le projet.'
+    ])">Valider</button>
+    <div class="result" id="result9"></div>
+</div>
+
+<!-- Question 10 -->
+<div class="question" id="q10">
+    <h3>10. Facteurs pronostiques de succès après implantation cochléaire :</h3>
+    <label><input type="checkbox"> A. Durée de la surdité inférieure à 5 ans.</label><br>
+    <label><input type="checkbox"> B. Présence d’un soutien familial.</label><br>
+    <label><input type="checkbox"> C. Score vocal pré-implant <10 %.</label><br>
+    <label><input type="checkbox"> D. Bonne motivation du patient.</label><br>
+    <label><input type="checkbox"> E. Âge supérieur à 85 ans.</label><br>
+    <button id="validateBtn10" onclick="validateQuestion(10, [0,1,3], [
+        'A. Vrai : Une surdité récente est un facteur pronostique favorable.',
+        'B. Vrai : Le soutien est un élément facilitateur de la réhabilitation.',
+        'C. Faux : Un score trop bas pré-implant peut limiter la progression.',
+        'D. Vrai : La motivation est un facteur central.',
+        'E. Faux : Un âge avancé n’est pas une contre-indication mais peut limiter les performances.'
+    ])">Valider</button>
+    <div class="result" id="result10"></div>
+</div>
+
+<!-- Question 11 -->
+<div class="question" id="q11">
+    <h3>11. Concernant la chirurgie d’implantation cochléaire :</h3>
+    <label><input type="checkbox"> A. Elle se fait sous anesthésie locale.</label><br>
+    <label><input type="checkbox"> B. Elle implique une insertion d’électrode dans la cochlée.</label><br>
+    <label><input type="checkbox"> C. La voie d’abord est le plus souvent transmastoidienne.</label><br>
+    <label><input type="checkbox"> D. Elle permet une stimulation directe du cortex auditif.</label><br>
+    <label><input type="checkbox"> E. Un scanner post-opératoire peut être réalisé pour contrôle.</label><br>
+    <button id="validateBtn11" onclick="validateQuestion(11, [1,2,4], [
+        'A. Faux : Elle se fait sous anesthésie générale.',
+        'B. Vrai : L’électrode est insérée dans la rampe tympanique de la cochlée.',
+        'C. Vrai : La voie d’abord habituelle est transmastoidienne avec tympanotomie postérieure.',
+        'D. Faux : Elle stimule le nerf auditif, pas le cortex directement.',
+        'E. Vrai : Le scanner post-opératoire permet de vérifier le bon placement.'
+    ])">Valider</button>
+    <div class="result" id="result11"></div>
+</div>
+
+<!-- Question 12 -->
+<div class="question" id="q12">
+    <h3>12. Concernant les réglages (mapping) d’un implant cochléaire :</h3>
+    <label><input type="checkbox"> A. Ils débutent immédiatement après la chirurgie.</label><br>
+    <label><input type="checkbox"> B. Les T-levels et C-levels sont ajustés.</label><br>
+    <label><input type="checkbox"> C. Ils influencent directement la compréhension auditive.</label><br>
+    <label><input type="checkbox"> D. Le réglage est identique pour tous les patients.</label><br>
+    <label><input type="checkbox"> E. Ils peuvent évoluer au fil du temps.</label><br>
+    <button id="validateBtn12" onclick="validateQuestion(12, [1,2,4], [
+        'A. Faux : Le premier réglage est fait à distance (3 à 4 semaines postopératoire).',
+        'B. Vrai : Le réglage ajuste les seuils perceptifs (T) et confortables (C).',
+        'C. Vrai : Il influence directement les performances auditives.',
+        'D. Faux : Il est toujours personnalisé en fonction des réponses auditives.',
+        'E. Vrai : Les réglages sont ajustés au fil du temps en fonction des progrès.'
+    ])">Valider</button>
+    <div class="result" id="result12"></div>
+</div>
+
+<!-- Question 13 -->
+<div class="question" id="q13">
+    <h3>13. Dans les critères HAS 2024, on retrouve :</h3>
+    <label><input type="checkbox"> A. Une surdité bilatérale sévère à profonde.</label><br>
+    <label><input type="checkbox"> B. Un score vocal à 60 dB SPL avec aides &lt; 50 %.</label><br>
+    <label><input type="checkbox"> C. Une audition résiduelle exclut toute implantation.</label><br>
+    <label><input type="checkbox"> D. Une motivation réaliste est nécessaire.</label><br>
+    <label><input type="checkbox"> E. L’âge est une contre-indication absolue.</label><br>
+    <button id="validateBtn13" onclick="validateQuestion(13, [0,1,3], [
+        'A. Vrai : Les seuils doivent dépasser 70 dB HL.',
+        'B. Vrai : L’intelligibilité doit être inférieure à 50 % avec appareillage.',
+        'C. Faux : Une audition résiduelle aux basses fréquences peut permettre une stratégie EAS.',
+        'D. Vrai : La motivation du patient est un critère nécessaire.',
+        'E. Faux : Il n’y a pas de limite d’âge stricte, mais une évaluation cognitive est nécessaire.'
+    ])">Valider</button>
+    <div class="result" id="result13"></div>
+</div>
+
+<!-- Question 14 -->
+<div class="question" id="q14">
+    <h3>14. L’évaluation cognitive dans le bilan :</h3>
+    <label><input type="checkbox"> A. Utilise le test MoCA pour les sujets âgés.</label><br>
+    <label><input type="checkbox"> B. Est inutile si le patient est motivé.</label><br>
+    <label><input type="checkbox"> C. Permet d’adapter le projet si trouble cognitif.</label><br>
+    <label><input type="checkbox"> D. Est réalisée par l’audioprothésiste.</label><br>
+    <label><input type="checkbox"> E. Est utile pour prédire le bénéfice post-implant.</label><br>
+    <button id="validateBtn14" onclick="validateQuestion(14, [0,2,4], [
+        'A. Vrai : Le MoCA est le test recommandé chez le sujet âgé.',
+        'B. Faux : L’évaluation cognitive reste indispensable quelle que soit la motivation.',
+        'C. Vrai : Un trouble cognitif peut faire adapter l’objectif ou la stratégie.',
+        'D. Faux : Ce test est réalisé par le médecin ou le psychologue, pas l’audioprothésiste.',
+        'E. Vrai : Il existe une corrélation entre cognition et bénéfice post-implant.'
+    ])">Valider</button>
+    <div class="result" id="result14"></div>
+</div>
+
+<!-- Question 15 -->
+<div class="question" id="q15">
+    <h3>15. L’audiométrie tonale dans le bilan pré-implantation :</h3>
+    <label><input type="checkbox"> A. Se limite à l’oreille la plus atteinte.</label><br>
+    <label><input type="checkbox"> B. Mesure les seuils en conduction aérienne et osseuse.</label><br>
+    <label><input type="checkbox"> C. Requiert un seuil &gt;70 dB HL pour indication.</label><br>
+    <label><input type="checkbox"> D. N’a aucun lien avec les critères HAS.</label><br>
+    <label><input type="checkbox"> E. Est inutile si l’IRM est normale.</label><br>
+    <button id="validateBtn15" onclick="validateQuestion(15, [1,2], [
+        'A. Faux : Elle est réalisée sur les deux oreilles pour bilans comparés.',
+        'B. Vrai : Elle explore l’aérien et l’osseux pour évaluer la surdité.',
+        'C. Vrai : Un seuil &gt;70 dB HL sur les fréquences conversationnelles est requis.',
+        'D. Faux : C’est un critère fondamental de l’indication HAS.',
+        'E. Faux : L’audiométrie tonale est complémentaire de l’imagerie, pas substitutive.'
+    ])">Valider</button>
+    <div class="result" id="result15"></div>
+</div>
+
+<!-- Question 16 -->
+<div class="question" id="q16">
+    <h3>16. L’imagerie post-opératoire d’un implant cochléaire :</h3>
+    <label><input type="checkbox"> A. Est systématiquement une IRM.</label><br>
+    <label><input type="checkbox"> B. Permet de vérifier l’insertion des électrodes.</label><br>
+    <label><input type="checkbox"> C. Peut mettre en évidence un déplacement du boîtier.</label><br>
+    <label><input type="checkbox"> D. Est inutile si la télémétrie est bonne.</label><br>
+    <label><input type="checkbox"> E. Est souvent un scanner des rochers.</label><br>
+    <button id="validateBtn16" onclick="validateQuestion(16, [1,2,4], [
+        'A. Faux : Le contrôle post-opératoire est le plus souvent un scanner, pas une IRM.',
+        'B. Vrai : Il permet de vérifier le bon placement des électrodes dans la cochlée.',
+        'C. Vrai : Une complication mécanique peut être visible sur le scanner.',
+        'D. Faux : L’imagerie est parfois réalisée en complément de la télémétrie.',
+        'E. Vrai : Le scanner des rochers est l’examen de référence en post-opératoire.'
+    ])">Valider</button>
+    <div class="result" id="result16"></div>
+</div>
+
+<!-- Question 17 -->
+<div class="question" id="q17">
+    <h3>17. L’auto-évaluation du patient avant implantation :</h3>
+    <label><input type="checkbox"> A. Se fait par questionnaire type ERSA.</label><br>
+    <label><input type="checkbox"> B. Est indispensable pour le diagnostic audiologique.</label><br>
+    <label><input type="checkbox"> C. Permet d’explorer la gêne sociale.</label><br>
+    <label><input type="checkbox"> D. Remplace l’audiométrie vocale.</label><br>
+    <label><input type="checkbox"> E. Évalue la qualité de vie perçue.</label><br>
+    <button id="validateBtn17" onclick="validateQuestion(17, [0,2,4], [
+        'A. Vrai : L’ERSA et autres questionnaires permettent cette auto-évaluation.',
+        'B. Faux : Elle est complémentaire mais ne remplace pas les tests objectifs.',
+        'C. Vrai : Elle évalue le retentissement social et émotionnel.',
+        'D. Faux : Elle ne remplace pas les examens cliniques et audiométriques.',
+        'E. Vrai : L’objectif est d’apprécier le vécu subjectif du handicap.'
+    ])">Valider</button>
+    <div class="result" id="result17"></div>
+</div>
+
+<!-- Question 18 -->
+<div class="question" id="q18">
+    <h3>18. Concernant les patients très âgés (&gt;80 ans) :</h3>
+    <label><input type="checkbox"> A. L’implantation est contre-indiquée.</label><br>
+    <label><input type="checkbox"> B. L’amélioration de la qualité de vie est possible.</label><br>
+    <label><input type="checkbox"> C. L’intelligibilité dans le bruit est souvent limitée.</label><br>
+    <label><input type="checkbox"> D. L’évaluation cognitive est inutile.</label><br>
+    <label><input type="checkbox"> E. Une anesthésie générale est toujours impossible.</label><br>
+    <button id="validateBtn18" onclick="validateQuestion(18, [1,2], [
+        'A. Faux : L’âge n’est pas une contre-indication absolue.',
+        'B. Vrai : Le bénéfice sur la qualité de vie est démontré même chez les plus de 80 ans.',
+        'C. Vrai : L’intelligibilité peut être réduite en raison du vieillissement central.',
+        'D. Faux : L’évaluation cognitive est essentielle dans cette population.',
+        'E. Faux : L’anesthésie est possible après bilan préopératoire adapté.'
+    ])">Valider</button>
+    <div class="result" id="result18"></div>
+</div>
+
+<!-- Question 19 -->
+<div class="question" id="q19">
+    <h3>19. En cas de surdité post-méningitique :</h3>
+    <label><input type="checkbox"> A. L’IRM est inutile.</label><br>
+    <label><input type="checkbox"> B. Il existe un risque d’ossification cochléaire.</label><br>
+    <label><input type="checkbox"> C. L’indication d’implant peut être urgente.</label><br>
+    <label><input type="checkbox"> D. L’implantation bilatérale est souvent envisagée.</label><br>
+    <label><input type="checkbox"> E. Le scanner peut montrer une cochlée obstruée.</label><br>
+    <button id="validateBtn19" onclick="validateQuestion(19, [1,2,3,4], [
+        'A. Faux : L’IRM est utile pour visualiser le nerf et les structures internes.',
+        'B. Vrai : L’ossification post-méningitique peut survenir rapidement.',
+        'C. Vrai : L’urgence est parfois indiquée pour éviter l’ossification complète.',
+        'D. Vrai : L’atteinte bilatérale post-méningite peut justifier un implant bilatéral.',
+        'E. Vrai : Le scanner montre bien les ossifications cochléaires.'
+    ])">Valider</button>
+    <div class="result" id="result19"></div>
+</div>
+
+<!-- Question 20 -->
+<div class="question" id="q20">
+    <h3>20. Les contre-indications à l’implantation cochléaire incluent :</h3>
+    <label><input type="checkbox"> A. Aplasie du nerf cochléaire.</label><br>
+    <label><input type="checkbox"> B. Infection chronique non contrôlée.</label><br>
+    <label><input type="checkbox"> C. Troubles cognitifs évolutifs sévères.</label><br>
+    <label><input type="checkbox"> D. Surdité de perception bilatérale sévère.</label><br>
+    <label><input type="checkbox"> E. Obstruction complète du canal cochléaire.</label><br>
+    <button id="validateBtn20" onclick="validateQuestion(20, [0,1,2,4], [
+        'A. Vrai : L’absence de nerf cochléaire empêche la stimulation.',
+        'B. Vrai : Une infection active contre-indique la chirurgie.',
+        'C. Vrai : Un trouble cognitif évolutif compromet la réhabilitation.',
+        'D. Faux : C’est une indication, pas une contre-indication.',
+        'E. Vrai : Une obstruction anatomique complète empêche l’insertion de l’électrode.'
+    ])">Valider</button>
+    <div class="result" id="result20"></div>
+</div>
+
+</div>  
+<!-- Fin des questions -->
+<br>
+
+<!-- Script principal de validation et score corrigé -->
+<script>
+let questionScores = {}; // On stocke le score par question
+
+function validateQuestion(qNumber, correctAnswers, explanations) {
+    const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+    let score = 1;
+    let errors = 0;
+    let resultArea = document.getElementById(`result${qNumber}`);
+    resultArea.innerHTML = "";
+
+    checkboxes.forEach((checkbox, idx) => {
+        const label = checkbox.parentNode;
+        const isChecked = checkbox.checked;
+        const shouldBeChecked = correctAnswers.includes(idx);
+
+        if (isChecked !== shouldBeChecked) {
+            errors++;
+        }
+
+        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
+            label.style.color = 'green';
+        } else {
+            label.style.color = 'red';
+        }
+    });
+
+    if (errors === 0) {
+        score = 1;
+    } else if (errors === 1) {
+        score = 0.5;
+    } else {
+        score = 0;
+    }
+
+    // Mettre à jour dynamiquement le score de cette question
+    questionScores[qNumber] = score;
+
+    resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
+
+    explanations.forEach((exp, idx) => {
+        const isChecked = checkboxes[idx].checked;
+        const shouldBeChecked = correctAnswers.includes(idx);
+
+        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
+            resultArea.innerHTML += `<p style="color:green;">✔️ ${exp}</p>`;
+        } else {
+            resultArea.innerHTML += `<p style="color:red;">❌ ${exp}</p>`;
+        }
+    });
+}
+
+function showTotalScore() {
+    let totalScore = 0;
+    for (const key in questionScores) {
+        totalScore += questionScores[key];
+    }
+    const scoreSur20 = totalScore.toFixed(2);
+
+    document.getElementById("finalScore").innerText = `Score total : ${scoreSur20} / 20`;
+}
+
+</script>
+
+<!-- Bouton et score alignés sur une même ligne -->
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
+    <button onclick="showTotalScore()">Afficher le score total</button>
+    <div id="finalScore" style="font-weight: bold;"></div>
+</div>
+
+<script>
+
+    for (let qNumber in allQuestions) {
+        const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+        checkboxes.forEach((checkbox, idx) => {
+            if (allQuestions[qNumber].includes(idx)) {
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+        });
+    }
+}
+</script>
+
+</body>
+</html>

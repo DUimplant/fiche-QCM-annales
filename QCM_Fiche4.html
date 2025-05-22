@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>QCM fiche 4</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .question { margin-bottom: 40px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+        button { margin-top: 10px; padding: 8px 15px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer;}
+        button:disabled { background: grey; }
+        .result { margin-top: 10px; padding: 10px; background-color: #e9ecef; border-left: 5px solid #007BFF; }
+    </style>
+</head>
+<body>
+<h1><h1>QCM Fiche 4 : Implants cochléaires et alternatives</h1>
+<p style="font-size: 18px; margin-top: 5px;">20 questions (barème : 1 point par QCM juste, 0,5 point pour une erreur, 0 pour deux erreurs ou plus.</p>
+<p style="font-size: 18px; margin-top: 5px;">Après validation votre score s'affiche, si les items passent au vert vous avez juste, si les items passent au rouge vous avez tort.</p>
+
+<div id="questions">
+
+<!-- Question 1 --> 
+<div class="question" id="q1">
+    <h3>1. Concernant le principe de l’implant cochléaire :</h3>
+    <label><input type="checkbox"> A. Il stimule directement les cellules ciliées internes.</label><br>
+    <label><input type="checkbox"> B. Il transforme le signal sonore en stimulation électrique.</label><br>
+    <label><input type="checkbox"> C. Il nécessite un nerf cochléaire fonctionnel.</label><br>
+    <label><input type="checkbox"> D. Il est totalement implanté sous-cutané sans élément externe.</label><br>
+    <label><input type="checkbox"> E. Il fonctionne uniquement en environnement silencieux.</label><br>
+    <button id="validateBtn1" onclick="validateQuestion(1, [1,2], [
+        'A. Faux : Ce sont les cellules ciliées internes qui réalisent la transduction, mais elles ne sont pas stimulées directement.',
+        'B. Vrai : Le signal acoustique est converti en stimulation électrique par le processeur.',
+        'C. Vrai : Le nerf auditif doit être fonctionnel pour transmettre le signal électrique au cerveau.',
+        'D. Faux : Une partie externe (microphone, processeur) est toujours nécessaire.',
+        'E. Faux : L’implant fonctionne également dans le bruit, même si les performances peuvent diminuer.'
+    ])">Valider</button>
+    <div class="result" id="result1"></div>
+</div>
+
+<!-- Question 2 --> 
+<div class="question" id="q2">
+    <h3>2. L’implant cochléaire est indiqué :</h3>
+    <label><input type="checkbox"> A. En cas de surdité de perception bilatérale profonde.</label><br>
+    <label><input type="checkbox"> B. Lorsque les aides auditives n'apportent plus de bénéfice fonctionnel suffisant.</label><br>
+    <label><input type="checkbox"> C. Chez l’enfant dès 1 an dans certaines indications.</label><br>
+    <label><input type="checkbox"> D. En cas de surdité de transmission pure.</label><br>
+    <label><input type="checkbox"> E. Chez les patients présentant une atteinte centrale pure.</label><br>
+    <button id="validateBtn2" onclick="validateQuestion(2, [0,1,2], [
+        'A. Vrai : C’est l’indication principale validée par la HAS.',
+        'B. Vrai : L’échec du gain avec prothèse est un critère d’éligibilité.',
+        'C. Vrai : Chez l’enfant, l’implantation peut débuter dès 1 an sous conditions.',
+        'D. Faux : La surdité de transmission est traitée différemment (BAHA, prothèse classique).',
+        'E. Faux : Une atteinte centrale pure contre-indique l’implantation.'
+    ])">Valider</button>
+    <div class="result" id="result2"></div>
+</div>
+
+<!-- Question 3 --> 
+<div class="question" id="q3">
+    <h3>3. Les composants d’un implant cochléaire incluent :</h3>
+    <label><input type="checkbox"> A. Un microphone externe.</label><br>
+    <label><input type="checkbox"> B. Une électrode intracochléaire.</label><br>
+    <label><input type="checkbox"> C. Un câble reliant l’électrode au cortex.</label><br>
+    <label><input type="checkbox"> D. Un processeur de parole.</label><br>
+    <label><input type="checkbox"> E. Une antenne externe pour la transmission des signaux.</label><br>
+    <button id="validateBtn3" onclick="validateQuestion(3, [0,1,3,4], [
+        'A. Vrai : Le son est capté à l’extérieur par un microphone.',
+        'B. Vrai : Une électrode est insérée dans la rampe tympanique de la cochlée.',
+        'C. Faux : Aucun câble ne relie l’implant au cerveau.',
+        'D. Vrai : Le processeur analyse et code les sons captés.',
+        'E. Vrai : L’antenne assure la transmission transcutanée au boîtier interne.'
+    ])">Valider</button>
+    <div class="result" id="result3"></div>
+</div>
+
+<!-- Question 4 --> 
+<div class="question" id="q4">
+    <h3>4. Le réglage ("mapping") d’un implant cochléaire :</h3>
+    <label><input type="checkbox"> A. Est identique pour tous les patients.</label><br>
+    <label><input type="checkbox"> B. Ajuste les seuils de perception auditive.</label><br>
+    <label><input type="checkbox"> C. Détermine l’intensité maximale confortable par électrode.</label><br>
+    <label><input type="checkbox"> D. Se réalise exclusivement en centre d’implantation.</label><br>
+    <label><input type="checkbox"> E. A un impact direct sur la compréhension de la parole.</label><br>
+    <button id="validateBtn4" onclick="validateQuestion(4, [1,2,4], [
+        'A. Faux : Le mapping est personnalisé à chaque patient.',
+        'B. Vrai : On définit les seuils de perception sonore (T-level).',
+        'C. Vrai : Le C-level correspond au niveau confortable maximal.',
+        'D. Faux : Des ajustements peuvent être faits en libéral aussi.',
+        'E. Vrai : Un réglage inadapté altère fortement l’intelligibilité.'
+    ])">Valider</button>
+    <div class="result" id="result4"></div>
+</div>
+
+<!-- Question 5 --> 
+<div class="question" id="q5">
+    <h3>5. Le T-level ("threshold level") correspond :</h3>
+    <label><input type="checkbox"> A. Au seuil minimal détecté par le patient.</label><br>
+    <label><input type="checkbox"> B. À l’intensité maximale supportable.</label><br>
+    <label><input type="checkbox"> C. À une valeur fixe pour tous les sujets.</label><br>
+    <label><input type="checkbox"> D. À un paramètre réglé lors du premier réglage.</label><br>
+    <label><input type="checkbox"> E. À la tension appliquée sur le nerf auditif.</label><br>
+    <button id="validateBtn5" onclick="validateQuestion(5, [0,3], [
+        'A. Vrai : Le T-level est le seuil auditif le plus faible que le patient perçoit.',
+        'B. Faux : Il s’agit du C-level, pas du T-level.',
+        'C. Faux : Il est individuel et variable selon le patient et l’électrode.',
+        'D. Vrai : Ce niveau est défini dès le premier réglage post-implantation.',
+        'E. Faux : La stimulation électrique n’est pas exprimée en tension directe appliquée.'
+    ])">Valider</button>
+    <div class="result" id="result5"></div>
+</div>
+
+<!-- Question 6 --> 
+<div class="question" id="q6">
+    <h3>6. Le C-level ("comfort level") désigne :</h3>
+    <label><input type="checkbox"> A. Le niveau le plus faible d’activation du micro.</label><br>
+    <label><input type="checkbox"> B. L’intensité auditive la plus confortable supportée.</label><br>
+    <label><input type="checkbox"> C. Le seuil d’alerte du processeur.</label><br>
+    <label><input type="checkbox"> D. Un niveau identique pour toutes les électrodes.</label><br>
+    <label><input type="checkbox"> E. Un paramètre ajusté en fonction des retours du patient.</label><br>
+    <button id="validateBtn6" onclick="validateQuestion(6, [1,4], [
+        'A. Faux : Le C-level n’a rien à voir avec la sensibilité du micro.',
+        'B. Vrai : C’est l’intensité maximale supportable sans gêne.',
+        'C. Faux : Il ne s’agit pas d’un seuil technique mais auditif.',
+        'D. Faux : Il varie entre électrodes et entre patients.',
+        'E. Vrai : Le patient participe activement à son réglage.'
+    ])">Valider</button>
+    <div class="result" id="result6"></div>
+</div>
+
+<!-- Question 7 --> 
+<div class="question" id="q7">
+    <h3>7. À propos des réglages d’un implant cochléaire :</h3>
+    <label><input type="checkbox"> A. Ils ne nécessitent aucune participation du patient.</label><br>
+    <label><input type="checkbox"> B. Ils sont stables à vie une fois définis.</label><br>
+    <label><input type="checkbox"> C. Ils peuvent évoluer au fil de la réhabilitation.</label><br>
+    <label><input type="checkbox"> D. Ils sont souvent réajustés durant la première année.</label><br>
+    <label><input type="checkbox"> E. Ils sont déterminés uniquement par la télémétrie objective.</label><br>
+    <button id="validateBtn7" onclick="validateQuestion(7, [2,3], [
+        'A. Faux : L’implication du patient est cruciale pour définir T-level et C-level.',
+        'B. Faux : Ils évoluent en fonction de la perception et de l’adaptation cérébrale.',
+        'C. Vrai : Ils sont régulièrement réévalués, notamment la première année.',
+        'D. Vrai : Plusieurs séances de réglage sont souvent nécessaires.',
+        'E. Faux : La télémétrie est complémentaire, mais l’évaluation subjective est essentielle.'
+    ])">Valider</button>
+    <div class="result" id="result7"></div>
+</div>
+
+<!-- Question 8 --> 
+<div class="question" id="q8">
+    <h3>8. La télémétrie dans le cadre du réglage :</h3>
+    <label><input type="checkbox"> A. Permet de vérifier l’intégrité de chaque électrode.</label><br>
+    <label><input type="checkbox"> B. Remplace entièrement l’évaluation subjective du patient.</label><br>
+    <label><input type="checkbox"> C. Est réalisée lors du premier branchement.</label><br>
+    <label><input type="checkbox"> D. Peut détecter des anomalies de l’implant.</label><br>
+    <label><input type="checkbox"> E. Mesure la réponse du nerf auditif aux stimuli électriques.</label><br>
+    <button id="validateBtn8" onclick="validateQuestion(8, [0,2,3,4], [
+        'A. Vrai : Elle permet de tester le bon fonctionnement de chaque canal.',
+        'B. Faux : Elle complète mais ne remplace pas l’évaluation comportementale.',
+        'C. Vrai : Elle est souvent effectuée lors de l’activation initiale.',
+        'D. Vrai : Elle peut mettre en évidence une électrode défectueuse.',
+        'E. Vrai : Elle mesure les potentiels évoqués électriquement.'
+    ])">Valider</button>
+    <div class="result" id="result8"></div>
+</div>
+
+<!-- Question 9 --> 
+<div class="question" id="q9">
+    <h3>9. En conditions optimales, un implant cochléaire permet :</h3>
+    <label><input type="checkbox"> A. Une compréhension >80 % dans le silence.</label><br>
+    <label><input type="checkbox"> B. Une audition binaurale naturelle.</label><br>
+    <label><input type="checkbox"> C. Une compréhension équivalente à l’audition normale.</label><br>
+    <label><input type="checkbox"> D. Une communication téléphonique dans la majorité des cas.</label><br>
+    <label><input type="checkbox"> E. Une reconnaissance musicale identique à la normale.</label><br>
+    <button id="validateBtn9" onclick="validateQuestion(9, [0,3], [
+        'A. Vrai : Les bons candidats peuvent dépasser 80 % de compréhension dans le calme.',
+        'B. Faux : L’audition reste monaurale sans bilatéralisation.',
+        'C. Faux : L’intelligibilité reste inférieure à l’audition physiologique.',
+        'D. Vrai : Le téléphone est souvent utilisable avec de l’entraînement.',
+        'E. Faux : La reconnaissance musicale est souvent altérée.'
+    ])">Valider</button>
+    <div class="result" id="result9"></div>
+</div>
+
+<!-- Question 10 --> 
+<div class="question" id="q10">
+    <h3>10. L’implantation cochléaire bilatérale :</h3>
+    <label><input type="checkbox"> A. Est systématiquement proposée chez l’adulte.</label><br>
+    <label><input type="checkbox"> B. Améliore la localisation sonore.</label><br>
+    <label><input type="checkbox"> C. Améliore la compréhension dans le bruit.</label><br>
+    <label><input type="checkbox"> D. Est contre-indiquée en cas de surdité asymétrique.</label><br>
+    <label><input type="checkbox"> E. Est recommandée chez l’enfant sourd profond bilatéral.</label><br>
+    <button id="validateBtn10" onclick="validateQuestion(10, [1,2,4], [
+        'A. Faux : Elle est discutée au cas par cas chez l’adulte.',
+        'B. Vrai : Deux implants permettent une meilleure spatialisation.',
+        'C. Vrai : Elle améliore la compréhension dans le bruit par effet de redondance et de suppression binaurale.',
+        'D. Faux : La surdité asymétrique peut bénéficier d’une implantation unilatérale.',
+        'E. Vrai : La bilatéralisation précoce est recommandée chez l’enfant pour développer la stéréophonie.'
+    ])">Valider</button>
+    <div class="result" id="result10"></div>
+</div>
+
+<!-- Question 11 --> 
+<div class="question" id="q11">
+    <h3>11. L’implantation bilatérale simultanée :</h3>
+    <label><input type="checkbox"> A. Est plus coûteuse que l’implantation séquentielle.</label><br>
+    <label><input type="checkbox"> B. Permet de limiter la privation sensorielle.</label><br>
+    <label><input type="checkbox"> C. Est contre-indiquée avant 3 ans.</label><br>
+    <label><input type="checkbox"> D. Est moins performante que l’unilatérale.</label><br>
+    <label><input type="checkbox"> E. Diminue la période de rééducation globale.</label><br>
+    <button id="validateBtn11" onclick="validateQuestion(11, [0,1,4], [
+        'A. Vrai : Deux implants en simultané coûtent plus cher que deux en différé, mais gagnent du temps.',
+        'B. Vrai : Une implantation précoce des deux côtés évite une asymétrie d’activation neuronale.',
+        'C. Faux : Elle peut être proposée dès 12 mois dans certains cas pédiatriques.',
+        'D. Faux : Elle donne de meilleurs résultats que l’unilatérale en bruit et localisation.',
+        'E. Vrai : La rééducation des deux oreilles en même temps réduit le temps global.'
+    ])">Valider</button>
+    <div class="result" id="result11"></div>
+</div>
+
+<!-- Question 12 --> 
+<div class="question" id="q12">
+    <h3>12. Les performances post-implantation dépendent :</h3>
+    <label><input type="checkbox"> A. De l’étiologie de la surdité.</label><br>
+    <label><input type="checkbox"> B. De la durée de la privation auditive.</label><br>
+    <label><input type="checkbox"> C. De la qualité du réglage.</label><br>
+    <label><input type="checkbox"> D. De la participation active à la rééducation.</label><br>
+    <label><input type="checkbox"> E. De la langue maternelle du patient.</label><br>
+    <button id="validateBtn12" onclick="validateQuestion(12, [0,1,2,3], [
+        'A. Vrai : Certaines étiologies (méningite, neuropathie) ont un pronostic réservé.',
+        'B. Vrai : Une privation sensorielle prolongée altère la plasticité auditive.',
+        'C. Vrai : Un réglage adapté est essentiel à la performance auditive.',
+        'D. Vrai : La motivation et la participation conditionnent la progression.',
+        'E. Faux : La langue maternelle n’influence pas directement le résultat.'
+    ])">Valider</button>
+    <div class="result" id="result12"></div>
+</div>
+
+<!-- Question 13 --> 
+<div class="question" id="q13">
+    <h3>13. Les implants du tronc cérébral (ABI) :</h3>
+    <label><input type="checkbox"> A. Sont utilisés quand le nerf cochléaire est absent.</label><br>
+    <label><input type="checkbox"> B. Se placent dans le noyau cochléaire.</label><br>
+    <label><input type="checkbox"> C. Offrent des résultats similaires aux implants cochléaires.</label><br>
+    <label><input type="checkbox"> D. Sont indiqués chez les patients avec neurofibromatose type 2.</label><br>
+    <label><input type="checkbox"> E. Requièrent un réglage plus simple que les implants cochléaires.</label><br>
+    <button id="validateBtn13" onclick="validateQuestion(13, [0,1,3], [
+        'A. Vrai : L’ABI est indiqué en cas d’agénésie ou de destruction du nerf cochléaire.',
+        'B. Vrai : L’électrode est placée sur le noyau cochléaire du tronc cérébral.',
+        'C. Faux : Les résultats sont généralement inférieurs à ceux des implants cochléaires.',
+        'D. Vrai : C’est une indication classique dans la NF2 bilatérale.',
+        'E. Faux : Le réglage est plus délicat du fait des effets non auditifs possibles.'
+    ])">Valider</button>
+    <div class="result" id="result13"></div>
+</div>
+
+<!-- Question 14 --> 
+<div class="question" id="q14">
+    <h3>14. Les indications d’implants du tronc cérébral incluent :</h3>
+    <label><input type="checkbox"> A. L’otospongiose bilatérale.</label><br>
+    <label><input type="checkbox"> B. L’agénésie du nerf cochléaire.</label><br>
+    <label><input type="checkbox"> C. La neurofibromatose type 2.</label><br>
+    <label><input type="checkbox"> D. Les malformations majeures du labyrinthe.</label><br>
+    <label><input type="checkbox"> E. Les otites moyennes chroniques.</label><br>
+    <button id="validateBtn14" onclick="validateQuestion(14, [1,2,3], [
+        'A. Faux : L’otospongiose relève d’une chirurgie de l’oreille moyenne.',
+        'B. Vrai : L’absence de nerf cochléaire rend l’implant cochléaire inopérant.',
+        'C. Vrai : L’ABI est souvent utilisé dans la NF2 pour contourner la tumeur.',
+        'D. Vrai : Certaines malformations empêchent l’insertion cochléaire.',
+        'E. Faux : Les otites chroniques ne relèvent pas de l’ABI.'
+    ])">Valider</button>
+    <div class="result" id="result14"></div>
+</div>
+
+<!-- Question 15 --> 
+<div class="question" id="q15">
+    <h3>15. L’implant électroacoustique (EAS) :</h3>
+    <label><input type="checkbox"> A. Combine une stimulation électrique et acoustique.</label><br>
+    <label><input type="checkbox"> B. Est réservé aux enfants de moins de 6 ans.</label><br>
+    <label><input type="checkbox"> C. Nécessite une audition résiduelle aux fréquences graves.</label><br>
+    <label><input type="checkbox"> D. Est une alternative en cas de perte auditive descendante.</label><br>
+    <label><input type="checkbox"> E. Utilise un embout acoustique sur l’oreille opérée.</label><br>
+    <button id="validateBtn15" onclick="validateQuestion(15, [0,2,3,4], [
+        'A. Vrai : Il associe amplification acoustique pour les graves et stimulation électrique pour les aigus.',
+        'B. Faux : L’âge n’est pas une limite, ce sont les seuils auditifs qui comptent.',
+        'C. Vrai : Une audition préservée dans les graves est indispensable.',
+        'D. Vrai : Il est particulièrement utile dans les surdités à pente.',
+        'E. Vrai : Un embout acoustique est ajouté sur la partie externe.'
+    ])">Valider</button>
+    <div class="result" id="result15"></div>
+</div>
+
+<!-- Question 16 --> 
+<div class="question" id="q16">
+    <h3>16. Les critères d’éligibilité à un EAS sont :</h3>
+    <label><input type="checkbox"> A. Une audition normale dans les aigus.</label><br>
+    <label><input type="checkbox"> B. Une perte sévère dans les graves.</label><br>
+    <label><input type="checkbox"> C. Une perte profonde dans les aigus avec résidu dans les graves.</label><br>
+    <label><input type="checkbox"> D. Une impossibilité de porter des appareils classiques.</label><br>
+    <label><input type="checkbox"> E. Une atteinte unilatérale uniquement.</label><br>
+    <button id="validateBtn16" onclick="validateQuestion(16, [2], [
+        'A. Faux : Le EAS cible les pertes dans les aigus, pas les aigus normaux.',
+        'B. Faux : Une audition préservée dans les graves est nécessaire.',
+        'C. Vrai : Le profil idéal est une perte de type ski slope avec conservation des graves.',
+        'D. Faux : Ce n’est pas une indication suffisante pour un EAS.',
+        'E. Faux : Le EAS concerne les surdités bilatérales à pente.'
+    ])">Valider</button>
+    <div class="result" id="result16"></div>
+</div>
+
+<!-- Question 17 --> 
+<div class="question" id="q17">
+    <h3>17. Le port d’un implant dans les cas complexes nécessite :</h3>
+    <label><input type="checkbox"> A. Un bilan pré-implantation renforcé.</label><br>
+    <label><input type="checkbox"> B. Une prise en charge psychologique adaptée.</label><br>
+    <label><input type="checkbox"> C. Une concertation collégiale en staff.</label><br>
+    <label><input type="checkbox"> D. Une exploration anatomique poussée.</label><br>
+    <label><input type="checkbox"> E. Une implantation bilatérale automatique.</label><br>
+    <button id="validateBtn17" onclick="validateQuestion(17, [0,1,2,3], [
+        'A. Vrai : Les cas complexes nécessitent un bilan plus approfondi.',
+        'B. Vrai : Un accompagnement renforcé est souvent nécessaire.',
+        'C. Vrai : Le staff pluridisciplinaire valide l’indication.',
+        'D. Vrai : Scanner et IRM sont fondamentaux.',
+        'E. Faux : L’implantation bilatérale n’est jamais automatique.'
+    ])">Valider</button>
+    <div class="result" id="result17"></div>
+</div>
+
+<!-- Question 18 --> 
+<div class="question" id="q18">
+    <h3>18. Dans les cas cliniques complexes :</h3>
+    <label><input type="checkbox"> A. Le réglage est souvent plus simple.</label><br>
+    <label><input type="checkbox"> B. La rééducation est toujours plus courte.</label><br>
+    <label><input type="checkbox"> C. Les attentes doivent être réalistes.</label><br>
+    <label><input type="checkbox"> D. Le bénéfice peut être uniquement qualitatif.</label><br>
+    <label><input type="checkbox"> E. Le patient est systématiquement exclu de l’indication.</label><br>
+    <button id="validateBtn18" onclick="validateQuestion(18, [2,3], [
+        'A. Faux : Le réglage est souvent plus délicat en raison d’anomalies anatomiques ou fonctionnelles.',
+        'B. Faux : Elle est souvent plus longue et difficile.',
+        'C. Vrai : Une bonne éducation thérapeutique est essentielle.',
+        'D. Vrai : Le bénéfice peut concerner la qualité de vie plus que l’intelligibilité.',
+        'E. Faux : Une exclusion n’est décidée qu’après bilan complet.'
+    ])">Valider</button>
+    <div class="result" id="result18"></div>
+</div>
+
+<!-- Question 19 --> 
+<div class="question" id="q19">
+    <h3>19. Chez les patients implantés tardivement :</h3>
+    <label><input type="checkbox"> A. L’intelligibilité peut être réduite.</label><br>
+    <label><input type="checkbox"> B. La qualité de vie peut néanmoins s’améliorer.</label><br>
+    <label><input type="checkbox"> C. L’entraînement auditif est plus long.</label><br>
+    <label><input type="checkbox"> D. Le score vocal n’a aucune importance.</label><br>
+    <label><input type="checkbox"> E. Les performances dépendent de la durée de la privation.</label><br>
+    <button id="validateBtn19" onclick="validateQuestion(19, [0,1,2,4], [
+        'A. Vrai : L’intelligibilité est souvent inférieure aux patients implantés précocement.',
+        'B. Vrai : L’impact sur l’autonomie et la communication peut être très positif.',
+        'C. Vrai : Il faut plus de temps pour obtenir une stabilisation des résultats.',
+        'D. Faux : Le score vocal pré-implant reste un facteur pronostique.',
+        'E. Vrai : Plus la surdité est ancienne, plus les performances sont limitées.'
+    ])">Valider</button>
+    <div class="result" id="result19"></div>
+</div>
+
+<!-- Question 20 --> 
+<div class="question" id="q20">
+    <h3>20. Une bonne coordination entre le réglage et la rééducation :</h3>
+    <label><input type="checkbox"> A. Est essentielle à la réussite de l’implantation.</label><br>
+    <label><input type="checkbox"> B. Permet d’optimiser les bénéfices subjectifs.</label><br>
+    <label><input type="checkbox"> C. Supprime la nécessité du suivi annuel.</label><br>
+    <label><input type="checkbox"> D. Favorise l’autonomie du patient implanté.</label><br>
+    <label><input type="checkbox"> E. Reste inutile chez les patients jeunes.</label><br>
+    <button id="validateBtn20" onclick="validateQuestion(20, [0,1,3], [
+        'A. Vrai : Le réglage doit être intégré dans une prise en charge globale.',
+        'B. Vrai : Il améliore la satisfaction globale du patient.',
+        'C. Faux : Un suivi est indispensable pour adapter les réglages dans le temps.',
+        'D. Vrai : Il favorise l’usage autonome et la communication spontanée.',
+        'E. Faux : Elle est essentielle à tout âge, surtout chez les enfants.'
+    ])">Valider</button>
+    <div class="result" id="result20"></div>
+</div>
+
+</div>  
+<!-- Fin des questions -->
+<br>
+
+<!-- Script principal de validation et score corrigé -->
+<script>
+let questionScores = {}; // On stocke le score par question
+
+function validateQuestion(qNumber, correctAnswers, explanations) {
+    const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+    let score = 1;
+    let errors = 0;
+    let resultArea = document.getElementById(`result${qNumber}`);
+    resultArea.innerHTML = "";
+
+    checkboxes.forEach((checkbox, idx) => {
+        const label = checkbox.parentNode;
+        const isChecked = checkbox.checked;
+        const shouldBeChecked = correctAnswers.includes(idx);
+
+        if (isChecked !== shouldBeChecked) {
+            errors++;
+        }
+
+        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
+            label.style.color = 'green';
+        } else {
+            label.style.color = 'red';
+        }
+    });
+
+    if (errors === 0) {
+        score = 1;
+    } else if (errors === 1) {
+        score = 0.5;
+    } else {
+        score = 0;
+    }
+
+    // Mettre à jour dynamiquement le score de cette question
+    questionScores[qNumber] = score;
+
+    resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
+
+    explanations.forEach((exp, idx) => {
+        const isChecked = checkboxes[idx].checked;
+        const shouldBeChecked = correctAnswers.includes(idx);
+
+        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
+            resultArea.innerHTML += `<p style="color:green;">✔️ ${exp}</p>`;
+        } else {
+            resultArea.innerHTML += `<p style="color:red;">❌ ${exp}</p>`;
+        }
+    });
+}
+
+function showTotalScore() {
+    let totalScore = 0;
+    for (const key in questionScores) {
+        totalScore += questionScores[key];
+    }
+    const scoreSur20 = totalScore.toFixed(2);
+
+    document.getElementById("finalScore").innerText = `Score total : ${scoreSur20} / 20`;
+}
+
+</script>
+
+<!-- Bouton et score alignés sur une même ligne -->
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
+    <button onclick="showTotalScore()">Afficher le score total</button>
+    <div id="finalScore" style="font-weight: bold;"></div>
+</div>
+
+<script>
+
+    for (let qNumber in allQuestions) {
+        const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+        checkboxes.forEach((checkbox, idx) => {
+            if (allQuestions[qNumber].includes(idx)) {
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+        });
+    }
+}
+</script>
+
+</body>
+</html>

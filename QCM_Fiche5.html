@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>QCM fiche 5</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .question { margin-bottom: 40px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+        button { margin-top: 10px; padding: 8px 15px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer;}
+        button:disabled { background: grey; }
+        .result { margin-top: 10px; padding: 10px; background-color: #e9ecef; border-left: 5px solid #007BFF; }
+    </style>
+</head>
+<body>
+<h1><h1>QCM Fiche 5 : Implants cochléaires des différents fabricants</h1>
+<p style="font-size: 18px; margin-top: 5px;">20 questions (barème : 1 point par QCM juste, 0,5 point pour une erreur, 0 pour deux erreurs ou plus.</p>
+<p style="font-size: 18px; margin-top: 5px;">Après validation votre score s'affiche, si les items passent au vert vous avez juste, si les items passent au rouge vous avez tort.</p>
+
+<div id="questions">
+
+<!-- Question 1 --> 
+<div class="question" id="q1">
+    <h3>1. À propos des logiciels de réglage des implants :</h3>
+    <label><input type="checkbox"> A. MAESTRO est utilisé par MED-EL.</label><br>
+    <label><input type="checkbox"> B. Target CI est dédié à Cochlear.</label><br>
+    <label><input type="checkbox"> C. DigiMap était le logiciel de réglage d’Oticon Medical.</label><br>
+    <label><input type="checkbox"> D. Custom Sound est utilisé par Cochlear.</label><br>
+    <label><input type="checkbox"> E. Advanced Bionics utilise le logiciel HiFocus.</label><br>
+    <button id="validateBtn1" onclick="validateQuestion(1, [0,2,3], [
+        'A. Vrai : MAESTRO est le logiciel propriétaire utilisé pour les réglages des implants MED-EL.',
+        'B. Faux : Target CI est utilisé par Advanced Bionics, pas Cochlear.',
+        'C. Vrai : DigiMap était le logiciel d’Oticon Medical, désormais obsolète.',
+        'D. Vrai : Custom Sound est le logiciel officiel de Cochlear.',
+        'E. Faux : HiFocus désigne le type d’électrode chez AB, pas un logiciel.'
+    ])">Valider</button>
+    <div class="result" id="result1"></div>
+</div>
+
+<!-- Question 2 --> 
+<div class="question" id="q2">
+    <h3>2. Concernant les réglages chez MED-EL :</h3>
+    <label><input type="checkbox"> A. Le volume initial doit être augmenté jusqu'à 100 %.</label><br>
+    <label><input type="checkbox"> B. Maplaw est généralement réglé à 1000.</label><br>
+    <label><input type="checkbox"> C. Les seuils THR sont placés à environ 50 % du MCL.</label><br>
+    <label><input type="checkbox"> D. Le réglage est basé sur l’anatomie du patient.</label><br>
+    <label><input type="checkbox"> E. Les électrodes sont stimulées en mode biphasique fixe uniquement.</label><br>
+    <button id="validateBtn2" onclick="validateQuestion(2, [0,1,3], [
+        'A. Vrai : Le volume par défaut est à augmenter progressivement jusqu’à 100 %.',
+        'B. Vrai : Le Maplaw (paramètre de compression) est souvent fixé à 1000.',
+        'C. Faux : Les seuils THR sont plutôt à 8–10 % du MCL, pas 50 %.',
+        'D. Vrai : MED-EL propose un réglage anatomique via OTOPLAN.',
+        'E. Faux : La stimulation peut être ajustée, y compris en mode adaptatif ou parallèle.'
+    ])">Valider</button>
+    <div class="result" id="result2"></div>
+</div>
+
+<!-- Question 3 --> 
+<div class="question" id="q3">
+    <h3>3. À propos de la stratégie HD-CIS :</h3>
+    <label><input type="checkbox"> A. Elle est utilisée chez AB.</label><br>
+    <label><input type="checkbox"> B. Elle repose sur une stimulation séquentielle à fréquence constante.</label><br>
+    <label><input type="checkbox"> C. Elle code la fine structure sonore.</label><br>
+    <label><input type="checkbox"> D. Elle est compatible avec tous les processeurs MED-EL.</label><br>
+    <label><input type="checkbox"> E. Elle offre de bonnes performances en environnement silencieux.</label><br>
+    <button id="validateBtn3" onclick="validateQuestion(3, [1,3,4], [
+        'A. Faux : HD-CIS est utilisé chez MED-EL, pas chez AB.',
+        'B. Vrai : HD-CIS repose sur une stimulation séquentielle à cadence constante.',
+        'C. Faux : HD-CIS ne code pas la fine structure, contrairement à FSx.',
+        'D. Vrai : HD-CIS est une stratégie compatible avec tous les processeurs MED-EL.',
+        'E. Vrai : Cette stratégie offre de bons résultats en environnement calme.'
+    ])">Valider</button>
+    <div class="result" id="result3"></div>
+</div>
+
+<!-- Question 4 --> 
+<div class="question" id="q4">
+    <h3>4. À propos de la stratégie FS4p :</h3>
+    <label><input type="checkbox"> A. Elle permet une stimulation parallèle.</label><br>
+    <label><input type="checkbox"> B. Elle utilise la compensation de diaphonie (CIC).</label><br>
+    <label><input type="checkbox"> C. Elle est particulièrement utile pour les fréquences aiguës.</label><br>
+    <label><input type="checkbox"> D. Elle fait partie de la stratégie Fine Structure Processing.</label><br>
+    <label><input type="checkbox"> E. Elle est utilisée exclusivement chez AB.</label><br>
+    <button id="validateBtn4" onclick="validateQuestion(4, [0,1,3], [
+        'A. Vrai : FS4p introduit une stimulation parallèle de deux canaux.',
+        'B. Vrai : FS4p utilise la compensation de diaphonie (Channel Interaction Compensation).',
+        'C. Faux : FS4p est surtout utile pour les sons graves (apex cochléaire).',
+        'D. Vrai : FS4p est une déclinaison avancée de la stratégie Fine Structure Processing (FSx).',
+        'E. Faux : Elle est utilisée chez MED-EL, pas chez AB.'
+    ])">Valider</button>
+    <div class="result" id="result4"></div>
+</div>
+
+<!-- Question 5 --> 
+<div class="question" id="q5">
+    <h3>5. Caractéristiques des processeurs SONNET 2 et RONDO 3 :</h3>
+    <label><input type="checkbox"> A. Ils permettent l'utilisation de la stratégie FS4p.</label><br>
+    <label><input type="checkbox"> B. Ils enregistrent des données d'utilisation (datalogging).</label><br>
+    <label><input type="checkbox"> C. Ils sont compatibles avec la connectivité Bluetooth universelle.</label><br>
+    <label><input type="checkbox"> D. Le SONNET 2 propose des réglages de directionnalité automatique.</label><br>
+    <label><input type="checkbox"> E. Le RONDO 3 est un processeur déporté (monobloc).</label><br>
+    <button id="validateBtn5" onclick="validateQuestion(5, [0,1,3,4], [
+        'A. Vrai : Ces processeurs MED-EL supportent la stratégie FS4p.',
+        'B. Vrai : Le datalogging est actif avec SONNET 2 et RONDO 3.',
+        'C. Faux : Ils ne sont pas Bluetooth universel comme les Marvel d’AB.',
+        'D. Vrai : Le SONNET 2 dispose de l’ASM 3.0 avec directionnalité automatique.',
+        'E. Vrai : Le RONDO 3 est un processeur déporté sans contour d’oreille.'
+    ])">Valider</button>
+    <div class="result" id="result5"></div>
+</div>
+
+<!-- Question 6 --> 
+<div class="question" id="q6">
+    <h3>6. Stratégie ACE chez Cochlear :</h3>
+    <label><input type="checkbox"> A. Elle sélectionne les canaux à plus faible énergie.</label><br>
+    <label><input type="checkbox"> B. Elle utilise entre 8 à 12 maxima.</label><br>
+    <label><input type="checkbox"> C. Elle fonctionne par stimulation parallèle sur toutes les électrodes.</label><br>
+    <label><input type="checkbox"> D. Elle permet une compréhension améliorée dans le bruit.</label><br>
+    <label><input type="checkbox"> E. Elle est basée sur la stratégie CIS.</label><br>
+    <button id="validateBtn6" onclick="validateQuestion(6, [1,3,4], [
+        'A. Faux : Elle sélectionne les canaux à plus forte énergie (maxima).',
+        'B. Vrai : Elle utilise de 8 à 12 maxima parmi les canaux disponibles.',
+        'C. Faux : La stimulation est séquentielle, pas parallèle.',
+        'D. Vrai : L’optimisation spectrale améliore l’intelligibilité dans le bruit.',
+        'E. Vrai : ACE est une évolution de CIS avec sélection des maxima.'
+    ])">Valider</button>
+    <div class="result" id="result6"></div>
+</div>
+
+<!-- Question 7 --> 
+<div class="question" id="q7">
+    <h3>7. À propos du Nucleus 8 :</h3>
+    <label><input type="checkbox"> A. Il est compatible EAS.</label><br>
+    <label><input type="checkbox"> B. Il intègre le Bluetooth.</label><br>
+    <label><input type="checkbox"> C. Il utilise la stratégie MP3000 par défaut.</label><br>
+    <label><input type="checkbox"> D. Il offre un accès à une application smartphone de réglage.</label><br>
+    <label><input type="checkbox"> E. Il nécessite un accessoire pour la connectivité sans fil.</label><br>
+    <button id="validateBtn7" onclick="validateQuestion(7, [0,1,4], [
+        'A. Vrai : Il est compatible avec l’option EAS pour patients avec audition résiduelle.',
+        'B. Vrai : Il inclut une connectivité Bluetooth intégrée.',
+        'C. Faux : MP3000 est optionnelle, pas utilisée par défaut.',
+        'D. Faux : L’ajustement via appli est possible mais limité, le réglage complet nécessite un professionnel.',
+        'E. Vrai : Certains appareils nécessitent un accessoire pour la connectivité sans fil complète.'
+    ])">Valider</button>
+    <div class="result" id="result7"></div>
+</div>
+
+<!-- Question 8 --> 
+<div class="question" id="q8">
+    <h3>8. HiRes Fidelity 120 chez AB :</h3>
+    <label><input type="checkbox"> A. Utilise le current steering pour générer des canaux virtuels.</label><br>
+    <label><input type="checkbox"> B. Crée jusqu’à 120 points spectraux.</label><br>
+    <label><input type="checkbox"> C. Offre une restitution spectrale enrichie.</label><br>
+    <label><input type="checkbox"> D. Est incompatible avec les prothèses Phonak.</label><br>
+    <label><input type="checkbox"> E. Nécessite une cochlée bien conservée pour être pleinement efficace.</label><br>
+    <button id="validateBtn8" onclick="validateQuestion(8, [0,1,2,4], [
+        'A. Vrai : Elle utilise le current steering pour interpoler entre électrodes.',
+        'B. Vrai : Elle permet jusqu’à 120 points spectraux virtuels.',
+        'C. Vrai : Elle enrichit la perception, notamment musicale.',
+        'D. Faux : Elle est totalement compatible avec les prothèses Phonak (même groupe Sonova).',
+        'E. Vrai : L’efficacité dépend de l’intégrité cochléaire pour permettre une bonne discrimination fréquentielle.'
+    ])">Valider</button>
+    <div class="result" id="result8"></div>
+</div>
+
+<!-- Question 9 --> 
+<div class="question" id="q9">
+    <h3>9. Spécificités de la stimulation chez AB :</h3>
+    <label><input type="checkbox"> A. La stimulation triphasique peut réduire les effets secondaires.</label><br>
+    <label><input type="checkbox"> B. La fréquence de stimulation est fixe.</label><br>
+    <label><input type="checkbox"> C. La largeur d’impulsion est ajustable.</label><br>
+    <label><input type="checkbox"> D. Les niveaux T et M sont définis par électrode.</label><br>
+    <label><input type="checkbox"> E. La stratégie HiRes est lente.</label><br>
+    <button id="validateBtn9" onclick="validateQuestion(9, [0,2,3], [
+        'A. Vrai : La triphasique limite les effets secondaires comme la stimulation du nerf facial.',
+        'B. Faux : La fréquence est totalement ajustable en fonction du patient.',
+        'C. Vrai : Elle peut être réglée pour adapter la perception sans augmenter le courant.',
+        'D. Vrai : T et M sont définis individuellement sur chaque canal.',
+        'E. Faux : La stratégie HiRes est rapide (jusqu’à 83 000 impulsions/s).'
+    ])">Valider</button>
+    <div class="result" id="result9"></div>
+</div>
+
+<!-- Question 10 --> 
+<div class="question" id="q10">
+    <h3>10. Compatibilité et fonctionnalités Marvel CI :</h3>
+    <label><input type="checkbox"> A. Il est compatible avec un micro CROS.</label><br>
+    <label><input type="checkbox"> B. Il propose le streaming Bluetooth universel.</label><br>
+    <label><input type="checkbox"> C. Il est bimodalement compatible avec Phonak.</label><br>
+    <label><input type="checkbox"> D. Il ne possède pas de datalogging.</label><br>
+    <label><input type="checkbox"> E. Il est compatible avec la stratégie HiRes Optima.</label><br>
+    <button id="validateBtn10" onclick="validateQuestion(10, [0,1,2,4], [
+        'A. Vrai : Marvel CI peut être couplé à un micro CROS pour les surdités unilatérales.',
+        'B. Vrai : Il est compatible avec Bluetooth standard (universel).',
+        'C. Vrai : Grâce à Sonova, il fonctionne avec les aides auditives Phonak.',
+        'D. Faux : Marvel CI intègre le datalogging avancé.',
+        'E. Vrai : HiRes Optima est une des stratégies disponibles.'
+    ])">Valider</button>
+    <div class="result" id="result10"></div>
+</div>
+
+<!-- Question 11 --> 
+<div class="question" id="q11">
+    <h3>11. À propos des électrodes FLEX chez MED-EL :</h3>
+    <label><input type="checkbox"> A. Elles sont de type périmodiolaire rigide.</label><br>
+    <label><input type="checkbox"> B. Elles offrent une insertion atraumatique.</label><br>
+    <label><input type="checkbox"> C. Elles existent en plusieurs longueurs.</label><br>
+    <label><input type="checkbox"> D. Elles sont adaptées à l’anatomie cochléaire grâce à OTOPLAN.</label><br>
+    <label><input type="checkbox"> E. Elles sont destinées uniquement aux enfants.</label><br>
+    <button id="validateBtn11" onclick="validateQuestion(11, [1,2,3], [
+        'A. Faux : Ce sont des électrodes latérales souples, pas périmodiolaires.',
+        'B. Vrai : La technologie FLEX Tip permet une insertion atraumatique.',
+        'C. Vrai : Il existe plusieurs modèles : FLEX20, 24, 26, 28, SOFT.',
+        'D. Vrai : OTOPLAN permet d’adapter la longueur au diamètre cochléaire.',
+        'E. Faux : Elles conviennent aux adultes comme aux enfants.'
+    ])">Valider</button>
+    <div class="result" id="result11"></div>
+</div>
+
+<!-- Question 12 --> 
+<div class="question" id="q12">
+    <h3>12. Les électrodes CI632 de Cochlear :</h3>
+    <label><input type="checkbox"> A. Sont de type périmodiolaire.</label><br>
+    <label><input type="checkbox"> B. Sont utilisées pour minimiser la stimulation du nerf facial.</label><br>
+    <label><input type="checkbox"> C. Sont rigides et non flexibles.</label><br>
+    <label><input type="checkbox"> D. Ont une forme Slim Modiolar.</label><br>
+    <label><input type="checkbox"> E. Sont compatibles avec le Nucleus 7.</label><br>
+    <button id="validateBtn12" onclick="validateQuestion(12, [0,1,4], [
+        'A. Vrai : Ce sont des électrodes périmodiolaires souples.',
+        'B. Vrai : Leur proximité du modiolus limite la diffusion du courant, donc la stimulation faciale.',
+        'C. Faux : Elles sont souples et rechargeables.',
+        'D. Faux : Le terme exact est Slim Modiolar, mais elles ne sont pas rigides.',
+        'E. Vrai : Elles sont compatibles avec les processeurs Cochlear récents.'
+    ])">Valider</button>
+    <div class="result" id="result12"></div>
+</div>
+
+<!-- Question 13 --> 
+<div class="question" id="q13">
+    <h3>13. Concernant les électrodes Slim J chez AB :</h3>
+    <label><input type="checkbox"> A. Ce sont des électrodes latérales.</label><br>
+    <label><input type="checkbox"> B. Elles ont 16 contacts.</label><br>
+    <label><input type="checkbox"> C. Elles sont montées sur stylet rigide.</label><br>
+    <label><input type="checkbox"> D. Elles sont indiquées pour les cochlées ossifiées.</label><br>
+    <label><input type="checkbox"> E. Elles permettent une insertion manuelle ou assistée.</label><br>
+    <button id="validateBtn13" onclick="validateQuestion(13, [0,1,4], [
+        'A. Vrai : Les Slim J sont de type latéral (scala tympani).',
+        'B. Vrai : Comme la majorité des électrodes AB, elles comptent 16 contacts.',
+        'C. Faux : Elles sont flexibles, sans stylet.',
+        'D. Faux : C’est la MidScala qui est recommandée en cas d’ossification.',
+        'E. Vrai : L’insertion peut être manuelle ou avec un outil dédié.'
+    ])">Valider</button>
+    <div class="result" id="result13"></div>
+</div>
+
+<!-- Question 14 --> 
+<div class="question" id="q14">
+    <h3>14. Particularités d’Oticon Medical :</h3>
+    <label><input type="checkbox"> A. La stratégie utilisée est FineHearing.</label><br>
+    <label><input type="checkbox"> B. Le codage est synchronisé avec l’entrée sonore.</label><br>
+    <label><input type="checkbox"> C. Le système propose une EAS compatible.</label><br>
+    <label><input type="checkbox"> D. Les processeurs actuels incluent le Neuro 2.</label><br>
+    <label><input type="checkbox"> E. Oticon est désormais intégré à Cochlear.</label><br>
+    <button id="validateBtn14" onclick="validateQuestion(14, [0,1,4], [
+        'A. Vrai : FineHearing est la stratégie propre à Oticon.',
+        'B. Vrai : Le codage est temporel, synchronisé à l’entrée acoustique.',
+        'C. Faux : Aucun processeur Oticon ne propose d’EAS.',
+        'D. Faux : Neuro 2 n’est plus en production.',
+        'E. Vrai : Oticon Medical a été racheté par Cochlear en 2022.'
+    ])">Valider</button>
+    <div class="result" id="result14"></div>
+</div>
+
+<!-- Question 15 --> 
+<div class="question" id="q15">
+    <h3>15. Points communs des stratégies FS4 et FS4p :</h3>
+    <label><input type="checkbox"> A. Utilisent la stimulation parallèle pour toutes les électrodes.</label><br>
+    <label><input type="checkbox"> B. Codent la fine structure des sons graves.</label><br>
+    <label><input type="checkbox"> C. Nécessitent un bon profil neural pour être efficaces.</label><br>
+    <label><input type="checkbox"> D. Sont spécifiques à Cochlear.</label><br>
+    <label><input type="checkbox"> E. Sont des variantes de la Fine Structure Processing.</label><br>
+    <button id="validateBtn15" onclick="validateQuestion(15, [1,2,4], [
+        'A. Faux : Seule FS4p permet une stimulation parallèle limitée.',
+        'B. Vrai : Ces stratégies ciblent les canaux apicaux pour le codage des sons graves.',
+        'C. Vrai : Une bonne intégrité neuronale est nécessaire pour profiter du codage temporel.',
+        'D. Faux : Elles sont spécifiques à MED-EL.',
+        'E. Vrai : Elles sont toutes deux issues de la famille FSx (Fine Structure Processing).'
+    ])">Valider</button>
+    <div class="result" id="result15"></div>
+</div>
+
+<!-- Question 16 --> 
+<div class="question" id="q16">
+    <h3>16. À propos du logiciel MAESTRO :</h3>
+    <label><input type="checkbox"> A. Il permet le réglage des implants Cochlear.</label><br>
+    <label><input type="checkbox"> B. Il est dédié aux réglages MED-EL.</label><br>
+    <label><input type="checkbox"> C. Il permet le suivi des données d’usage (datalogging).</label><br>
+    <label><input type="checkbox"> D. Il propose une visualisation anatomique de la cochlée.</label><br>
+    <label><input type="checkbox"> E. Il inclut la programmation des stratégies FSx.</label><br>
+    <button id="validateBtn16" onclick="validateQuestion(16, [1,2,3,4], [
+        'A. Faux : MAESTRO est réservé aux implants MED-EL.',
+        'B. Vrai : Il s’agit du logiciel propriétaire de MED-EL.',
+        'C. Vrai : Il permet l’analyse des données d’usage pour les processeurs compatibles.',
+        'D. Vrai : Grâce à OTOPLAN, il intègre des images cochléaires anatomiques.',
+        'E. Vrai : Il permet de choisir entre HD-CIS, FSP, FS4 ou FS4p.'
+    ])">Valider</button>
+    <div class="result" id="result16"></div>
+</div>
+
+<!-- Question 17 --> 
+<div class="question" id="q17">
+    <h3>17. Particularités du datalogging :</h3>
+    <label><input type="checkbox"> A. Permet d’estimer le port quotidien de l’implant.</label><br>
+    <label><input type="checkbox"> B. Est accessible uniquement avec les implants AB.</label><br>
+    <label><input type="checkbox"> C. Fournit des informations sur les environnements sonores.</label><br>
+    <label><input type="checkbox"> D. Permet d’adapter les réglages en fonction de l’usage réel.</label><br>
+    <label><input type="checkbox"> E. Peut déclencher automatiquement des alertes sonores.</label><br>
+    <button id="validateBtn17" onclick="validateQuestion(17, [0,2,3], [
+        'A. Vrai : Il indique le nombre d’heures d’utilisation par jour.',
+        'B. Faux : Il est aussi disponible chez MED-EL (Sonnet 2), Cochlear et Oticon (Neuro 2).',
+        'C. Vrai : Il analyse les environnements calmes, bruyants, avec parole, etc.',
+        'D. Vrai : Ces données peuvent guider l’audioprothésiste pour adapter la carte.',
+        'E. Faux : Aucun système actuel ne déclenche des alertes automatiquement.'
+    ])">Valider</button>
+    <div class="result" id="result17"></div>
+</div>
+
+<!-- Question 18 --> 
+<div class="question" id="q18">
+    <h3>18. Implantation bimodale :</h3>
+    <label><input type="checkbox"> A. Combine un implant cochléaire et une prothèse auditive.</label><br>
+    <label><input type="checkbox"> B. Est souvent utilisée chez les sujets avec audition unilatérale.</label><br>
+    <label><input type="checkbox"> C. Permet un traitement synchronisé avec certaines marques.</label><br>
+    <label><input type="checkbox"> D. Est compatible uniquement avec les systèmes Cochlear.</label><br>
+    <label><input type="checkbox"> E. Nécessite une implantation bilatérale simultanée.</label><br>
+    <button id="validateBtn18" onclick="validateQuestion(18, [0,1,2], [
+        'A. Vrai : L’implant est d’un côté, la prothèse auditive conventionnelle de l’autre.',
+        'B. Vrai : C’est une alternative courante à la bilatéralisation chirurgicale.',
+        'C. Vrai : Notamment chez AB avec Phonak, ou Cochlear avec Resound.',
+        'D. Faux : Tous les fabricants proposent aujourd’hui des solutions bimodales.',
+        'E. Faux : C’est justement une alternative à l’implantation bilatérale.'
+    ])">Valider</button>
+    <div class="result" id="result18"></div>
+</div>
+
+<!-- Question 19 --> 
+<div class="question" id="q19">
+    <h3>19. Le current steering :</h3>
+    <label><input type="checkbox"> A. Permet la création d’électrodes virtuelles.</label><br>
+    <label><input type="checkbox"> B. Est utilisé dans la stratégie Fidelity 120.</label><br>
+    <label><input type="checkbox"> C. Est utilisé uniquement par Cochlear.</label><br>
+    <label><input type="checkbox"> D. Repose sur une stimulation alternée des canaux.</label><br>
+    <label><input type="checkbox"> E. Améliore la résolution spectrale.</label><br>
+    <button id="validateBtn19" onclick="validateQuestion(19, [0,1,4], [
+        'A. Vrai : Le courant est dirigé entre deux électrodes pour simuler une position intermédiaire.',
+        'B. Vrai : Fidelity 120 utilise ce principe pour augmenter le nombre de points spectraux.',
+        'C. Faux : C’est AB qui utilise cette technique, pas Cochlear.',
+        'D. Faux : Il ne s’agit pas d’une alternance mais d’une interpolation.',
+        'E. Vrai : Cela permet un codage spectral plus fin, bénéfique pour la musique notamment.'
+    ])">Valider</button>
+    <div class="result" id="result19"></div>
+</div>
+
+<!-- Question 20 --> 
+<div class="question" id="q20">
+    <h3>20. Critères influençant le choix du fabricant :</h3>
+    <label><input type="checkbox"> A. La forme et la taille de la cochlée du patient.</label><br>
+    <label><input type="checkbox"> B. Le besoin d’un couplage bimodal.</label><br>
+    <label><input type="checkbox"> C. La stratégie de codage souhaitée.</label><br>
+    <label><input type="checkbox"> D. La préférence du chirurgien.</label><br>
+    <label><input type="checkbox"> E. La possibilité de préserver l’audition résiduelle.</label><br>
+    <button id="validateBtn20" onclick="validateQuestion(20, [0,1,2,3,4], [
+        'A. Vrai : Certains systèmes comme MED-EL s’adaptent mieux aux grandes cochlées.',
+        'B. Vrai : AB et Cochlear sont très bien intégrés avec leurs systèmes auditifs respectifs.',
+        'C. Vrai : Chaque fabricant propose une stratégie différente.',
+        'D. Vrai : L’expérience du chirurgien influence souvent le choix.',
+        'E. Vrai : Les électrodes souples (ex. FLEX) sont conçues pour cela.'
+    ])">Valider</button>
+    <div class="result" id="result20"></div>
+</div>
+
+</div>  
+<!-- Fin des questions -->
+<br>
+
+<!-- Script principal de validation et score corrigé -->
+<script>
+let questionScores = {}; // On stocke le score par question
+
+function validateQuestion(qNumber, correctAnswers, explanations) {
+    const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+    let score = 1;
+    let errors = 0;
+    let resultArea = document.getElementById(`result${qNumber}`);
+    resultArea.innerHTML = "";
+
+    checkboxes.forEach((checkbox, idx) => {
+        const label = checkbox.parentNode;
+        const isChecked = checkbox.checked;
+        const shouldBeChecked = correctAnswers.includes(idx);
+
+        if (isChecked !== shouldBeChecked) {
+            errors++;
+        }
+
+        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
+            label.style.color = 'green';
+        } else {
+            label.style.color = 'red';
+        }
+    });
+
+    if (errors === 0) {
+        score = 1;
+    } else if (errors === 1) {
+        score = 0.5;
+    } else {
+        score = 0;
+    }
+
+    // Mettre à jour dynamiquement le score de cette question
+    questionScores[qNumber] = score;
+
+    resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
+
+    explanations.forEach((exp, idx) => {
+        const isChecked = checkboxes[idx].checked;
+        const shouldBeChecked = correctAnswers.includes(idx);
+
+        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
+            resultArea.innerHTML += `<p style="color:green;">✔️ ${exp}</p>`;
+        } else {
+            resultArea.innerHTML += `<p style="color:red;">❌ ${exp}</p>`;
+        }
+    });
+}
+
+function showTotalScore() {
+    let totalScore = 0;
+    for (const key in questionScores) {
+        totalScore += questionScores[key];
+    }
+    const scoreSur20 = totalScore.toFixed(2);
+
+    document.getElementById("finalScore").innerText = `Score total : ${scoreSur20} / 20`;
+}
+
+</script>
+
+<!-- Bouton et score alignés sur une même ligne -->
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
+    <button onclick="showTotalScore()">Afficher le score total</button>
+    <div id="finalScore" style="font-weight: bold;"></div>
+</div>
+
+<script>
+
+    for (let qNumber in allQuestions) {
+        const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+        checkboxes.forEach((checkbox, idx) => {
+            if (allQuestions[qNumber].includes(idx)) {
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+        });
+    }
+}
+</script>
+
+</body>
+</html>
