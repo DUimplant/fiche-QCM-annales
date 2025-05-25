@@ -572,7 +572,6 @@
 <!-- Fin des questions -->
 <br>
 
-
 <!-- Marge pour éviter que le bouton soit caché sur mobile -->
 <style>
     body {
@@ -582,7 +581,7 @@
 
 <!-- Script principal de validation et score corrigé -->
 <script>
-let questionScores = {}; // On stocke le score par question
+let questionScores = {};
 
 function validateQuestion(qNumber, correctAnswers, explanations) {
     const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
@@ -615,7 +614,6 @@ function validateQuestion(qNumber, correctAnswers, explanations) {
         score = 0;
     }
 
-    // Mettre à jour dynamiquement le score de cette question
     questionScores[qNumber] = score;
 
     resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
@@ -637,14 +635,19 @@ function showTotalScore() {
     for (const key in questionScores) {
         totalScore += questionScores[key];
     }
-    const scoreSur20 = totalScore.toFixed(2);
-    document.getElementById("finalScore").innerText = `Score total : ${scoreSur20} / 20`;
+
+    const totalQuestions = document.querySelectorAll(".question").length;
+    const scoreDetail = `${totalScore.toFixed(2)} / ${totalQuestions}`;
+    const scoreSur20 = ((totalScore / totalQuestions) * 20).toFixed(2);
+
+    document.getElementById("finalScore").innerText = `Score total : ${scoreDetail} — soit ${scoreSur20} / 20`;
+
     window.latestScore = scoreSur20;
     document.getElementById("exportBtn").style.display = "inline-block";
 }
 </script>
 
-<!-- Boutons : score + export -->
+<!-- Boutons score + export -->
 <div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
     <button onclick="showTotalScore()">Afficher le score total</button>
     <div id="finalScore" style="font-weight: bold;"></div>
@@ -667,14 +670,14 @@ function exportErrorsToCSV() {
 
     let csvRows = [];
 
-    // Bloc d'entête
+    // En-tête
     csvRows.push(["Nom du fichier", filename]);
     csvRows.push([]);
     csvRows.push(["", "Date de l'export", dateString]);
-    csvRows.push(["", "Score total", window.latestScore || ""]);
-    csvRows.push([]);
+ csvRows.push(["", "Score total", (window.latestScore ? window.latestScore + "/20" : "")]);
+   csvRows.push([]);
 
-    // En-tête tableau des erreurs
+    // Tableau des erreurs
     csvRows.push(["N° de question", "Items faux"]);
 
     sortedIds.forEach(qNum => {
@@ -694,7 +697,6 @@ function exportErrorsToCSV() {
         csvRows.push([qNum, errors.join(", ")]);
     });
 
-    // Génère le CSV avec point-virgule
     const csvContent = csvRows.map(row => row.join(";")).join("\n");
     const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
 
