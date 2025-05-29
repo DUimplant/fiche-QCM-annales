@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>DU Annale 2019-2020</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .question { margin-bottom: 40px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+        button { margin-top: 10px; padding: 8px 15px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer;}
+        button:disabled { background: grey; }
+        .result { margin-top: 10px; padding: 10px; background-color: #e9ecef; border-left: 5px solid #007BFF; }
+    </style>
+</head>
+<body>
+<h1><h1>D.U Audioprothèses implantables - Annale 2019-2020</h1>
+<p style="font-size: 18px; margin-top: 5px;">30 questions (QCM et QRU, barème : 1 point par QCM juste, 0,5 point pour une erreur, 0 pour deux erreurs ou plus.</p>
+<p style="font-size: 18px; margin-top: 5px;">Après validation votre score s'affiche, si les items passent au vert vous avez juste, si les items passent au rouge vous avez tort.</p>
+<p style="font-size: 18px; margin-top: 5px;">Puisse le sort vous être favorable.</p>
+<div id="questions">
+
+<!-- Question 1 -->
+<div class="question" id="q1">
+  <h3>Question 1. Indiquer les réponses exactes :</h3>
+  <label><input type="checkbox"> 1. Les cellules ciliées externes sont au nombre de 2000 à la naissance et jouent un rôle dans la sélectivité fréquentielle.</label><br>
+  <label><input type="checkbox"> 2. La scala media est remplie d’endolymphe, très riche en potassium, sécrétée par la strie vasculaire qui contient de nombreux transporteurs ioniques</label><br>
+  <label><input type="checkbox"> 3. La connexine 26 est une protéine responsable des « tip links » reliant les cils des cellules cochléaires qui participent à la transduction mécano-bio-électrique.</label><br>
+  <label><input type="checkbox"> 4. La tonotopie fréquentielle existe au niveau de la cochlée, du nerf auditif et du noyau cochléaire et est présente dès la naissance.</label><br>
+  <label><input type="checkbox"> 5. Le ganglion spiral est composé principalement de neurones de type I avec des fibres myélinisées afférentes en connexion avec les cellules ciliées internes.</label><br>
+  <button onclick="validateQuestion(1, [1,3,4], [
+    'Faux : Les CCE jouent bien un rôle dans la sélectivité fréquentielle mais leur nombre est d’environ 13 000.',
+    'Vrai : L’endolymphe est très riche en K+, sécrétée par la strie vasculaire qui contient de nombreux transporteurs ioniques.',
+    'Faux : La connexine 26 est impliquée dans les jonctions GAP, pas dans les tip links.',
+    'Vrai : La tonotopie fréquentielle est présente dès la naissance dans les structures auditives centrales et périphériques.',
+    'Vrai : Les neurones de type I sont majoritaires dans le ganglion spiral, connectés aux CCI, et myélinisés.'
+  ])">Valider</button>
+  <div class="result" id="result1"></div>
+</div>
+
+<!-- Question 2 -->
+<div class="question" id="q2">
+  <h3>Question 2. Concernant les modes de transmission des surdités génétiques, quelles propositions sont exactes ?</h3>
+  <label><input type="checkbox"> 1. Les surdités congénitales sont le plus souvent de transmission autosomique récessive.</label><br>
+  <label><input type="checkbox"> 2. Lorsque le gène muté est porté par l’ADN mitochondrial, un homme peut être atteint mais ne transmettra pas la maladie.</label><br>
+  <label><input type="checkbox"> 3. L’existence d’une surdité apparue très rapidement après une prise d’aminosides doit faire rechercher une mutation génétique dont le mode de transmission est lié à l’X.</label><br>
+  <label><input type="checkbox"> 4. La mutation de la stéréociline est à l’origine d’une surdité périlinguale d’aggravation progressive liée à une neuropathie auditive.</label><br>
+  <label><input type="checkbox"> 5. Face à une surdité isolée post-linguale sans élément clinique d’orientation, le généticien peut désormais faire une analyse par panel NGS qui permet d’analyser un grand nombre gènes simultanément.</label><br>
+  <button onclick="validateQuestion(2, [0,1], [
+    'Vrai : La majorité des surdités congénitales non syndromiques sont autosomiques récessives.',
+    'Vrai : L’ADN mitochondrial est transmis uniquement par la mère ; un homme atteint ne transmet pas la mutation.',
+    'Faux : Il s’agit d’un mode de transmission mitochondrial, non lié à l’X.',
+    'Faux : La mutation de la stéréociline est responsable d’une surdité récessive non syndromique sans neuropathie.',
+    'Faux : Attention cet item est bien vrai en cas d’étiologie inconnue si âge du patient inf à 50 ans, sinon item faux car pas de bilan génétique systématique quand âge sup à 50ans.'
+  ])">Valider</button>
+  <div class="result" id="result2"></div>
+</div>
+
+<!-- Question 3 -->
+<div class="question" id="q3">
+  <h3>Question 3 : Concernant les étiologies de surdité de perception chez l’adulte :</h3>
+  <label><input type="checkbox"> 1. La survenue d’une surdité après prise d’aminosides par voie parentérale est toujours secondaire à des doses très importantes et/ou à un traitement prolongé.</label><br>
+  <label><input type="checkbox"> 2. L’otospongiose peut donner une atteinte principalement neurosensorielle et être révélée sur le scanner préopératoire dans le cadre du bilan pré-implant.</label><br>
+  <label><input type="checkbox"> 3. Chez l’adulte implanté cochléaire, la cause de la surdité est inconnue dans 40 à 50% des cas en fonction des études cliniques.</label><br>
+  <label><input type="checkbox"> 4. Une neuropathie auditive est la cause de la surdité retrouvée chez environ 30% des adultes.</label><br>
+  <label><input type="checkbox"> 5. La presbyacousie ou surdité liée à l’âge doit faire systématiquement proposer un bilan génétique, même en l’absence d’antécédents familiaux, car plusieurs gènes à l’origine de la presbyacousie ont été identifiés chez l’homme.</label><br>
+  <button onclick="validateQuestion(3, [1,2], [
+    'Faux : Des mutations mitochondriales comme MT-RNR1 peuvent entraîner une toxicité même à faible dose.',
+    'Vrai : L’otospongiose peut exceptionnellement être responsable d’une atteinte neurosensorielle.',
+    'Vrai : Dans de nombreuses études, la cause est inconnue dans 50% des cas (p39 cours étiologie) des patients adultes implantés.',
+    'Faux : Les neuropathies auditives sont rares, 5-14% (p60 cours étiologie).',
+    'Faux : Le bilan génétique n’est pas systématiquement recommandé dans la presbyacousie isolée sans ATCD familiaux.'
+  ])">Valider</button>
+  <div class="result" id="result3"></div>
+</div>
+
+<!-- Question 4 -->
+<div class="question" id="q4">
+  <h3>Question 4 : Concernant les explorations audiométriques :</h3>
+  <label><input type="checkbox"> 1. Le test FRAMATRIX est un test adaptatif de phrases dans le bruit qui utilise des phrases avec une structure syntaxique fixée, organisée de manière à ce que la sémantique soit imprévisible.</label><br>
+  <label><input type="checkbox"> 2. Si les performances sont moins bonnes en audiométrie vocale qu’en audiométrie tonale, cela suggère une neuropathie auditive ou des troubles cognitifs.</label><br>
+  <label><input type="checkbox"> 3. En cas de surdité profonde bilatérale en audiométrie, la mesure des potentiels évoqués auditifs n’est pas nécessaire car aucune onde ne sera retrouvée du fait de la surdité profonde.</label><br>
+  <label><input type="checkbox"> 4. Les otoémissions acoustiques sont systématiquement réalisées chez l’adulte dans le but de rechercher s’il persiste des cellules ciliées internes dans l’organe de Corti.</label><br>
+  <label><input type="checkbox"> 5. L’indication d’implantation cochléaire repose sur les performances en audiométrie vocale en champ libre pour les mots de Fournier pour l’oreille testée sans tenir compte des performances en binaural.</label><br>
+  <button onclick="validateQuestion(4, [0,1], [
+    'Vrai : Le test FrMatrix a une structure syntaxique fixe, avec contenu sémantique imprévisible, dans le bruit.',
+    'Vrai : Un écart entre audiométrie vocale et tonale suggère une atteinte rétrocochléaire ou trouble cognitif.',
+    'Faux : Les PEA peuvent permettre d’apprécier une réponse même faible, notamment les ondes tardives.',
+    'Faux : Les OEA explorent les CCE, non les CCI, et ne sont pas systématiques chez l’adulte.',
+    'Faux : Repose sur les performances binaurales oreille appareillées si c'est possible.'
+  ])">Valider</button>
+  <div class="result" id="result4"></div>
+</div>
+
+<!-- Question 5 -->
+<div class="question" id="q5">
+  <h3>Question 5. Le bilan avant l’implant cochléaire comporte :</h3>
+  <label><input type="checkbox"> 1. Un examen d’imagerie par résonance magnétique nucléaire (IRM) uniquement en cas d’antécédent de surdité brutale sur une des deux oreilles ou de surdité évolutive asymétrique afin d’éliminer un schwannome vestibulaire.</label><br>
+  <label><input type="checkbox"> 2. Un test de dépistage des troubles cognitifs après 65 ans et/ou en cas de doute sur une attente cognitive à réaliser exclusivement par un/une neuropsychologue.</label><br>
+  <label><input type="checkbox"> 3. Une IRM fonctionnelle en cas de suspicion de neuropathie auditive afin de rechercher des facteurs pronostiques pour les performances de l’implant.</label><br>
+  <label><input type="checkbox"> 4. Un entretien avec la psychologue si le patient le souhaite.</label><br>
+  <label><input type="checkbox"> 5. Un bilan orthophonique qui comportera (entre autres) une évaluation quantitative de la lecture labiale et de la perception audiovisuelle sur des supports verbaux variés.</label><br>
+  <button onclick="validateQuestion(5, [1,4], [
+    'Faux : Imagerie pas que en cas de surdité brutale ou asymétrique.',
+    'Faux : Le test est recommandé après 65 ans ou si doute, peut être réalisé par autre professionnel.',
+    'Vrai : L’IRM est recommandée en cas de suspission de neuropathie, par exemple un schwannome peut donner de moins bonne performance pour l’IC, ou orienter vers ABI si schwannome évolutif ou très important (nécéssité d'exérèse du nerf auditif).',
+    'Faux : L’entretien psychologique est systématique, non optionnel.',
+    'Vrai : L’évaluation orthophonique pré-implant comprend l’évaluation de la lecture labiale et perception audiovisuelle.'
+  ])">Valider</button>
+  <div class="result" id="result5"></div>
+</div>
+
+<!-- Question 6 -->
+<div class="question" id="q6">
+  <h3>Question 6. Les explorations vestibulaires :</h3>
+  <label><input type="checkbox"> 1. Sont indiquées avant toute primo-implantation cochléaire chez l’adulte</label><br>
+  <label><input type="checkbox"> 2. Doivent être réalisées à nouveau dans le bilan pré-implantation avant le deuxième côté dans le cadre d’une implantation bilatérale séquentielle.</label><br>
+  <label><input type="checkbox"> 3. Contribuent au choix du côté de l’implantation cochléaire en cas d’atteinte auditive symétrique, notamment chez le sujet âgé.</label><br>
+  <label><input type="checkbox"> 4. La survenue d’une aréflexie vestibulaire après une implantation cochléaire d’un côté contre-indique l’implantation cochléaire controlatérale chez le sujet de plus de 65 ans du fait du risque important d’atteinte vestibulaire après implantation cochléaire chez le sujet âgé.</label><br>
+  <label><input type="checkbox"> 5. Il n’y a souvent pas de corrélation entre le bilan vestibulaire et les signes cliniques.</label><br>
+  <button onclick="validateQuestion(6, [0,1,2,4], [
+    'Vrai : Les explorations vestibulaires sont systématiques avant une primo-implantation.',
+    'Vrai : Une réévaluation est importante avant implantation controlatérale pour éviter un double déficit vestibulaire.',
+    'Vrai : Le côté avec le moins de fonction vestibulaire est privilégié chez le sujet âgé en cas d’audition symétrique.',
+    'Faux : Ce n’est pas une contre indication formelle mais un sujt de discussion et de réserve.',
+    'Vrai : Il existe une discordance fréquente entre les tests objectifs vestibulaires et la clinique.'
+  ])">Valider</button>
+  <div class="result" id="result6"></div>
+</div>
+
+<!-- Question 7 -->
+<div class="question" id="q7">
+  <h3>Question 7. Concernant les implants à ancrage osseux :</h3>
+  <label><input type="checkbox"> 1. L’implant à ancrage osseux Bonebridge (MEDEL) est un implant à ancrage osseux actif qui donne donc des performances supérieures par rapport aux implants passifs.</label><br>
+  <label><input type="checkbox"> 2. Tous les implants à ancrage osseux sont compatibles avec l’IRM 1,5 Tesla.</label><br>
+  <label><input type="checkbox"> 3. En cas de surdité de transmission ou mixte, l’implant à ancrage osseux transcutané (BAHA attract) est possible si le seuil en conduction osseuse est inférieur ou égal à 30 dB.</label><br>
+  <label><input type="checkbox"> 4. La société OTICON propose une technique chirurgicale mini-invasive (MIPS) très simple et rapide à réaliser (< 30 minutes) pour la pose d’implant à ancrage osseux PONTO.</label><br>
+  <label><input type="checkbox"> 5. Pour les implants transcutanés (à peau intacte), la surveillance cutanée à distance de la chirurgie n’est pas nécessaire car il ne peut pas survenir de complications cutanées du fait de l’absence de pilier à travers la peau.</label><br>
+  <button onclick="validateQuestion(7, [1,2,3], [
+    'Faux : Indication de 45 dB pour le bonebrige vs 65 dB sur les BAHA ou ponto power, mais meilleur gain fonctionnel des implants actifs vs BAHA attract dans les aigus (p50 ancrage osseux).',
+    'Vrai : Tous les implants sont compatibles IRM 1,5T, et tous compatible 3T sauf BAHA attract.',
+    'Vrai : Le BAHA attract est indiqué si le seuil en conduction osseuse est ≤ 30 dB.',
+    'Vrai : OTICON propose la technique MIPS pour les implants PONTO.',
+    'Faux : Même sans pilier, des réactions inflammatoires peuvent exister à long terme, donc un suivi est nécessaire.'
+  ])">Valider</button>
+  <div class="result" id="result7"></div>
+</div>
+
+<!-- Question 8 -->
+<div class="question" id="q8">
+  <h3>Question 8. Monsieur C. âgé de 30 ans vient en consultation en raison d’une 
+aplasie majeure gauche avec absence de conduit auditif externe et 
+malformation du pavillon de l’oreille. A droite, l’anatomie et l’audition sont 
+normales. Le scanner des rochers retrouve une malformation de la chaîne 
+ossiculaire gauche avec une courte apophyse de taille normale mais une 
+longue apophyse très courte et malformée. Sa mastoïde du côté de l’aplasie 
+est petite avec une procidence du tegmen. Voici son audiométrie tonale et 
+vocale au casque. Il souhaite bénéficier d’une réhabilitation auditive étant très 
+gêné dans le bruit, mais ne veut pas « de vis à travers la peau » qu’on lui a 
+déjà proposé. Quelles informations lui donnez-vous ?</h3>
+  <label><input type="checkbox"> 1. Il est possible de vous mettre un implant à ancrage osseux transcutané BAHA attract (COCHLEAR). L’intervention se déroule sous anesthésie locale. Le processeur est désormais totalement remboursé en France. Vous pouvez faire un essai sur bandeau ou Sound arc.</label><br>
+  <label><input type="checkbox"> 2. L’implant d’oreille moyenne Vibrant Soundbridge (MEDEL) n’est pas envisageable du fait de la malformation de la branche descendante de l’enclume.</label><br>
+  <label><input type="checkbox"> 3. L’implant à conduction osseuse Bonebridge (MEDEL) pourrait être une option après étude du scanner car la petite mastoïde pourrait représenter un obstacle.</label><br>
+  <label><input type="checkbox"> 4. La partie implantée de l’implant d’oreille moyenne Vibrant Soundbridge (MEDEL) et de l’implant à conduction osseuse Bonebridge (MEDEL) sont pris en charge par la Sécurité Sociale en France. Les processeurs restent à la charge du patient.</label><br>
+  <label><input type="checkbox"> 5. La chirurgie de l’implant à conduction osseuse Bonebridge (MEDEL) se déroule le plus souvent sous anesthésie générale.</label><br>
+  <button onclick="validateQuestion(8, [0,2,4], [
+    'Vrai : Le BAHA attract est transcutané, éligible ici, et totalement remboursé, avec essais possibles sur bandeau/Soundarc.',
+    'Faux : La branche descendante est la longue apophyse, non indispensable à la pose du VSB.',
+    'Vrai : Le Bonebridge est possible, mais nécessite une évaluation scanner précise en cas de mastoïde étroite.',
+    'Faux : Les processeurs sont aussi remboursés. C’est la partie externe qui peut parfois rester à la charge selon les cas.',
+    'Vrai : La chirurgie du Bonebridge se fait le plus souvent sous anesthésie générale.'
+  ])">Valider</button>
+  <div class="result" id="result8"></div>
+</div>
+
+<!-- Question 9 -->
+<div class="question" id="q9">
+  <h3>Question 9. Selon les recommandations de l’HAS, l’implantation cochléaire peut être réalisée chez l’adulte :</h3>
+  <label><input type="checkbox"> 1. En cas de surdité de perception sévère à profonde bilatérale post-linguale avec un maximum d’intelligibilité de 50% à 60 dB pour les mots dissyllabiques des listes de Fournier avec des prothèses adaptées dans le silence.</label><br>
+  <label><input type="checkbox"> 2. En cas de surdité totale unilatérale si elle s’accompagne d’acouphènes invalidants avec un retentissement psychologique majeur.</label><br>
+  <label><input type="checkbox"> 3. En cas de surdité sévère bilatérale avec persistance d’une audition résiduelle sur les fréquences 125 à 750 Hz, si le bénéfice est limité avec des prothèses auditives bien adaptées (maximum d’intelligibilité de 50% à 60 dB pour les mots de listes de Fournier avec des prothèses adaptées dans le silence).</label><br>
+  <label><input type="checkbox"> 4. En cas de surdité de perception asymétrique sévère à profonde d’un côté et de surdité fluctuante controlatérale si le retentissement sur la communication est majeur.</label><br>
+  <label><input type="checkbox"> 5. En cas de surdité de perception asymétrique sévère à profonde d’un côté avec un maximum d’intelligibilité de 50% à 60 dB pour les mots en liste de Fournier avec une prothèse auditive adaptée, et de surdité moyenne de l’autre côté mais rapidement évolutive.</label><br>
+  <button onclick="validateQuestion(9, [0,1,2,3], [
+    'Vrai : Il s’agit du critère principal d’éligibilité HAS pour la surdité bilatérale post-linguale.',
+    'Vrai : Cette indication est retenue par l’HAS dans des cas bien sélectionnés.',
+    'Vrai : Cela correspond à une indication avec audition résiduelle et échec prothétique.',
+    'Vrai : Une surdité asymétrique avec retentissement majeur peut justifier l’indication.',
+    'Faux : Une surdité moyenne n’est pas un critère d’implantation.'
+  ])">Valider</button>
+  <div class="result" id="result9"></div>
+</div>
+
+<!-- Question 10 -->
+<div class="question" id="q10">
+  <h3>Question 10 : Avant toute implantation cochléaire, que faut-il expliquer au patient ?</h3>
+  <label><input type="checkbox"> 1. Les stimulations faciales sont fréquentes au début chez beaucoup de patients mais finissent par disparaître avec le temps.</label><br>
+  <label><input type="checkbox"> 2. La durée de vie de la partie interne de l’implant est en moyenne de 20 ans. Il y aura donc plusieurs réimplantations nécessaires au cours de votre vie.</label><br>
+  <label><input type="checkbox"> 3. L’utilisation d’accessoire d’écoute pourra vous aider à téléphoner plus facilement, mais on ne peut pas vous certifier que vous pourrez utiliser le téléphone.</label><br>
+  <label><input type="checkbox"> 4. La communication dans les situations très bruyantes (restaurants, cocktails….) restera difficile.</label><br>
+  <label><input type="checkbox"> 5. Vous pouvez rencontrer une psychologue avant l’implantation si vous le souhaitez mais ce n’est pas obligatoire.</label><br>
+  <button onclick="validateQuestion(10, [2,3], [
+    'Faux : Les stimulations faciales sont rares et doivent faire suspecter un malpositionnement de l’électrode.',
+    'Faux : La partie interne peut nécessiter une réimplantation uniquement en cas de panne, donc pas fréquent dans une vie.',
+    'Vrai : Le téléphone peut rester difficile, même avec accessoires ; il faut le préciser au patient.',
+    'Vrai : Le bruit de fond reste une difficulté importante même après implantation.',
+    'Faux : L’évaluation psychologique est obligatoire dans le bilan pré-implant.'
+  ])">Valider</button>
+  <div class="result" id="result10"></div>
+</div>
+
+<!-- Question 11 -->
+<div class="question" id="q11">
+  <h3>Question 11. Concernant les facteurs pronostiques de réussite de l’implant cochléaire :</h3>
+  <label><input type="checkbox"> 1. La durée de surdité profonde est un des principaux facteurs pronostiques.</label><br>
+  <label><input type="checkbox"> 2. L’existence d’une otospongiose évoluée est un facteur de très mauvais pronostic.</label><br>
+  <label><input type="checkbox"> 3. Le pourcentage d’électrodes actives peut influer sur les performances obtenues.</label><br>
+  <label><input type="checkbox"> 4. La position du porte-électrodes dans la cochlée (rampe tympanique ou vestibulaire) peut influer sur les performances auditives.</label><br>
+  <label><input type="checkbox"> 5. L’existence d’une surdité fluctuante controlatérale à l’implant est un facteur de mauvais pronostic car cela perturbe l’audition du côté de l’implant.</label><br>
+  <button onclick="validateQuestion(11, [0,2,3], [
+    'Vrai : Une longue durée de surdité est associée à un moins bon pronostic.',
+    'Faux : L’otospongiose n’est pas un facteur de très mauvais pronostic, elle est traitée en chirurgie.',
+    'Vrai : Moins il y a d’électrodes actives, plus les performances peuvent être altérées.',
+    'Vrai : Un positionnement intracochléaire optimal améliore les performances auditives.',
+    'Faux : Une surdité fluctuante controlatérale n’altère pas directement les performances du côté implanté.'
+  ])">Valider</button>
+  <div class="result" id="result11"></div>
+</div>
+
+<!-- Question 12 -->
+<div class="question" id="q12">
+  <h3>Question 12. L’implant du tronc cérébral :</h3>
+  <label><input type="checkbox"> 1. Est indiqué en cas de schwannome vestibulaire bilatéral dans le cadre d’une neurofibromatose de type 2 si le nerf auditif n’est plus fonctionnel.</label><br>
+  <label><input type="checkbox"> 2. Est indiqué en cas de méningite bactérienne avec ossification complète des 2 cochlées.</label><br>
+  <label><input type="checkbox"> 3. La palette d’électrodes est positionnée au niveau du noyau cochléaire, guidée par le monitoring peropératoire de l’audition (potentiels évoqués électriques, nerf facial et autres nerfs crâniens).</label><br>
+  <label><input type="checkbox"> 4. Les performances sont moins bonnes que celles de l’implant cochléaire pour la majorité des patients.</label><br>
+  <label><input type="checkbox"> 5. Les principaux facteurs pronostiques sont le nombre d’électrodes actives, la taille du schwannome vestibulaire du côté de l’implant en cas de NF2 et la durée de surdité profonde.</label><br>
+  <button onclick="validateQuestion(12, [0,1,2,3,4], [
+    'Vrai : C’est l’indication principale d’un implant du tronc cérébral dans la NF2 bilatérale.',
+    'Vrai : Lorsque les deux cochlées sont ossifiées, l’implant du tronc peut être proposé.',
+    'Vrai : Le positionnement est guidé par des enregistrements peropératoires.',
+    'Vrai : Les performances sont globalement moindres que celles d’un implant cochléaire.',
+    'Vrai : Ce sont les trois facteurs principaux de pronostic en cas d’implant du tronc.'
+  ])">Valider</button>
+  <div class="result" id="result12"></div>
+</div>
+
+<!-- Question 13 -->
+<div class="question" id="q13">
+  <h3>Question 13 : Citez les réponses exactes :</h3>
+  <label><input type="checkbox"> 1. L’enveloppe est le contour de sonie et est essentiel à la compréhension de la parole.</label><br>
+  <label><input type="checkbox"> 2. Le codage de la fréquence d’un son au niveau du nerf auditif se fait grâce à la tonotopie et au phaselocking (pour les fréquences inférieures à 5000 Hz).</label><br>
+  <label><input type="checkbox"> 3. Le taux de décharge des neurones et le nombre de neurones recrutés donnent une information sur l’intensité.</label><br>
+  <label><input type="checkbox"> 4. Les implants cochléaires ne peuvent utiliser qu’un faible nombre de canaux fréquentiels du fait du risque de diaphonie par diffusion du courant électrique.</label><br>
+  <label><input type="checkbox"> 5. Le mode de stimulation (monopolaire ou bipolaire) peut avoir un impact sur la consommation d’énergie.</label><br>
+  <button onclick="validateQuestion(13, [0,1,2,3,4], [
+    'Vrai : L’enveloppe contient les modulations de l’intensité dans le temps, essentielles pour la parole.',
+    'Vrai : La tonotopie et le phaselocking codent la fréquence, jusqu’à 4-5 kHz pour le phase-locking.',
+    'Vrai : L’intensité est encodée par le nombre de fibres et leur fréquence de décharge.',
+    'Vrai : La diaphonie limite la séparation effective des canaux électriques dans l’implant.',
+    'Vrai : Le mode bipolaire consomme plus d’énergie que le monopolaire, mais réduit la diaphonie.'
+  ])">Valider</button>
+  <div class="result" id="result13"></div>
+</div>
+
+<!-- Question 14 -->
+<div class="question" id="q14">
+  <h3>Question 14. Citez les réponses exactes :</h3>
+  <label><input type="checkbox"> 1. La mesure d’impédance constitue la première étape à réaliser après avoir créé le fichier patient.</label><br>
+  <label><input type="checkbox"> 2. La télémétrie d’impédance permet d’identifier si une électrode est en circuit ouvert ou en courtcircuit. Il faudra alors la désactiver.</label><br>
+  <label><input type="checkbox"> 3. Les accessoires d’écoute doivent être proposés en fonction de l’évolution de la perception avec l’implant cochléaire. Ils sont à la charge du patient et ne sont jamais fournis gratuitement avec le processeur.</label><br>
+  <label><input type="checkbox"> 4. Les trois points essentiels à vérifier lors des réglages annuels après la première année d’implantation sont les mesures d’impédance, l’état cutané en regard de l’antenne et l’état du processeur (câbles, antennes).</label><br>
+  <label><input type="checkbox"> 5. La réglementation européenne impose que les nouveaux processeurs soient compatibles avec toutes les partie internes implantées même les plus anciennes.</label><br>
+  <button onclick="validateQuestion(14, [0,1,3], [
+    'Vrai : La vérification des impédances est l’étape initiale à faire lors d’un premier branchement.',
+    'Vrai : La télémétrie d’impédance détecte les anomalies de circuit des électrodes.',
+    'Faux : Certains accessoires sont fournis avec les processeurs selon les conditions du marché.',
+    'Vrai : Ces trois vérifications sont essentielles lors des réglages annuels.',
+    'Faux : La rétrocompatibilité n’est pas obligatoire par la réglementation, elle dépend des fabricants.'
+  ])">Valider</button>
+  <div class="result" id="result14"></div>
+</div>
+
+<!-- Question 15 -->
+<div class="question" id="q15">
+  <h3>Question 15. Monsieur H consulte en raison d’une surdité profonde unilatérale survenue brutalement il y a 5 ans, accompagnée d’acouphènes très invalidants. Il est très gêné dans le bruit et par l’absence de localisation sonore et cherche une solution. L’audition controlatérale est normale. Citez les réponses exactes :</h3>
+  <label><input type="checkbox"> 1. Vous vérifiez qu’il a bien effectué un scanner des rochers afin d’éliminer un schwannome vestibulaire qui aurait pu être responsable de la surdité.</label><br>
+  <label><input type="checkbox"> 2. Vous lui proposez de faire l’essai d’un appareillage CROS WIFI qui ne pourra pas améliorer la localisation sonore mais sera bénéfique sur les acouphènes.</label><br>
+  <label><input type="checkbox"> 3. En cas d’implantation cochléaire de l’oreille sourde, la stimulation électrique via l’implantation cochléaire et la stimulation physiologique via l’oreille intacte se synchronisent très rapidement en quelques semaines.</label><br>
+  <label><input type="checkbox"> 4. L’implantation cochléaire peut permettre d’améliorer la localisation sonore et de diminuer voire de supprimer les acouphènes. Elle n’est cependant pas recommandée actuellement par la Haute Autorité de Santé.</label><br>
+  <label><input type="checkbox"> 5. Le colliculus supérieur situé dans le mésencéphale joue un rôle majeur dans la localisation sonore dans le plan horizontal.</label><br>
+  <button onclick="validateQuestion(15, [4], [
+    'Faux : Un IRM est indispensable dans ce cas.',
+    'Faux : Le système CROS (aérien ou osseux) améliore le confort auditif mais n’améliore pas l’acouphène.',
+    'Faux : La synchronisation bimodale est lente et peut être incomplète chez certains patients.',
+    'Faux : C’est une recommandation.',
+    'Vrai : Le colliculus supérieur est une structure clé dans la localisation sonore horizontale.'
+  ])">Valider</button>
+  <div class="result" id="result15"></div>
+</div>
+
+<!-- Question 16 -->
+<div class="question" id="q16">
+  <h3>Question 16. Indiquez les réponses justes :</h3>
+  <label><input type="checkbox"> 1. Les électrodes Slim J (ADVANCED BIONICS) et EVO (OTICON) sont des électrodes droites.</label><br>
+  <label><input type="checkbox"> 2. Chez le patient implanté bilatéral avec des processeurs Naida (ADVANCED BIONICS), il est possible d’interchanger les processeurs entre les deux côtés sans risque.</label><br>
+  <label><input type="checkbox"> 3. Les processeurs bouton Rondo 2 (MEDEL) et Kanso (COCHLEAR) sont alimentés par 2 piles.</label><br>
+  <label><input type="checkbox"> 4. Les implants MEDEL possèdent une stratégie de codage au niveau de la région apicale avec une cadence de stimulation variable liée au son permettant d’imiter le codage de l’audition normale.</label><br>
+  <label><input type="checkbox"> 5. Les différentes stratégies de codage disponible avec les implants COCHLEAR sont ACE, CIS et SPEAK.</label><br>
+  <button onclick="validateQuestion(16, [0,1,3,4], [
+    'Vrai : Slim J et EVO sont des électrodes droites dans leurs gammes respectives.',
+    'Vrai : Les processeurs Naida peuvent être interchangés sans risque si bien programmés.',
+    'Faux : Ils sont alimentés par batterie rechargeable intégrée, non par piles.',
+    'Vrai : MEDEL utilise une stimulation tonale avec cadence variable au niveau apical (FSP).',
+    'Vrai : Les stratégies ACE, CIS et SPEAK sont bien proposées par COCHLEAR.'
+  ])">Valider</button>
+  <div class="result" id="result16"></div>
+</div>
+
+<!-- Question 17 -->
+<div class="question" id="q17">
+  <h3>Question 17. Indiquez les réponses justes :</h3>
+  <label><input type="checkbox"> 1. Les firmes COCHLEAR et ADVANCED BIONICS ont dans leur portfolio d’électrodes à la fois des électrodes droites et des électrodes périmodiolaires.</label><br>
+  <label><input type="checkbox"> 2. Le processeur Neuro2 (OTICON) est compatible avec l’ancien modèle de partie interne Digisonic SP.</label><br>
+  <label><input type="checkbox"> 3. Le processeur Neptune de chez ADVANCED BIONICS est le seul processeur totalement étanche permettant de se baigner en piscine sans nécessité de mettre une protection.</label><br>
+  <label><input type="checkbox"> 4. Une connexion directe entre un Iphone et le processeur d’implant cochléaire sans nécessité d’accessoire est possible pour les marques COCHLEAR et MEDEL.</label><br>
+  <label><input type="checkbox"> 5. MEDEL propose une possibilité de stimulation triphasique qui permet une distribution de l’excitation neurale plus étroite et peut être intéressante en cas de stimulations faciales.</label><br>
+  <button onclick="validateQuestion(17, [0,2,3,4], [
+    'Vrai : Les deux marques proposent électrodes droites et périmodiolaires dans leurs catalogues.',
+    'Faux : Le Neuro2 n’est pas rétrocompatible avec le Digisonic SP.',
+    'Vrai : Neptune est le seul à être totalement étanche sans accessoire complémentaire.',
+    'Vrai : Les trois fabricants ont une connexion avec iPhone.',
+    'Vrai : La stimulation triphasique est une technologie MEDEL utile en cas de stimulations faciales.'
+  ])">Valider</button>
+  <div class="result" id="result17"></div>
+</div>
+
+<!-- Question 18 -->
+<div class="question" id="q18">
+  <h3>Question 18. La chirurgie d’implantation cochléaire :</h3>
+  <label><input type="checkbox"> 1. Peut, sous certaines conditions, être réalisée en chirurgie ambulatoire.</label><br>
+  <label><input type="checkbox"> 2. Est réalisée de plus en plus souvent sous anesthésie locale car la durée du geste opératoire est de moins d’une heure.</label><br>
+  <label><input type="checkbox"> 3. Est possible même en cas d’otite chronique avec performation tympanique, à condition d’adapter la technique chirurgicale.</label><br>
+  <label><input type="checkbox"> 4. L’existence d’une très petite mastoïde empêchant la réalisation d’une tympanotomie postérieure pour le passage de l’électrode contre-indique de ce fait l’implantation cochléaire.</label><br>
+  <label><input type="checkbox"> 5. La réalisation d’un scanner en post-opératoire est très vivement conseillée car un mauvais positionnement du porte-électrodes dans le vestibule survient dans environ 5% des implantations cochléaires.</label><br>
+  <button onclick="validateQuestion(18, [0,2,4], [
+    'Vrai : Plusieurs centres réalisent l’implantation en ambulatoire selon le profil du patient.',
+    'Faux : L’anesthésie générale reste la norme, la locale est rare.',
+    'Vrai : Une implantation est possible même en cas d’otite chronique, avec adaptation.',
+    'Faux : Des techniques alternatives permettent l’insertion même sans tympanotomie postérieure.',
+    'Vrai : Le contrôle scanner post-op permet de vérifier le bon placement, des erreurs surviennent dans 5 % des cas.'
+  ])">Valider</button>
+  <div class="result" id="result18"></div>
+</div>
+
+<!-- Question 19 -->
+<div class="question" id="q19">
+  <h3>Question 19. Chez le sujet âgé :</h3>
+  <label><input type="checkbox"> 1. Une évaluation psycho-cognitive est nécessaire avant l’implantation selon les recommandations de l’HAS.</label><br>
+  <label><input type="checkbox"> 2. Cette évaluation psycho-cognitive doit être réalisée par des neuropsychologues pour que l’implant soit pris en charge.</label><br>
+  <label><input type="checkbox"> 3. Il n’y a pas de limite d’âge supérieure à l’implantation cochléaire unilatérale selon les recommandations de l’HAS.</label><br>
+  <label><input type="checkbox"> 4. Les études épidémiologiques ont montré que la surdité sévère multipliait par 5 le risque de démence, l’implantation cochléaire est donc particulièrement recommandée pour essayer de prévenir l’évolution vers la démence.</label><br>
+  <label><input type="checkbox"> 5. Selon les recommandations de l’HAS, l’implantation cochléaire bilatérale est contre-indiquée chez le sujet de plus de 80 ans du fait des risques vestibulaires.</label><br>
+  <button onclick="validateQuestion(19, [0,2,3], [
+    'Vrai : L’évaluation cognitive est nécessaire avant implantation chez le sujet âgé.',
+    'Faux : Elle peut être réalisée par des médecins généralistes formés ou gériatres.',
+    'Vrai : Il n’existe pas de limite d’âge fixée pour l’unilatéral dans les recommandations HAS.',
+    'Vrai : La surdité sévère est un facteur de risque important pour la démence.',
+    'Faux : L’âge > 80 ans n’est pas une contre-indication stricte mais un facteur de discussion.'
+  ])">Valider</button>
+  <div class="result" id="result19"></div>
+</div>
+
+<!-- Question 20 -->
+<div class="question" id="q20">
+  <h3>Question 20. L’implantation cochléaire bilatérale :</h3>
+  <label><input type="checkbox"> 1. L’implantation bilatérale séquentielle n’est pas indiquée si le patient a plus de 20 ans d’écart entre les deux implantations car le bénéfice du deuxième côté est alors hypothétique.</label><br>
+  <label><input type="checkbox"> 2. Permet de restaurer l’effet masque de la tête, la sommation binaurale et l’effet squelch qui sont tous des mécanismes centraux.</label><br>
+  <label><input type="checkbox"> 3. Peut améliorer la localisation sonore, un entraînement à la localisation sonore est d’ailleurs vivement recommandé dans le cadre de la rééducation post-implantation.</label><br>
+  <label><input type="checkbox"> 4. Peut être simultanée en cas de risque d’ossification de la cochlée, comme dans les méningites bactériennes et les fracture translabyrinthiques….</label><br>
+  <label><input type="checkbox"> 5. En cas d’impossibilité d’implantation cochléaire bilatérale, la marque Advanced Bionics propose un système CROS couplé au processeur d’implant cochléaire qui permet d’améliorer l’effet ombre de la tête.</label><br>
+  <button onclick="validateQuestion(20, [2,3,4], [
+    'Faux : Même après 20 ans, la bilatéralisation peut être bénéfique, selon le contexte.',
+    'Faux : L’effet d’ombre de la tête (diffraction) est un phénomène acoustique et non central.',
+    'Vrai : La localisation sonore est améliorée et une rééducation spécifique est recommandée.',
+    'Vrai : En cas de risque d’ossification, l’implantation doit être simultanée pour préserver l’accès cochléaire.',
+    'Vrai : AB propose un système CROS compatible avec ses implants cochléaires pour améliorer l’écoute côté controlatéral.'
+  ])">Valider</button>
+  <div class="result" id="result20"></div>
+</div>
+
+<!-- Question 21 -->
+<div class="question" id="q21">
+  <h3>Question 21. Madame M. âgée de 72 ans, sans antécédent particulier, a présenté en février 2019 une méningite à pneumocoque compliquée d’une endocardite (infection d’une valve cardiaque), qui a nécessité le remplacement d’une valve aortique. Quelques jours après la méningite, elle s’est plainte de surdité bilatérale majeure, de troubles de l’équilibre et d’acouphènes invalidants. Elle se présente en consultation en avril 2019 après avoir passé 1 ½ mois en réanimation. La patiente est fatiguée mais en bon état général. L’audiométrie et le bilan vestibulaire retrouvent une surdité totale bilatérale associée à une aréflexie vestibulaire bilatérale. Le scanner des rochers et l’IRM réalisés 1 mois1/2 après le début de la méningite sont normaux. Que lui expliquez-vous ?</h3>
+  <label><input type="checkbox"> 1. Si l’imagerie à 1 mois ½ du début de la méningite est normale, le risque d’avoir une ossification à distance est exceptionnel. Il vaut mieux attendre que vous soyez moins fatiguée pour envisager le bilan et l’implantation cochléaire.</label><br>
+  <label><input type="checkbox"> 2. Le risque d’ossification de la cochlée après une méningite existe uniquement en cas de méningite virale et non bactérienne. Vous ne risquez donc rien et l’on peut attendre que vous soyez moins fatiguée pour envisager le bilan et l’implantation cochléaire.</label><br>
+  <label><input type="checkbox"> 3. Il faut envisager une implantation bilatérale dans le même temps opératoire très rapidement car il existe un risque rapide d’ossification de la cochlée.</label><br>
+  <label><input type="checkbox"> 4. Il peut exister parfois de moins bons résultats de l’implant cochléaire dans les suites d’une méningite, mais l’IRM est normale chez vous. Vous devriez donc avoir un excellent résultat compte-tenu de la durée courte de surdité profonde.</label><br>
+  <label><input type="checkbox"> 5. L’implantation cochléaire bilatérale n’est pas pris en charge par la Sécurité Sociale chez le sujet de plus de 70 ans. Vous ne pourrez donc être implantée que d’un côté.</label><br>
+  <button onclick="validateQuestion(21, [2,3], [
+    'Faux : Le risque d’ossification reste important même si l’imagerie initiale est normale.',
+    'Faux : Ce risque existe surtout après méningite bactérienne.',
+    'Vrai : Une implantation bilatérale rapide est indiquée à cause du risque d’ossification rapide.',
+    'Vrai : Les résultats sont parfois moins bons, mais ici l’IRM normale et la surdité récente sont des bons facteurs.',
+    'Faux : L’âge n’est pas une contre-indication pour la prise en charge de l’implantation bilatérale.'
+  ])">Valider</button>
+  <div class="result" id="result21"></div>
+</div>
+
+<!-- Question 22 -->
+<div class="question" id="q22">
+  <h3>Question 22 : Un patient âgé de 45 ans présente une surdité évolutive depuis 5 ans avec ce type d’audiogramme. Comme vous le constatez, il n’y a très peu d’intelligibilité en audiométrie vocale alors que le patient a encore un seuil auditif en audiométrie tonale au casque. Qu’en pensez-vous ?</h3>
+  <label><input type="checkbox"> 1. On ne peut pas exclure des problèmes psychologiques qui provoquent l’absence de réponses en audiométrie vocale. La réalisation de potentiels évoqués auditifs et les otoémissions acoustiques permettent dans la majorité des cas de rétablir le diagnostic.</label><br>
+  <label><input type="checkbox"> 2. Les potentiels évoqués auditifs et les otoémissions acoustiques permettront de faire le diagnostic d’une éventuelle neuropathie expliquant ce type d’audiométrie.</label><br>
+  <label><input type="checkbox"> 3. Les neuropathies débutent toujours dans l’enfance ou à l’adolescence. Le patient est trop âgé pour que l’on puisse envisager ce type de diagnostic.</label><br>
+  <label><input type="checkbox"> 4. Seul l’implant du tronc cérébral est indiqué dans les cas de neuropathies pour obtenir une amélioration des performances puisque le nerf auditif n’est pas fonctionnel.</label><br>
+  <label><input type="checkbox"> 5. Les neuropathies auditives chez l’adulte peuvent s’accompagner d’autres atteintes neurologiques (neuropathie périphérique, neuropathie optique) qui doivent être recherchés.</label><br>
+  <button onclick="validateQuestion(22, [0,1,4], [
+    'Vrai : Il est possible que la surdité soit psychogène, les PEA présent permettraient d’orienter vers ce type de surdité.',
+    'Vrai : Ce bilan objectif est indispensable dans ce type de tableau pour rechercher une neuropathie.',
+    'Faux : Les neuropathies peuvent apparaître à tout âge, y compris à l’âge adulte.',
+    'Faux : L’implant cochléaire est souvent indiqué même en cas de neuropathie partielle.',
+    'Vrai : Les neuropathies auditives peuvent être syndromiques et s’accompagner d’autres atteintes.'
+  ])">Valider</button>
+  <div class="result" id="result22"></div>
+</div>
+
+<!-- Question 23 -->
+<div class="question" id="q23">
+  <h3>Question 23 : Madame S. âgée de 65 ans a bénéficié d’une implantation cochléaire droite (Cochlear, processeur CP 910) en 2016 en raison d’une surdité profonde, avec un très bon résultat à 6 mois postimplantation, même dans le bruit (voir audiogramme). Son audition à gauche vient de se dégrader brutalement mais il persiste une audition résiduelle sur les fréquences graves. La prothèse auditive à gauche ne lui apporte plus de bénéfice et elle est très gênée par l’asymétrie auditive. Son bilan vestibulaire est normal. Que lui expliquez-vous ?</h3>
+  <label><input type="checkbox"> 1. L’implantation cochléaire est indiquée à gauche mais il y a un risque important (>80 %), compte-tenu de votre âge de perdre l’audition résiduelle.</label><br>
+  <label><input type="checkbox"> 2. Compte-tenu du très bon résultat du premier côté, il est préférable de ne pas vous faire implanter de l’autre côté afin de garder l’audition résiduelle sur les fréquences graves, car de nouvelles thérapeutiques in situ vont être disponibles dans les 5 ans qui viennent et vont permettre de restaurer des cellules ciliées afin d’améliorer l’audition.</label><br>
+  <label><input type="checkbox"> 3. L’implantation cochléaire est indiquée à gauche. Vous avez de grandes chances de garder de l’audition résiduelle qui pourrait vous permettre l’utilisation d’un processeur électro-acoustique et ainsi d’améliorer l’audition dans le bruit et une meilleure perception du timbre et des mélodies.</label><br>
+  <label><input type="checkbox"> 4. Compte-tenu du très bon résultat du premier côté, le bénéfice va être très rapide du deuxième côté et vous n’aurez pas besoin de reprendre la rééducation orthophonique.</label><br>
+  <label><input type="checkbox"> 5. Il n’est pas certain que vous obteniez des performances symétriques entre les deux côtés mais il est certain que vous aurez une amélioration par rapport à votre audition actuelle.</label><br>
+  <button onclick="validateQuestion(23, [2,4], [
+    'Faux : Le risque de perte auditive résiduelle n’est pas aussi élevé et dépend du type d’insertion.',
+    'Faux : Les thérapies géniques ou cellulaires sont en recherche et non disponibles à court terme.',
+    'Vrai : L’indication est posée avec bonne chance de conserver l’audition résiduelle.',
+    'Faux : Une rééducation orthophonique est toujours nécessaire après un deuxième implant.',
+    'Vrai : L’amélioration globale est attendue, même si la symétrie n’est pas garantie.'
+  ])">Valider</button>
+  <div class="result" id="result23"></div>
+</div>
+
+<!-- Question 24 -->
+<div class="question" id="q24">
+  <h3>Question 24 : Concernant le suivi la première année après implantation cochléaire, qu'expliquer-vous au patient ?</h3>
+  <label><input type="checkbox"> 1. La rééducation orthophonique est nécessaire en post-opératoire. Elle repose principalement sur un travail basé sur la lecture labiale et est prise en charge par la Sécurité Sociale chez l’adulte pendant les 6 mois post-implantation cochléaire.</label><br>
+  <label><input type="checkbox"> 2. Les premiers réglages chez l’adulte sont basés sur les mesures de télémétrie réalisées au bloc opératoire et affinés sur le seuil auditif obtenu en champ libre en audiométrie tonale avec votre implant cochléaire. La participation du patient n’est pas nécessaire les 3 premiers mois.</label><br>
+  <label><input type="checkbox"> 3. Il est fortement recommandé de ne pas porter la prothèse auditive controlatérale les 3 mois qui suivent l’activation du processeur afin d’entraîner l’oreille implantée.</label><br>
+  <label><input type="checkbox"> 4. La rééducation orthophonique peut inclure des exercices spécifiques pour faciliter l’utilisation du téléphone et des médias.</label><br>
+  <label><input type="checkbox"> 5. L’amélioration de la communication la plus importante est constatée dans les 6 mois postimplantation, puis les performances se stabilisent le plus souvent.</label><br>
+  <button onclick="validateQuestion(24, [3,4], [
+    'Faux : La rééducation orthophonique est remboursée même après 6 mois.',
+    'Faux : Les C et T sont réglés en stimulation directe.',
+    'Faux : Il n’est pas recommandé de priver l’oreille controlatérale, sauf cas particulier.',
+    'Vrai : Des exercices pratiques avec téléphone et médias sont recommandés.',
+    'Vrai : Les progrès majeurs sont dans les 6 premiers mois.'
+  ])">Valider</button>
+  <div class="result" id="result24"></div>
+</div>
+
+<!-- Question 25 -->
+<div class="question" id="q25">
+  <h3>Question 25 : Indiquez les réponses exactes.</h3>
+  <label><input type="checkbox"> 1. Le renouvellement du processeur peut parfois permettre une amélioration des performances du fait du traitement du signal dans le bruit.</label><br>
+  <label><input type="checkbox"> 2. Lorsque le renouvellement du processeur est décidé par le centre implant, le nouveau processeur est envoyé au domicile du patient avec réglages de celui-ci, sans qu’il soit nécessaire de faire revenir dans le centre implant si ces réglages sont stables habituellement.</label><br>
+  <label><input type="checkbox"> 3. Le bénéfice obtenu diminue souvent après 10 ans du fait du vieillissement du récepteur implanté.</label><br>
+  <label><input type="checkbox"> 4. Si une panne de la partie interne survient, on change le récepteur-stimulateur de l’implant que l’on réadapte à l’électrode. L’électrode n’est pas explantée pour éviter de traumatiser la cochlée.</label><br>
+  <label><input type="checkbox"> 5. En cas de panne du processeur sous garantie, les firmes d’implant sont tenues de mettre à disposition dans les 48 heures un processeur de remplacement qui est livré chez le patient.</label><br>
+  <button onclick="validateQuestion(25, [0,3,4], [
+    'Vrai : Les processeurs récents ont de meilleures capacités de traitement du signal.',
+    'Faux : Un passage au centre est généralement requis pour adaptation et vérification.',
+    'Faux : Le vieillissement du système n’entraîne pas nécessairement une baisse de performance.',
+    'Vrai : La chirurgie de réimplantation conserve l’électrode si elle est fonctionnelle.',
+    'Vrai : Les fabricants sont tenus de fournir un processeur de secours rapidement.'
+  ])">Valider</button>
+  <div class="result" id="result25"></div>
+</div>
+
+<!-- Question 26 -->
+<div class="question" id="q26">
+  <h3>Question 26 : Si lors du suivi d’un patient implanté, vous constatez une baisse des performances auditives globales, que faut-il rechercher ?</h3>
+  <label><input type="checkbox"> 1. Un câble ou une antenne en mauvais état.</label><br>
+  <label><input type="checkbox"> 2. Des cache-micros encrassés.</label><br>
+  <label><input type="checkbox"> 3. Des troubles cognitifs.</label><br>
+  <label><input type="checkbox"> 4. Un processeur peu porté par le patient.</label><br>
+  <label><input type="checkbox"> 5. Une dégénérescence du nerf auditif par stimulation excessive provoqué par l’implant cochléaire.</label><br>
+  <button onclick="validateQuestion(26, [0,1,2,3], [
+    'Vrai : Un câble ou une antenne défectueux peuvent entraîner une baisse de transmission du signal.',
+    'Vrai : Des micros obstrués perturbent la capture du son.',
+    'Vrai : Les fonctions cognitives impactent la compréhension et l’adaptation à l’implant.',
+    'Vrai : Une utilisation insuffisante du processeur entraîne des performances faibles.',
+    'Faux : L’implant ne provoque pas de dégénérescence du nerf auditif.'
+  ])">Valider</button>
+  <div class="result" id="result26"></div>
+</div>
+
+<!-- Question 27 -->
+<div class="question" id="q27">
+  <h3>Question 27 : Concernant la prise en charge de l’implant cochléaire :</h3>
+  <label><input type="checkbox"> 1. Il existe des forfaits annuels par la Sécurité Sociale pour l’achat des piles ou des batteries sur prescription médicale. Le remplacement du petit matériel reste par contre à la charge du patient.</label><br>
+  <label><input type="checkbox"> 2. Le processeur externe est garanti 5 ans par le constructeur pour les pannes et casses accidentelles.</label><br>
+  <label><input type="checkbox"> 3. Après 5 ans, le renouvellement du processeur est discuté au cas par cas par les centres d’implant en fonction de son état de fonctionnement, et des évolutions actuelles ou futures. Son renouvellement est pris en charge par la Sécurité Sociale.</label><br>
+  <label><input type="checkbox"> 4. En cas de perte d’un processeur non assuré, le constructeur est tenu de donner au patient un processeur d’ancienne génération, révisé, afin que le patient ne se retrouve pas dans le silence.</label><br>
+  <label><input type="checkbox"> 5. Si le patient souhaite acquérir des accessoires d’aide à l’écoute, il devra les acheter car aucun constructeur ne les propose gratuitement avec le processeur.</label><br>
+  <button onclick="validateQuestion(27, [2], [
+    'Faux : La Sécurité Sociale prend en charge le petit matériel (cable antenne, cache micro) via un forfait de 100€ par an.',
+    'Faux : La garantie exclut généralement les casses accidentelles.',
+    'Vrai : Le renouvellement peut être pris en charge après 5 ans selon les critères médicaux.',
+    'Faux : Aucune obligation pour le fabricant.',
+    'Faux : Certains accessoires sont fournis gratuitement à l’achat du processeur.'
+  ])">Valider</button>
+  <div class="result" id="result27"></div>
+</div>
+
+<!-- Question 28 -->
+<div class="question" id="q28">
+  <h3>Question 28 : l’implantation cochléaire n’est pas possible ou est contre-indiquée :</h3>
+  <label><input type="checkbox"> 1. En cas de perforation tympanique.</label><br>
+  <label><input type="checkbox"> 2. En cas de petit schwannome vestibulaire.</label><br>
+  <label><input type="checkbox"> 3. En cas de malformation de Mondini de l’oreille.</label><br>
+  <label><input type="checkbox"> 4. En cas d’aplasie du nerf cochléaire.</label><br>
+  <label><input type="checkbox"> 5. En cas de rampe tympanique ossifiée avec une rampe vestibulaire intacte.</label><br>
+  <button onclick="validateQuestion(28, [3], [
+    'Faux : Une perforation tympanique n’est pas une contre-indication, la chirurgie peut être adaptée.',
+    'Faux : L’implant peut être indiqué même en cas de petit schwannome sous conditions.',
+    'Faux : La malformation de Mondini n’est pas une contre-indication formelle.',
+    'Vrai : L’absence de nerf cochléaire est une contre-indication absolue à l’implant cochléaire.',
+    'Faux : Une insertion dans la rampe vestibulaire peut être envisagée si la tympanique est ossifiée.'
+  ])">Valider</button>
+  <div class="result" id="result28"></div>
+</div>
+
+<!-- Question 29 -->
+<div class="question" id="q29">
+  <h3>Question 29 : Concernant le suivi des patients implantés cochléaires :</h3>
+  <label><input type="checkbox"> 1. La consultation médicale est indispensable dans le suivi du patient pour examen clinique, audiogramme, et suivi de l’oreille controlatérale.</label><br>
+  <label><input type="checkbox"> 2. Depuis 2011, à la demande de l’HAS, tout nouveau patient implanté doit être inscrit de façon anonyme dans un registre, qui collecte les données pré-implantation, de la chirurgie, les complications per- et post-opératoires et les performances post implantation. Le patient signe un consentement au moment de l’implantation pour accepter cette procédure.</label><br>
+  <label><input type="checkbox"> 3. Le principal motif de réimplantation est le changement du récepteur pour un récepteur de nouvelle génération dans le but d’améliorer les performances et d’avoir accès aux nouvelles technologies.</label><br>
+  <label><input type="checkbox"> 4. Le patient doit revenir voir le régleur pour le changement des câbles et des cache micros, car le matériel est très fragile avec un risque d’endommager le processeur lors de ces manipulations.</label><br>
+  <label><input type="checkbox"> 5. Les marques d’implant cochléaire COCHLEAR et ADVANCED BIONICS proposent désormais des réglages à distance via une application sur le téléphone sans nécessité de se déplacer dans le centre implant.</label><br>
+  <button onclick="validateQuestion(29, [0,1,4], [
+    'Vrai : Le suivi médical reste essentiel après implantation.',
+    'Vrai : L’inscription au registre post-implantation est obligatoire et encadrée.',
+    'Faux : Le principal motif de réimplantation est la panne du matériel interne, pas l’amélioration de performances.',
+    'Faux : Le patient peut changer lui-même les câbles/cache-micros, les manipulations sont prévues à cet effet.',
+    'Vrai : Les réglages à distance sont possibles mais non appliqués en France pour cause de non remboursement.'
+  ])">Valider</button>
+  <div class="result" id="result29"></div>
+</div>
+
+<!-- Question 30 -->
+<div class="question" id="q30">
+  <h3>Question 30 : Indiquez les réponses exactes</h3>
+  <label><input type="checkbox"> 1. Les nouvelles parties internes de chez COCHLEAR, MEDEL et ADVANCED BIONICS sont compatibles avec l’IRM 3Tesla sans nécessité de bandage compressif.</label><br>
+  <label><input type="checkbox"> 2. La partie interne explantée est envoyée au constructeur pour analyse et une déclaration de matériovigilance est réalisée quelle que soit le motif d’explantation.</label><br>
+  <label><input type="checkbox"> 3. En cas de baisse importante des performances faisant suspecter une panne du récepteur, il faut demander au constructeur de réaliser un test d’intégrité. Si celui-ci est normal et qu’aucune autre cause de baisse des performances n’est retrouvée, il est possible de proposer au patient une réimplantation car tous les dysfonctionnements de la partie interne ne sont pas détectés par les tests d’intégrité. Le patient doit toutefois être informé du risque d’échec.</label><br>
+  <label><input type="checkbox"> 4. Les performances après implantation sont le plus souvent identiques ou meilleures que celles avant l’implantation cochléaire, mais il faut informer le patient qu’il existe un faible risque de performances moindre.</label><br>
+  <label><input type="checkbox"> 5. Avant toute implantation, il faut encourager les patients à échanger avec les associations de patients implantés cochléaires, ce qui permet souvent de le rassurer et de l’encourager à poursuivre les démarches. Une fois les patients implantés, les associations (comme le CISIC) peuvent également proposer des essais d’accessoires.</label><br>
+  <button onclick="validateQuestion(30, [1,2,3,4], [
+    'Faux : Seules certaines parties internes sont compatibles 3T sans précaution.',
+    'Vrai : Une matériovigilance est systématique en cas d’explantation.',
+    'Vrai : Le test d’intégrité peut être faussement rassurant, une réimplantation peut être envisagée avec consentement.',
+    'Vrai : Il existe un risque, rare, de baisse de performance après réimplantation.',
+    'Vrai : Le rôle des associations est central en information et accompagnement.'
+  ])">Valider</button>
+  <div class="result" id="result30"></div>
+</div>
+
+<!-- Fin des questions -->
+<br>
+
+<!-- Marge pour éviter que le bouton soit caché sur mobile -->
+<style>
+    body {
+        margin-bottom: 120px;
+    }
+</style>
+
+<!-- Script principal de validation et score corrigé -->
+<script>
+let questionScores = {};
+
+function validateQuestion(qNumber, correctAnswers, explanations) {
+    const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+    let score = 1;
+    let errors = 0;
+    let resultArea = document.getElementById(`result${qNumber}`);
+    resultArea.innerHTML = "";
+
+    checkboxes.forEach((checkbox, idx) => {
+        const label = checkbox.parentNode;
+        const isChecked = checkbox.checked;
+        const shouldBeChecked = correctAnswers.includes(idx);
+
+        if (isChecked !== shouldBeChecked) {
+            errors++;
+        }
+
+        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
+            label.style.color = 'green';
+        } else {
+            label.style.color = 'red';
+        }
+    });
+
+    if (errors === 0) {
+        score = 1;
+    } else if (errors === 1) {
+        score = 0.5;
+    } else {
+        score = 0;
+    }
+
+    questionScores[qNumber] = score;
+
+    resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
+
+    explanations.forEach((exp, idx) => {
+        const isChecked = checkboxes[idx].checked;
+        const shouldBeChecked = correctAnswers.includes(idx);
+        const itemLabel = (idx + 1).toString(); // Numérotation de 1 à 5
+
+        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
+            resultArea.innerHTML += `<p style="color:green;">✔️ ${exp}</p>`;
+        } else {
+           const prefix = exp.trim().startsWith(`${itemLabel}.`) ? '' : `${itemLabel}. `;
+           resultArea.innerHTML += `<p style="color:red;">❌ ${prefix}${exp}</p>`;
+
+        }
+    });
+}
+
+function showTotalScore() {
+    let totalScore = 0;
+    const totalQuestions = document.querySelectorAll(".question").length;
+
+    for (const key in questionScores) {
+        totalScore += questionScores[key];
+    }
+
+    const scoreDetail = `${totalScore.toFixed(2)} / ${totalQuestions}`;
+    const scoreSur20 = ((totalScore / totalQuestions) * 20).toFixed(2);
+
+    document.getElementById("finalScore").innerText = `Score total : ${scoreDetail} — soit ${scoreSur20} / 20`;
+
+    window.latestScore = scoreSur20;
+    document.getElementById("exportBtn").style.display = "inline-block";
+}
+</script>
+
+<!-- Boutons score + export -->
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
+    <button onclick="showTotalScore()">Afficher le score total</button>
+    <div id="finalScore" style="font-weight: bold;"></div>
+    <button id="exportBtn" style="display: none;" onclick="exportErrorsToCSV()">Exporter les erreurs</button>
+</div>
+
+<script>
+function exportErrorsToCSV() {
+    const now = new Date();
+    const dateString = now.toLocaleDateString('fr-FR');
+    const filename = document.title ? document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html" : "qcm_export.html";
+
+    const questionDivs = document.querySelectorAll(".question");
+    const questionIds = Array.from(questionDivs).map(div => div.id.replace("q", ""));
+
+    const sortedIds = questionIds.sort((a, b) => {
+        const parseId = id => parseFloat(id.replace(/[^0-9]/g, "") + (id.includes("bis") ? ".5" : ""));
+        return parseId(a) - parseId(b);
+    });
+
+    let csvRows = [];
+
+    // En-tête
+    csvRows.push(["Nom du fichier", filename]);
+    csvRows.push([]);
+    csvRows.push(["", "Date de l'export", dateString]);
+    csvRows.push(["", "Score total", (window.latestScore ? window.latestScore + "/20" : "")]);
+    csvRows.push([]);
+
+    // Tableau des erreurs
+    csvRows.push(["N° de question", "Items faux"]);
+
+    sortedIds.forEach(qNum => {
+        const resultBlock = document.getElementById(`result${qNum}`);
+        let errors = [];
+
+        if (resultBlock) {
+            const explanations = resultBlock.querySelectorAll("p");
+            explanations.forEach(p => {
+                if (p.style.color === "red") {
+                    const match = p.innerText.match(/^❌\s?([1-5])/);
+                    if (match) errors.push(match[1]);
+                }
+            });
+        }
+
+        csvRows.push([qNum, errors.join(", ")]);
+    });
+
+    const csvContent = csvRows.map(row => row.join(";")).join("\n");
+    const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `${filename.replace('.html', '')}_export.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+</script>
+
+</body>
+</html>
