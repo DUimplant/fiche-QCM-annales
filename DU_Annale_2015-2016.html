@@ -568,146 +568,412 @@
     <div class="result" id="result30"></div>
 </div>
 
-</div>  
-<!-- Fin des questions -->
+<!-- Fin des QCMS -->
 <br>
 
-<!-- Marge pour éviter que le bouton soit caché sur mobile -->
-<style>
-    body {
-        margin-bottom: 120px;
-    }
-</style>
+<!-- BOUTONS SCORE + EXPORT -->
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
+  <button onclick="showTotalScore()">Afficher le score total QCM</button>
+  <div id="finalScore" style="font-weight: bold;"></div>
+  <button id="exportBtn" style="display: none;" onclick="exportErrorsToCSV()">Exporter les erreurs</button>
+</div>
 
-<!-- Script principal de validation et score corrigé -->
+<!-- Questions Rédactionnelles -->
+<br>
+<br>
+<br>
+
+<!-- CAS CLINIQUE 1 -->
+<div class="question-redac" style="margin-bottom: 40px;">
+  <h3>Cas clinique 1 : Madame C. âgée de 60 ans consulte pour une surdité bilatérale profonde à gauche survenue après un accident de plongée il y a 8 ans et évolutive à droite appareillée. Elle n’a pas de vertiges mais présente des acouphènes invalidants à gauche. L’audiogramme retrouve une surdité de perception bilatérale.</h3>
+</div>
+
+<!-- Question 1.1 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>1.1 : L’ORL prescrit des potentiels évoqués auditifs. Quels sont les deux renseignements que va fournir cet examen ?</h4>
+  <textarea id="answer_redac11" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac11', 1)">Valider</button>
+    <div id="scoreBlock_redac11" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac11" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac11">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac11" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac11" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> confirmation des seuils, argument pour une atteinte rétro-cochléaire.
+  </div>
+</div>
+
+<!-- Question 1.2 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>1.2 : Une imagerie est-elle indiquée ? Si oui, laquelle et dans quel but ?</h4>
+  <textarea id="answer_redac12" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac12', 1)">Valider</button>
+    <div id="scoreBlock_redac12" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac12" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac12">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac12" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac12" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> IRM avec injection pour éliminer une pathologie rétro-cochléaire type SV.
+  </div>
+</div>
+
+<!-- Question 1.3 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>1.3 : La patiente a essayé un système BICROS mais elle n’est pas satisfaite. Peut-on lui proposer une prothèse à ancrage osseux ? Argumentez</h4>
+  <textarea id="answer_redac13" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac13', 1)">Valider</button>
+    <div id="scoreBlock_redac13" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac13" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac13">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac13" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac13" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> CO du côté droit très limite pour un ancrage osseux sur pilier, pour un appareillage dans le cadre d’une surdité unilatérale. Ce sera également inefficace sur les acouphènes.
+  </div>
+</div>
+
+<!-- Question 1.4 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>1.4 : L’essai avec la prothèse à ancrage osseux n’est pas concluant (peu de bénéfice, persistance des acouphènes). La patiente a entendu parler de l’implant cochléaire et souhaite savoir si cela pourrait apporter un meilleur bénéfice à gauche et également améliorer les acouphènes. Elle souhaite également connaitre les modalités de prise en charge. Que lui répondez-vous ? Argumentez.</h4>
+  <textarea id="answer_redac14" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac14', 2)">Valider</button>
+    <div id="scoreBlock_redac14" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac14" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac14">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac14" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac14" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Oui on pourrait avoir un bon bénéfice au vu de sa perte car on stimule directement l’oreille sourde, cela peut améliorer les acouphènes, mais la rééducation est longue (orthophonie, réglage, …), risque potentiel de vertiges, stimulations faciales, modification du gout. L’implant coute 13,65k€ et le processeur 6k€, tous ces couts ainsi que la chirurgie sont remboursés.
+  </div>
+</div>
+
+<!-- CAS CLINIQUE 2 -->
+<div class="question-redac" style="margin-bottom: 40px;">
+  <h3>Cas clinique 2 : Monsieur V. né le 14/09/1935 consulte pour une surdité de perception bilatérale lentement évolutive depuis 20 ans, appareillée depuis 15 ans avec des prothèses surpuissantes renouvelées il y a 1 an. Il dit être de plus en plus gêné dans sa communication au quotidien en particulier dans le bruit, avoir de grosses difficultés pour téléphoner ce qui conduit à un isolement progressif. L’examen clinique est normal. Le bilan vestibulaire retrouve une aréflexie droite compensée. Le scanner et l’IRM sont normaux. Le bilan orthophonique retrouve une intelligibilité de 100% pour les mots disyllabiques de Fournier, de 50% pour les mots de Lafon mais seulement de 30% pour les phrases MBAA dans le silence. En lecture labiale seule, il répète 10% des mots de Fournier et 0% des phrases. Qu’en pensez-vous ?</h3>
+</div>
+
+<!-- Question 2.1 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>2.1 : L’implant cochléaire à droite est-il indiqué ? Argumentez votre réponse.</h4>
+  <textarea id="answer_redac21" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac21', 2)">Valider</button>
+    <div id="scoreBlock_redac21" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac21" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac21">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac21" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac21" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Non, en dehors des critères, 100% à 60 dB HL
+  </div>
+</div>
+
+<!-- Question 2.2 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>2.2 : Citer deux raisons de demander un bilan cognitif pour ce patient.</h4>
+  <textarea id="answer_redac22" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac22', 1.5)">Valider</button>
+    <div id="scoreBlock_redac22" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac22" min="0" max="1.5" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac22">/1.5</span>
+      </label>
+      <span id="redacScoreDisplay_redac22" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac22" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Discordance plainte/bénéfice audioprothétique, moins bon résultat pour les phrases que pour les mots, âge. De plus la lecture labiale est très faible, le patient a un problème de compensation.
+  </div>
+</div>
+
+<!-- Question 2.3 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>2.3 : Quelles propositions pour améliorer la communication de ce patient en dehors de la réhabilitation auditive ? Argumentez.</h4>
+  <textarea id="answer_redac23" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac23', 1.5)">Valider</button>
+    <div id="scoreBlock_redac23" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac23" min="0" max="1.5" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac23">/1.5</span>
+      </label>
+      <span id="redacScoreDisplay_redac23" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac23" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> rééducation orthophonique avec rééducation cognitive, accessoires sans fil, soutien psychologique
+  </div>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>Question 3 : Citez trois points qui caractérisent la surdité et la distinguent d’autres handicaps physiques ou sensoriels.</h4>
+  <textarea id="answer_redac3" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac3', 5)">Valider</button>
+    <div id="scoreBlock_redac3" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac3" min="0" max="5" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac3">/5</span>
+      </label>
+      <span id="redacScoreDisplay_redac3" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac3" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong>
+    1. Handicap peu visible – Peut passer inaperçu – Souvent sous-estimé par l’entourage - Difficultés difficiles à évaluer – Difficultés pas en rapport avec qui qui en apparait - La personne sourde peut le camoufler et faire illusion<br>
+    2. Handicap difficile à se représenter pour l’entourage – Difficulté à s’identifier à la personne sourde - Susceptible d’être minimisé, banalisé, dénié – Génère de l’incompréhension, parfois de l’agressivité<br>
+    3. Handicap dont les difficultés se partagent – Implique l’interlocuteur – Nécessite des efforts de l’entourage dans l’échange - Favorise les malentendus<br>
+    4. Handicap dérangeant – Peut susciter de l’agressivité – Provoque des réactions défensives de la part de l’entourage – Rend floues les limites avec la personne non handicapée<br>
+    5. Handicap qui suscite un isolement relationnel, social, professionnel – Peut générer des difficultés relationnelles – Génère une grande souffrance psychique de la personne sourde - Isolement qui peut provoquer un état dépressif durable
+  </div>
+</div>
+
+<!-- Question 4-->
+<div class="question-redac" style="margin-bottom: 40px;">
+  <h3>Question 4 : Lors du suivi et d’un réglage de contrôle du patient implanté, que faites-vous dans les situations suivantes (plusieurs réponses possibles pour chaque situation) ? </h3>
+</div>
+
+
+<!-- QUESTION 4.1 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>4.1 : Le patient se plaint de coupures intermittentes.</h4>
+  <textarea id="answer_redac41" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac41', 2)">Valider</button>
+    <div id="scoreBlock_redac41" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac41" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac41">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac41" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac41" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Vérifier le câble. Vérifier la source d’alimentation (piles défectueuses ? batterie mal chargée ?). Vérifier la puissance de l’aimant. Vérifier l’antenne. Envisager un essai avec un processeur de test.
+  </div>
+</div>
+
+<!-- QUESTION 4.2 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>4.2 : Le patient se plaint de maux de tête depuis le dernier réglage</h4>
+  <textarea id="answer_redac42" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac42', 1)">Valider</button>
+    <div id="scoreBlock_redac42" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac42" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac42">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac42" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac42" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Force de l’aimant. Peau en regard de l’antenne. Seuils de confort peuvent être surestimés.
+  </div>
+</div>
+
+<!-- QUESTION 4.3 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>4.3 : La mesure d’impédances montre un quart des électrodes en court-circuit.</h4>
+  <textarea id="answer_redac43" rows="5" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <button onclick="showCorrectionAndScoreInput('redac43', 2)">Valider</button>
+    <div id="scoreBlock_redac43" style="display: none;">
+      <label>Votre score :
+        <input type="number" id="score_redac43" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac43">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac43" style="margin-left: 15px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac43" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Demander au patient s’il a remarqué une baisse de ses performances. Faire une évaluation pour voir si les performances ont diminué. Désactiver les électrodes concernées. Demander un test d’intégrité. Demander un scanner.
+  </div>
+</div>
+
+<!-- BOUTONS RÉDACTIONNEL + GLOBAL -->
+<div style="margin-top: 30px;">
+  <button onclick="calculateRedacScore()">Score total questions rédactionnelles</button>
+  <span id="redacScoreDisplayFinal" style="margin-left: 10px; font-weight: bold;"></span>
+  <span id="redacScoreSur20" style="margin-left: 15px; font-weight: bold;"></span>
+  <br><br>
+  <button onclick="calculateGrandTotal()">Score total général</button>
+  <span id="globalScoreDisplay" style="margin-left: 10px; font-weight: bold;"></span>
+</div>
+
+<!-- SCRIPTS -->
 <script>
 let questionScores = {};
 
 function validateQuestion(qNumber, correctAnswers, explanations) {
-    const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
-    let score = 1;
-    let errors = 0;
-    let resultArea = document.getElementById(`result${qNumber}`);
-    resultArea.innerHTML = "";
+  const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+  let score = 1;
+  let errors = 0;
+  let resultArea = document.getElementById(`result${qNumber}`);
+  resultArea.innerHTML = "";
 
-    checkboxes.forEach((checkbox, idx) => {
-        const label = checkbox.parentNode;
-        const isChecked = checkbox.checked;
-        const shouldBeChecked = correctAnswers.includes(idx);
+  checkboxes.forEach((checkbox, idx) => {
+    const label = checkbox.parentNode;
+    const isChecked = checkbox.checked;
+    const shouldBeChecked = correctAnswers.includes(idx);
+    if (isChecked !== shouldBeChecked) errors++;
+    label.style.color = (isChecked === shouldBeChecked) ? 'green' : 'red';
+  });
 
-        if (isChecked !== shouldBeChecked) {
-            errors++;
-        }
+  if (errors === 0) score = 1;
+  else if (errors === 1) score = 0.5;
+  else score = 0;
 
-        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
-            label.style.color = 'green';
-        } else {
-            label.style.color = 'red';
-        }
-    });
+  questionScores[qNumber] = score;
 
-    if (errors === 0) {
-        score = 1;
-    } else if (errors === 1) {
-        score = 0.5;
-    } else {
-        score = 0;
-    }
-
-    questionScores[qNumber] = score;
-
-    resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
-
-    explanations.forEach((exp, idx) => {
-        const isChecked = checkboxes[idx].checked;
-        const shouldBeChecked = correctAnswers.includes(idx);
-
-        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
-            resultArea.innerHTML += `<p style="color:green;">✔️ ${exp}</p>`;
-        } else {
-            resultArea.innerHTML += `<p style="color:red;">❌ ${exp}</p>`;
-        }
-    });
+  resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
+  explanations.forEach((exp, idx) => {
+    const isChecked = checkboxes[idx].checked;
+    const shouldBeChecked = correctAnswers.includes(idx);
+    const itemLabel = (idx + 1).toString();
+    const prefix = exp.trim().startsWith(`${itemLabel}.`) ? '' : `${itemLabel}. `;
+    resultArea.innerHTML += `<p style="color:${(isChecked === shouldBeChecked) ? 'green' : 'red'};">${(isChecked === shouldBeChecked ? '✔️' : '❌')} ${prefix}${exp}</p>`;
+  });
 }
 
 function showTotalScore() {
-    let totalScore = 0;
-    for (const key in questionScores) {
-        totalScore += questionScores[key];
-    }
+  let totalScore = 0;
+  const qcmQuestions = Array.from(document.querySelectorAll(".question"))
+    .filter(div => div.id && div.id.startsWith("q") && !div.id.includes("redac"));
 
-    const totalQuestions = document.querySelectorAll(".question").length;
-    const scoreDetail = `${totalScore.toFixed(2)} / ${totalQuestions}`;
-    const scoreSur20 = ((totalScore / totalQuestions) * 20).toFixed(2);
+  qcmQuestions.forEach(div => {
+    const qNum = div.id.replace("q", "");
+    totalScore += questionScores[qNum] || 0;
+  });
 
-    document.getElementById("finalScore").innerText = `Score total : ${scoreDetail} — soit ${scoreSur20} / 20`;
+  const qcmCount = qcmQuestions.length;
+  const scoreSur20 = ((totalScore / qcmCount) * 20).toFixed(2);
 
-    window.latestScore = scoreSur20;
-    document.getElementById("exportBtn").style.display = "inline-block";
+  window.qcmScoreRaw = totalScore;
+  window.qcmCount = qcmCount;
+
+  document.getElementById("finalScore").innerText = `Score total QCM : ${totalScore.toFixed(2)} / ${qcmCount} — soit ${scoreSur20} / 20`;
+  window.latestScore = parseFloat(scoreSur20);
+  document.getElementById("exportBtn").style.display = "inline-block";
 }
-</script>
 
-<!-- Boutons score + export -->
-<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
-    <button onclick="showTotalScore()">Afficher le score total</button>
-    <div id="finalScore" style="font-weight: bold;"></div>
-    <button id="exportBtn" style="display: none;" onclick="exportErrorsToCSV()">Exporter les erreurs</button>
-</div>
+function showCorrectionAndScoreInput(id, maxScore) {
+  const correction = document.getElementById("correction_" + id);
+  if (correction) correction.style.display = "block";
 
-<script>
+  const scoreBlock = document.getElementById("scoreBlock_" + id);
+  const input = document.getElementById("score_" + id);
+  const label = document.getElementById("maxLabel_" + id);
+  if (scoreBlock && input && label) {
+    scoreBlock.style.display = "inline-flex";
+    input.setAttribute("max", maxScore);
+    label.innerText = "/" + maxScore;
+  }
+}
+
+function calculateRedacScore() {
+  const inputs = document.querySelectorAll("input[id^='score_redac']");
+  let total = 0;
+  let max = 0;
+  inputs.forEach(input => {
+    const val = parseFloat(input.value) || 0;
+    const maxVal = parseFloat(input.getAttribute("max")) || 0;
+    total += val;
+    max += maxVal;
+  });
+
+  window.redacScoreRaw = total;
+  window.redacMaxScore = max;
+
+  document.getElementById("redacScoreDisplayFinal").innerText =
+    `Score total questions rédactionnelles : ${total.toFixed(1)} / ${max}`;
+
+  const scoreSur20 = ((total / max) * 20).toFixed(2);
+  document.getElementById("redacScoreSur20").innerText = `— soit ${scoreSur20} / 20`;
+}
+
+function calculateGrandTotal() {
+  const qcmScore = window.qcmScoreRaw || 0;
+  const qcmCount = window.qcmCount || 0;
+  const redacScore = window.redacScoreRaw || 0;
+  const redacMaxScore = window.redacMaxScore || 0;
+
+  const totalScore = qcmScore + redacScore;
+  const totalMax = qcmCount + redacMaxScore;
+
+  const scoreSur20 = ((totalScore / totalMax) * 20).toFixed(2);
+  document.getElementById("globalScoreDisplay").innerText =
+    `Score total : ${totalScore.toFixed(1)} / ${totalMax} — soit ${scoreSur20} / 20`;
+}
+
 function exportErrorsToCSV() {
-    const now = new Date();
-    const dateString = now.toLocaleDateString('fr-FR');
-    const filename = document.title ? document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html" : "qcm_export.html";
+  const now = new Date();
+  const dateString = now.toLocaleDateString('fr-FR');
+  const filename = document.title ? document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html" : "qcm_export.html";
 
-    const questionDivs = document.querySelectorAll(".question");
-    const questionIds = Array.from(questionDivs).map(div => div.id.replace("q", ""));
+  const questionDivs = document.querySelectorAll(".question");
+  const questionIds = Array.from(questionDivs).map(div => div.id.replace("q", ""));
+  const sortedIds = questionIds.sort((a, b) => {
+    const parseId = id => parseFloat(id.replace(/[^0-9]/g, "") + (id.includes("bis") ? ".5" : ""));
+    return parseId(a) - parseId(b);
+  });
 
-    const sortedIds = questionIds.sort((a, b) => {
-        const parseId = id => parseFloat(id.replace(/[^0-9]/g, "") + (id.includes("bis") ? ".5" : ""));
-        return parseId(a) - parseId(b);
-    });
+  let csvRows = [["Nom du fichier", filename], [], ["", "Date de l'export", dateString], ["", "Score total", (window.latestScore ? window.latestScore + "/20" : "")], [], ["N° de question", "Items faux"]];
 
-    let csvRows = [];
-
-    // En-tête
-    csvRows.push(["Nom du fichier", filename]);
-    csvRows.push([]);
-    csvRows.push(["", "Date de l'export", dateString]);
- csvRows.push(["", "Score total", (window.latestScore ? window.latestScore + "/20" : "")]);
-   csvRows.push([]);
-
-    // Tableau des erreurs
-    csvRows.push(["N° de question", "Items faux"]);
-
-    sortedIds.forEach(qNum => {
-        const resultBlock = document.getElementById(`result${qNum}`);
-        let errors = [];
-
-        if (resultBlock) {
-            const explanations = resultBlock.querySelectorAll("p");
-            explanations.forEach(p => {
-                if (p.style.color === "red") {
-                    const match = p.innerText.match(/^❌\s?([A-E])/);
-                    if (match) errors.push(match[1]);
-                }
-            });
+  sortedIds.forEach(qNum => {
+    const resultBlock = document.getElementById(`result${qNum}`);
+    let errors = [];
+    if (resultBlock) {
+      const explanations = resultBlock.querySelectorAll("p");
+      explanations.forEach(p => {
+        if (p.style.color === "red") {
+          const match = p.innerText.match(/^❌\s?([1-5])/);
+          if (match) errors.push(match[1]);
         }
+      });
+    }
+    csvRows.push([qNum, errors.join(", ")]);
+  });
 
-        csvRows.push([qNum, errors.join(", ")]);
-    });
+  const csvContent = csvRows.map(row => row.join(";")).join("\n");
+  const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
 
-    const csvContent = csvRows.map(row => row.join(";")).join("\n");
-    const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
-
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = `${filename.replace('.html', '')}_export.csv`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `${filename.replace('.html', '')}_export.csv`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 </script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 </body>
 </html>
