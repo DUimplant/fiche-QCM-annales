@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>DU Annale Pr MEYER</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .question { margin-bottom: 40px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+        button { margin-top: 10px; padding: 8px 15px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer;}
+        button:disabled { background: grey; }
+        .result { margin-top: 10px; padding: 10px; background-color: #e9ecef; border-left: 5px solid #007BFF; }
+    </style>
+</head>
+<body>
+<h1><h1>D.U Audioprothèses implantables - Annale Pr MEYER</h1>
+<p style="font-size: 18px; margin-top: 5px;">15 questions (QCM et QRU, barème : 1 point par QCM juste, 0,5 point pour une erreur, 0 pour deux erreurs ou plus.</p>
+<p style="font-size: 18px; margin-top: 5px;">Après validation votre score s'affiche, si les items passent au vert vous avez juste, si les items passent au rouge vous avez tort.</p>
+<p style="font-size: 18px; margin-top: 5px;">Puisse le sort vous être favorable.</p>
+<div id="questions">
+
+
+<!-- Question A -->
+<div class="question" id="qA">
+  <h3>Question A : Quels sont les quatre informations les plus pertinentes à recueillir lors de l’anamnèse dans le cadre du bilan pré-implant ?</h3>
+  <label><input type="checkbox"> 1. Mode de survenue, étiologie et durée de la surdité ainsi que les attentes vis-à-vis de l’implantation.</label><br>
+  <label><input type="checkbox"> 2. Modalités de communication utilisées, nature de la gêne auditive, identification des voix familières et étiologie de la surdité.</label><br>
+  <label><input type="checkbox"> 3. Motivation de l’entourage, performances en lecture labiale, mode de survenue et étiologie de la surdité.</label><br>
+  <label><input type="checkbox"> 4. Etiologie et durée de la surdité, durée d’appareillage, niveau d’études et attentes vis-à-vis de l’implantation.</label><br>
+  <button onclick="validateQuestion('A', [0], [
+    '1. Vrai : Anamnèse centrée sur étiologie, durée et attentes est recommandée par le DU.',
+    '2. Faux : Identification des voix familières n’est pas un critère central.',
+    '3. Faux : Motivation de l’entourage et lecture labiale sont secondaires.',
+    '4. Faux : Le niveau d’études n’est pas un critère clinique pertinent dans ce contexte.'
+  ])">Valider</button>
+  <div class="result" id="resultA"></div>
+</div>
+
+<!-- Question B -->
+<div class="question" id="qB">
+  <h3>Question B : Quels sont les principaux tests utilisés lors des évaluations orthophoniques pré et post implants ?</h3>
+  <label><input type="checkbox"> 1. Listes d’intégration de Lafon, listes de Boorsma et listes de phrases du HINT.</label><br>
+  <label><input type="checkbox"> 2. Listes monosyllabiques de Fournier, listes d’intégration de Lafon et listes de phrases MMBA.</label><br>
+  <label><input type="checkbox"> 3. Listes cochléaires de Lafon, listes de Boorsma et listes de phrases MMBA.</label><br>
+  <label><input type="checkbox"> 4. Listes cochléaires de Lafon, listes dissyllabiques de Fournier et listes de phrases MMBA.</label><br>
+  <label><input type="checkbox"> 5. Listes cochléaires de Lafon, listes dissyllabiques de Fournier et listes de phrases de Combescure.</label><br>
+  <button onclick="validateQuestion('B', [3], [
+    '1. Faux : Le HINT n’est pas utilisé dans les centres français selon le DU.',
+    '2. Faux : Les listes monosyllabiques sont peu utilisées pour évaluer la compréhension.',
+    '3. Faux : Les listes de Boorsma ne sont pas mentionnées dans le DU.',
+    '4. Vrai : C’est la combinaison recommandée dans le DU.',
+    '5. Faux : Les phrases de Combescure ne sont pas citées dans le cours.'
+  ])">Valider</button>
+  <div class="result" id="resultB"></div>
+</div>
+
+<!-- Question C -->
+<div class="question" id="qC">
+  <h3>Question C : Le bilan pré-implant est composé de :</h3>
+  <label><input type="checkbox"> 1. Bilans d’imagerie, orthophonique, psychologique, et neuropsychologique.</label><br>
+  <label><input type="checkbox"> 2. L’examen clinique O.R.L et bilans audio-vestibulaire, d’imagerie et neuropsychologique.</label><br>
+  <label><input type="checkbox"> 3. L’examen clinique O.R.L et bilans audio-vestibulaire, d’imagerie, orthophonique et psychologique.</label><br>
+  <label><input type="checkbox"> 4. L’examen clinique O.R.L et bilans audio-vestibulaire, d’imagerie et psychiatrique.</label><br>
+  <button onclick="validateQuestion('C', [2], [
+    '1. Faux : Le bilan neuropsychologique n’est pas systématique selon le DU.',
+    '2. Faux : L’orthophonie et la psychologie sont manquants.',
+    '3. Vrai : C’est la composition complète du bilan décrite dans le DU.',
+    '4. Faux : Le bilan psychiatrique n’est pas systématiquement réalisé.'
+  ])">Valider</button>
+  <div class="result" id="resultC"></div>
+</div>
+
+<!-- Question D -->
+<div class="question" id="qD">
+  <h3>Question D : Quels sont les trois points essentiels de la rééducation post-implant ?</h3>
+  <label><input type="checkbox"> 1. Percevoir, comprendre la parole et communiquer.</label><br>
+  <label><input type="checkbox"> 2. Entendre des sons, comprendre dans le bruit et au téléphone.</label><br>
+  <label><input type="checkbox"> 3. Percevoir les bruits environnants, comprendre dans le bruit et écouter de la musique.</label><br>
+  <label><input type="checkbox"> 4. Comprendre la parole en groupe, à la télévision et au téléphone.</label><br>
+  <button onclick="validateQuestion('D', [0], [
+    '1. Vrai : C’est la triade de base selon le DU.',
+    '2. Faux : Trop ciblé sur situations spécifiques.',
+    '3. Faux : La musique est importante mais secondaire.',
+    '4. Faux : Ce sont des objectifs spécifiques, pas fondamentaux.'
+  ])">Valider</button>
+  <div class="result" id="resultD"></div>
+</div>
+
+<!-- Question E -->
+<div class="question" id="qE">
+  <h3>Question E : Quels types d’entraînement peut-on proposer au cours de la rééducation aux patients adultes ayant un bénéfice satisfaisant avec l’implant cochléaire ?</h3>
+  <label><input type="checkbox"> 1. Discrimination des bruits environnants, identification de mots et de phrases dans des listes.</label><br>
+  <label><input type="checkbox"> 2. Compréhension de la parole dans le bruit et au téléphone, écoute de la musique et entraînement en ligne.</label><br>
+  <label><input type="checkbox"> 3. Identification de phonèmes (voyelles et consonnes) isolés et dans des mots, compréhension de la parole avec un interlocuteur et à la télévision.</label><br>
+  <label><input type="checkbox"> 4. Reconnaissance de syllabes, de mots et de phrases en liste ouverte.</label><br>
+  <button onclick="validateQuestion('E', [1], [
+    '1. Faux : Pertinent mais partiel, pas la stratégie complète pour les bons utilisateurs.',
+    '2. Vrai : Ce sont les entraînements recommandés selon le DU pour patients performants.',
+    '3. Faux : Trop basique pour ce type de patient.',
+    '4. Faux : Insuffisant à lui seul pour un entraînement adapté.'
+  ])">Valider</button>
+  <div class="result" id="resultE"></div>
+</div>
+
+<!-- Question F -->
+<div class="question" id="qF">
+  <h3>Question F : Citez les cinq termes les plus importants concernant les réglages des implants cochléaires.</h3>
+  <label><input type="checkbox"> 1. Nombre de maxima, intensité, seuils de perception et de confort, puissance d’émission.</label><br>
+  <label><input type="checkbox"> 2. Gain, seuils, activation, amplification et électrodes.</label><br>
+  <label><input type="checkbox"> 3. Intensité, largeur d’impulsion, aimant, maxima et processeur vocal.</label><br>
+  <label><input type="checkbox"> 4. Activation, électrodes, impédances, seuils de perception et de confort, stratégie de codage.</label><br>
+  <button onclick="validateQuestion('F', [3], [
+    '1. Faux : Si le nombre de maxima et les seuils de perception (T) et de confort (C) sont bien des paramètres fondamentaux du réglage, le terme intensité est imprécis et ne correspond pas à un paramètre technique utilisé en tant que tel. La puissance d’émission n’est pas non plus un paramètre ajusté couramment par les régleurs dans la pratique clinique.',
+    '2. Faux : Le gain et l’amplification sont des termes plus audioprothésiques.',
+    '3. Faux : Aimant et processeur vocal ne font pas partie du réglage des paramètres électriques.',
+    '4. Vrai : Stratégie de codage, électrodes, seuils et impédances sont essentiels dans le suivi des réglages.'
+  ])">Valider</button>
+  <div class="result" id="resultF"></div>
+</div>
+
+<!-- Question G -->
+<div class="question" id="qG">
+  <h3>Question G : Quels paramètres de réglages sont le plus fréquemment modifiés, toutes marques d’implants confondues ?</h3>
+  <label><input type="checkbox"> 1. Valeurs des seuils de perception et de confort, largeur d’impulsion, nombre d’électrodes actives et gain.</label><br>
+  <label><input type="checkbox"> 2. Volume, stratégie de codage, gain/compression, répartition fréquentielle.</label><br>
+  <label><input type="checkbox"> 3. Puissance d’émission, impédances, largeur d’impulsion, nombre d’électrodes actives.</label><br>
+  <label><input type="checkbox"> 4. Gain, volume, nombre de maxima, stratégie de codage et répartition fréquentielle.</label><br>
+  <button onclick="validateQuestion('G', [0], [
+    '1. Vrai : Ce sont les paramètres clés ajustés dans tous les centres selon le DU.',
+    '2. Faux : Le volume et la compression sont secondaires dans les logiciels de réglage.',
+    '3. Faux : Impédances et puissance sont surveillées mais peu modifiées.',
+    '4. Faux : Le gain et le volume ne sont pas des paramètres directement réglés lors des séances de programmation d’un implant cochléaire, contrairement aux seuils T et C, nombre d’électrodes actives ou largeur d’impulsion. De plus la stratégie de codage est rarement modifiée.'
+  ])">Valider</button>
+  <div class="result" id="resultG"></div>
+</div>
+
+<!-- Question H -->
+<div class="question" id="qH">
+  <h3>Question H : En quoi consiste la visite annuelle de suivi long terme proposée par l’IFIC aux patients porteurs d’un implant cochléaire ? (Plusieurs réponses possibles)</h3>
+  <label><input type="checkbox"> 1. Bilan psychologique</label><br>
+  <label><input type="checkbox"> 2. Bilan orthophonique</label><br>
+  <label><input type="checkbox"> 3. Réglage et entretien du processeur</label><br>
+  <label><input type="checkbox"> 4. Test d’équilibre</label><br>
+  <button onclick="validateQuestion('H', [1,2], [
+    '1. Faux : Le bilan psychologique n’est pas systématique à la visite annuelle.',
+    '2. Vrai : Le suivi orthophonique fait partie de la visite.',
+    '3. Vrai : Entretien et vérification du processeur sont essentiels.',
+    '4. Faux : Le test vestibulaire est réservé aux cas symptomatiques.'
+  ])">Valider</button>
+  <div class="result" id="resultH"></div>
+</div>
+
+<!-- Question I -->
+<div class="question" id="qI">
+  <h3>Question I : Quels sont les causes les plus fréquentes de dysfonctionnement des processeurs de son ? (Plusieurs réponses possibles)</h3>
+  <label><input type="checkbox"> 1. oxydation des contacts</label><br>
+  <label><input type="checkbox"> 2. câble d’antenne sectionné</label><br>
+  <label><input type="checkbox"> 3. embout mal adapté</label><br>
+  <label><input type="checkbox"> 4. micros obturés par manque d’entretien</label><br>
+  <button onclick="validateQuestion('I', [0,1,3], [
+    '1. Vrai : Fréquent à cause de l’humidité ou de l’usure.',
+    '2. Vrai : C’est une panne matérielle typique.',
+    '3. Faux : L’embout concerne les audioprothèses, pas les implants.',
+    '4. Vrai : L’entretien insuffisant est une cause majeure de panne microphonique.'
+  ])">Valider</button>
+  <div class="result" id="resultI"></div>
+</div>
+
+<!-- Question J -->
+<div class="question" id="qJ">
+  <h3>Question J : Chez les adultes présentant une surdité acquise à l’âge adulte, quel paramètre vocal risque, la plupart du temps, d’être altéré :</h3>
+  <label><input type="checkbox"> 1. Le débit</label><br>
+  <label><input type="checkbox"> 2. Le rythme</label><br>
+  <label><input type="checkbox"> 3. Le voisement</label><br>
+  <label><input type="checkbox"> 4. L’intensité</label><br>
+  <label><input type="checkbox"> 5. La nasalité</label><br>
+  <button onclick="validateQuestion('J', [3], [
+    '1. Faux : Le débit reste stable en général.',
+    '2. Faux : Le rythme vocal n’est pas systématiquement atteint.',
+    '3. Faux : Le voisement n’est pas une altération dominante.',
+    '4. Vrai : L’intensité est souvent modifiée chez les sourds tardifs.',
+    '5. Faux : La nasalité est peu concernée sauf pathologie associée.'
+  ])">Valider</button>
+  <div class="result" id="resultJ"></div>
+</div>
+
+<!-- Question K -->
+<div class="question" id="qK">
+  <h3>Question K : D’un point de vue psycholinguistique, quels facteurs rendent un mot plus facile à reconnaître ? (plusieurs réponses)</h3>
+  <label><input type="checkbox"> 1. Sa fréquence lexicale est élevée</label><br>
+  <label><input type="checkbox"> 2. Sa fréquence lexicale est peu élevée</label><br>
+  <label><input type="checkbox"> 3. Il a beaucoup de voisins phonologiques</label><br>
+  <label><input type="checkbox"> 4. Il a peu de voisins phonologiques</label><br>
+  <label><input type="checkbox"> 5. Un ou plusieurs de ses voisins phonologiques ont une fréquence lexicale élevée</label><br>
+  <button onclick="validateQuestion('K', [0,4], [
+    '1. Vrai : Les mots fréquents sont plus facilement identifiables.',
+    '2. Faux : Les mots rares sont plus difficiles à reconnaître.',
+    '3. Faux : Un mot avec beaucoup de voisins peut induire plus d’interférences.',
+    '4. Faux : Ce n’est pas un facteur facilitateur ici.',
+    '5. Vrai : Un voisin très fréquent active le réseau lexical associé plus rapidement.'
+  ])">Valider</button>
+  <div class="result" id="resultK"></div>
+</div>
+
+<!-- Question L -->
+<div class="question" id="qL">
+  <h3>Question L : Quels sont, parmi les questionnaires de Qualité de Vie suivants, ceux spécifiques à la surdité et/ou l’implant cochléaire :</h3>
+  <label><input type="checkbox"> 1. EORTC</label><br>
+  <label><input type="checkbox"> 2. APHAB</label><br>
+  <label><input type="checkbox"> 3. ERSA</label><br>
+  <label><input type="checkbox"> 4. Questionnaire de Nijmegen</label><br>
+  <label><input type="checkbox"> 5. SF-36</label><br>
+  <button onclick="validateQuestion('L', [1,2,3], [
+    '1. Faux : EORTC concerne les patients cancéreux.',
+    '2. Vrai : APHAB est spécifique aux aides auditives.',
+    '3. Vrai : L’ERSA (Échelle de Réduction de la Surdité Appliquée) est un questionnaire spécifiquement développé pour évaluer l’impact de la surdité et les effets de sa réhabilitation, notamment chez les patients implantés.',
+    '4. Vrai : Questionnaire de Nijmegen est spécifique à l’implant cochléaire.',
+    '5. Faux : SF-36 est un questionnaire générique.'
+  ])">Valider</button>
+  <div class="result" id="resultL"></div>
+</div>
+
+<!-- Question M -->
+<div class="question" id="qM">
+  <h3>Question M : Chez l’adulte, le renouvellement du processeur externe de l’implant cochléaire peut être remboursé par la sécurité sociale au bout de :</h3>
+  <label><input type="checkbox"> 1. 3 ans minimum</label><br>
+  <label><input type="checkbox"> 2. 7 ans maximum</label><br>
+  <label><input type="checkbox"> 3. 10 ans maximum</label><br>
+  <label><input type="checkbox"> 4. 6 ans minimum</label><br>
+  <label><input type="checkbox"> 5. 5 ans minimum</label><br>
+  <button onclick="validateQuestion('M', [4], [
+    '1. Faux : Délai trop court selon les recommandations.',
+    '2. Faux : Ce n’est pas un critère de remboursement.',
+    '3. Faux : 10 ans est la garantie interne, pas le délai de renouvellement.',
+    '4. Faux : Trop long, 6 ans est hors critère.',
+    '5. Vrai : Délai minimum officiel pour remboursement selon les textes HAS.'
+  ])">Valider</button>
+  <div class="result" id="resultM"></div>
+</div>
+
+<!-- Question N -->
+<div class="question" id="qN">
+  <h3>Question N : Cochez les noms des tests permettant une évaluation rapide des fonctions cognitives générales :</h3>
+  <label><input type="checkbox"> 1. MMSE</label><br>
+  <label><input type="checkbox"> 2. QUALY</label><br>
+  <label><input type="checkbox"> 3. EORTC</label><br>
+  <label><input type="checkbox"> 4. MOCA</label><br>
+  <label><input type="checkbox"> 5. CODEX</label><br>
+  <button onclick="validateQuestion('N', [0,3,4], [
+    '1. Vrai : MMSE est un test cognitif rapide reconnu.',
+    '2. Faux : QUALY n’est pas un test cognitif.',
+    '3. Faux : EORTC est lié à la qualité de vie en cancérologie.',
+    '4. Vrai : MOCA est un test cognitif validé en consultation mémoire.',
+    '5. Vrai : CODEX est également un test cognitif rapide.'
+  ])">Valider</button>
+  <div class="result" id="resultN"></div>
+</div>
+
+<!-- Question O -->
+<div class="question" id="qO">
+  <h3>Question O : Quels facteurs influencent la qualité de la communication téléphonique chez une personne implantée cochléaire :</h3>
+  <label><input type="checkbox"> 1. Le degré de familiarité du sujet de conversation</label><br>
+  <label><input type="checkbox"> 2. Les ondes radios environnantes</label><br>
+  <label><input type="checkbox"> 3. La pression atmosphérique</label><br>
+  <label><input type="checkbox"> 4. Le degré de familiarité de l’interlocuteur</label><br>
+  <label><input type="checkbox"> 5. La qualité de la parole de l’interlocuteur</label><br>
+  <button onclick="validateQuestion('O', [0,3,4], [
+    '1. Vrai : Un sujet connu est plus facile à anticiper auditivement.',
+    '2. Faux : Les ondes radios ne perturbent pas directement l’implant.',
+    '3. Faux : Pas de lien établi avec la communication téléphonique.',
+    '4. Vrai : Le degré de familiarité de l’interlocuteur facilite la reconnaissance vocale et réduit l’effort d’écoute, ce qui améliore la compréhension au téléphone chez les patients implantés.',
+    '5. Vrai : Une diction claire améliore fortement la compréhension.'
+  ])">Valider</button>
+  <div class="result" id="resultO"></div>
+</div>
+
+<!-- Fin des QCMS -->
+<br>
+
+<!-- BOUTONS SCORE + EXPORT -->
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
+  <button onclick="showTotalScore()">Afficher le score total QCM</button>
+  <div id="finalScore" style="font-weight: bold;"></div>
+  <button id="exportBtn" style="display: none;" onclick="exportErrorsToCSV()">Exporter les erreurs</button>
+</div>
+
+<!-- Questions Rédactionnelles -->
+<br>
+<br>
+<br>
+
+<!-- Question Rédactionnelle 1 -->
+<div class="question-redac" style="margin-bottom: 30px;">
+  <h3>Question 1</h3>
+  <p>Quels sont les principaux impacts de la surdité acquise chez l’adulte et les enjeux de la réhabilitation auditive ? Donnez des exemples concrets selon les différentes situations cliniques.</p>
+  <textarea id="answer_redac1" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac1', 2)">Valider</button>
+    <div id="scoreBlock_redac1" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac1" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac1">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac1" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac1" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong><br>
+    Impacts : <br>-perte d’habilité sociale <br>-perte de échange spontané <br>-Perte d’indépendance <br>-Perte d’habilité émotionnel <br>-Retentissement psychologique<br>
+    <br>Enjeux : <br>-Percevoir (évaluation et réhabilitation IC IOM AA) <br>-Comprendre (rééducation audio-cognitive, lecture labiale, téléphone accessoire) <br>-Communiquer (professionnel, interaction sociale)
+  </div>
+</div>
+
+<!-- Question Rédactionnelle 2 -->
+<div class="question-redac" style="margin-bottom: 30px;">
+  <h3>Question 2</h3>
+  <p>Décrivez les modalités de suivi des réglages des implants cochléaires ainsi que les difficultés rencontrées dans certains cas ainsi que leur(s) origine(s).</p>
+  <textarea id="answer_redac2" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac2', 2)">Valider</button>
+    <div id="scoreBlock_redac2" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac2" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac2">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac2" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac2" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong><br>
+    1) activation : 3 semaine après implantation (1h à 1h30) mise en route, télémétrie (mesure d’impédance, intégrité des électrodes et mesure de compliance (évaluation énergie)), mesure des T et C, évaluation rapide des résultats (bruit différenciation voie, identification, compréhension, manipulation, réponse au question<br>
+    <br>2) En routine : télémétrie mesure T et C, test en live (J8, J21, M3, M6, M0, M12)<br>
+    <br>Difficulté : <br>-Capacité du patient à déterminer son seul de confort et son seuil T en étant reproductible pour chaque électrode. (acouphene masquant)<br>
+    -Pas de reponse ou reponse desagreable ou sensation faciale : Electrode en court circuit ou ouverte (desactivaton) = nombre d’electrode active suifisante electrode extra cochléaire<br>
+    -Douleur au pavillon ou au niveau de l’antenne : Pb d’amant trop fort avec risque de necrose, mettre un embout pour soulager le pavillon
+  </div>
+</div>
+
+<!-- Question Rédactionnelle 3 -->
+<div class="question-redac" style="margin-bottom: 30px;">
+  <h3>Question 3</h3>
+  <p>Facteurs à prendre en compte lors de la démarche de renouvellement de processeur externe ?</p>
+  <textarea id="answer_redac3" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac3', 2)">Valider</button>
+    <div id="scoreBlock_redac3" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac3" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac3">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac3" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac3" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong><br>
+    1) Demande du patient<br>
+    2) Avis/Discussion de l’équipe<br>
+    <br>Les différents critères : <br>– Performances stables ou en dégradation <br>– Amélioration probable apportée par le nouveau processeur <br>– Panne non réparable, non garantie <br>– Obsolescence du processeur <br>– Il requiert une bonne connaissance à la fois de l’ancien processeur et de la partie interne qui peuvent être différents d’une génération ancienne (stratégie de codage, dynamique d’entrée) et du nouveau système qui comprend de nouveaux paramètres (microphones, dynamique d’entrée, algorithme de prétraitement, stratégie de codage) afin d’avoir conscience du bond technologique. Au moment du renouvellement : Force de l’aimant, stratégie, conversion de map ou upgrade
+  </div>
+</div>
+
+<!-- Question Rédactionnelle 4 -->
+<div class="question-redac" style="margin-bottom: 30px;">
+  <h3>Question 4</h3>
+  <p>Quel bénéfice de l’implant attendre au téléphone ? Quelle(s) aide(s) apporter ?</p>
+  <textarea id="answer_redac4" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac4', 2)">Valider</button>
+    <div id="scoreBlock_redac4" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac4" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac4">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac4" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac4" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong><br>
+    Bénéfice possible dans quelque situation de la vie courante, utilisation de texto permet de faciliter les communications.<br>
+    <br>Très dépendant d’un patient à l’autre et de ses performances auditives, le téléphone est quelque chose de compliqué pour les patients implantés. La discussion avec une personne du cercle familial ou proche peut être plus facile (reconnaissance de la voix) ; le sujet de la discussion s’il est connu peut faciliter les suppléances mentales.<br>
+    <br>Différentes solutions sont à mettre en œuvre :<br>
+    - L’entraînement avec des personnes proches<br>
+    - Environnement sonore maîtrisé (bruit)<br>
+    - Mise en place de programmes avec boucle magnétique<br>
+    - Utilisation de téléphone spécialisé ou essayer d’autres téléphones<br>
+    - Accessoire Bluetooth avec collier magnétique<br>
+    - Placement du téléphone sur l’implant
+  </div>
+</div>
+
+
+<!-- BOUTONS RÉDACTIONNEL + GLOBAL -->
+<div style="margin-top: 30px;">
+  <button onclick="calculateRedacScore()">Score total questions rédactionnelles</button>
+  <span id="redacScoreDisplayFinal" style="margin-left: 10px; font-weight: bold;"></span>
+  <span id="redacScoreSur20" style="margin-left: 15px; font-weight: bold;"></span>
+  <br><br>
+  <button onclick="calculateGrandTotal()">Score total général</button>
+  <span id="globalScoreDisplay" style="margin-left: 10px; font-weight: bold;"></span>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+let questionScores = {};
+
+function validateQuestion(qNumber, correctAnswers, explanations) {
+  const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+  let score = 1;
+  let errors = 0;
+  let resultArea = document.getElementById(`result${qNumber}`);
+  resultArea.innerHTML = "";
+
+  checkboxes.forEach((checkbox, idx) => {
+    const label = checkbox.parentNode;
+    const isChecked = checkbox.checked;
+    const shouldBeChecked = correctAnswers.includes(idx);
+    if (isChecked !== shouldBeChecked) errors++;
+    label.style.color = (isChecked === shouldBeChecked) ? 'green' : 'red';
+  });
+
+  if (errors === 0) score = 1;
+  else if (errors === 1) score = 0.5;
+  else score = 0;
+
+  questionScores[qNumber] = score;
+
+  resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
+  explanations.forEach((exp, idx) => {
+    const isChecked = checkboxes[idx].checked;
+    const shouldBeChecked = correctAnswers.includes(idx);
+    const itemLabel = (idx + 1).toString();
+    const prefix = exp.trim().startsWith(`${itemLabel}.`) ? '' : `${itemLabel}. `;
+    resultArea.innerHTML += `<p style="color:${(isChecked === shouldBeChecked) ? 'green' : 'red'};">${(isChecked === shouldBeChecked ? '✔️' : '❌')} ${prefix}${exp}</p>`;
+  });
+}
+
+function showTotalScore() {
+  let totalScore = 0;
+  const qcmQuestions = Array.from(document.querySelectorAll(".question"))
+    .filter(div => div.id && div.id.startsWith("q") && !div.id.includes("redac"));
+
+  qcmQuestions.forEach(div => {
+    const qNum = div.id.replace("q", "");
+    totalScore += questionScores[qNum] || 0;
+  });
+
+  const qcmCount = qcmQuestions.length;
+  const scoreSur20 = ((totalScore / qcmCount) * 20).toFixed(2);
+
+  window.qcmScoreRaw = totalScore;
+  window.qcmCount = qcmCount;
+
+  document.getElementById("finalScore").innerText = `Score total QCM : ${totalScore.toFixed(2)} / ${qcmCount} — soit ${scoreSur20} / 20`;
+  window.latestScore = parseFloat(scoreSur20);
+  document.getElementById("exportBtn").style.display = "inline-block";
+}
+
+function showCorrectionAndScoreInput(id, maxScore) {
+  const correction = document.getElementById("correction_" + id);
+  if (correction) correction.style.display = "block";
+
+  const scoreBlock = document.getElementById("scoreBlock_" + id);
+  const input = document.getElementById("score_" + id);
+  const label = document.getElementById("maxLabel_" + id);
+  if (scoreBlock && input && label) {
+    scoreBlock.style.display = "inline-flex";
+    input.setAttribute("max", maxScore);
+    label.innerText = "/" + maxScore;
+  }
+}
+
+function calculateRedacScore() {
+  const inputs = document.querySelectorAll("input[id^='score_redac']");
+  let total = 0;
+  let max = 0;
+  inputs.forEach(input => {
+    const val = parseFloat(input.value) || 0;
+    const maxVal = parseFloat(input.getAttribute("max")) || 0;
+    total += val;
+    max += maxVal;
+  });
+
+  window.redacScoreRaw = total;
+  window.redacMaxScore = max;
+
+  document.getElementById("redacScoreDisplayFinal").innerText =
+    `Score total questions rédactionnelles : ${total.toFixed(1)} / ${max}`;
+
+  const scoreSur20 = ((total / max) * 20).toFixed(2);
+  document.getElementById("redacScoreSur20").innerText = `— soit ${scoreSur20} / 20`;
+}
+
+function calculateGrandTotal() {
+  const qcmScore = window.qcmScoreRaw || 0;
+  const qcmCount = window.qcmCount || 0;
+  const redacScore = window.redacScoreRaw || 0;
+  const redacMaxScore = window.redacMaxScore || 0;
+
+  const totalScore = qcmScore + redacScore;
+  const totalMax = qcmCount + redacMaxScore;
+
+  const scoreSur20 = ((totalScore / totalMax) * 20).toFixed(2);
+  document.getElementById("globalScoreDisplay").innerText =
+    `Score total : ${totalScore.toFixed(1)} / ${totalMax} — soit ${scoreSur20} / 20`;
+}
+
+function exportErrorsToCSV() {
+  const now = new Date();
+  const dateString = now.toLocaleDateString('fr-FR');
+  const filename = document.title ? document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html" : "qcm_export.html";
+
+  const questionDivs = document.querySelectorAll(".question");
+  const questionIds = Array.from(questionDivs).map(div => div.id.replace("q", ""));
+  const sortedIds = questionIds.sort((a, b) => {
+    const parseId = id => parseFloat(id.replace(/[^0-9]/g, "") + (id.includes("bis") ? ".5" : ""));
+    return parseId(a) - parseId(b);
+  });
+
+  let csvRows = [["Nom du fichier", filename], [], ["", "Date de l'export", dateString], ["", "Score total", (window.latestScore ? window.latestScore + "/20" : "")], [], ["N° de question", "Items faux"]];
+
+  sortedIds.forEach(qNum => {
+    const resultBlock = document.getElementById(`result${qNum}`);
+    let errors = [];
+    if (resultBlock) {
+      const explanations = resultBlock.querySelectorAll("p");
+      explanations.forEach(p => {
+        if (p.style.color === "red") {
+          const match = p.innerText.match(/^❌\s?([1-5])/);
+          if (match) errors.push(match[1]);
+        }
+      });
+    }
+    csvRows.push([qNum, errors.join(", ")]);
+  });
+
+  const csvContent = csvRows.map(row => row.join(";")).join("\n");
+  const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `${filename.replace('.html', '')}_export.csv`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</div>
+</body>
+</html>
