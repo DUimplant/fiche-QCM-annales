@@ -596,146 +596,410 @@ invalidants. Que lui conseillez-vous ? </h3>
     <div class="result" id="result30"></div>
 </div>
 
-</div>  
-<!-- Fin des questions -->
+<!-- Fin des QCMS -->
 <br>
 
-<!-- Marge pour éviter que le bouton soit caché sur mobile -->
-<style>
-    body {
-        margin-bottom: 120px;
-    }
-</style>
+<!-- BOUTONS SCORE + EXPORT -->
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
+  <button onclick="showTotalScore()">Afficher le score total QCM</button>
+  <div id="finalScore" style="font-weight: bold;"></div>
+  <button id="exportBtn" style="display: none;" onclick="exportErrorsToCSV()">Exporter les erreurs</button>
+</div>
 
-<!-- Script principal de validation et score corrigé -->
+<!-- Questions Rédactionnelles -->
+<br>
+<br>
+<br>
+
+<!-- Cas clinique 1 -->
+<div class="question-redac" style="margin-bottom: 30px;">
+  <h3>Cas clinique 1</h3>
+  <p>
+    Un homme de 18 ans consulte en raison d’une surdité de transmission droite et mixte gauche, liée à une sténose congénitale fibreuse et osseuse des deux conduits auditifs externes. Une canaloplastie a été réalisée à droite en 2014 à l’étranger, avec réapparition rapide d’une sténose fibreuse, qui ne permet pas de voir le tympan à droite comme à gauche. L’appareillage auditif conventionnel n’est donc pas possible. Le jeune patient est en échec scolaire. Le scanner confirme les sténoses osseuses et fibreuses allant jusqu’au tympan, avec une chaine des osselets qui semble intacte.
+  </p>
+</div>
+
+<!-- Question 1.1 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>1.1	Citez deux types de prothèse implantable que l’on peut proposer à ce patient ?</h4>
+  <textarea id="answer_redac1_1" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac1_1', 1)">Valider</button>
+    <div id="scoreBlock_redac1_1" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac1_1" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac1_1">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac1_1" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac1_1" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Ancrage osseux (percutané ou transcutané bonebridge) ou IOM
+  </div>
+</div>
+
+<!-- Question 1.2 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>1.2	Pour chaque prothèse implantable citée, décrivez :</h4>
+  <ul>
+    <li>	le principe de fonctionnement </li>
+    <li>	le type d’anesthésie recommandée (anesthésie générale ou locale) et la durée approximative du geste (courte, moins de 30 min ou longue + de 1h30)</li>
+    <li>	les complications possibles </li>
+    <li>	s’il existe une prise en charge, au moins partielle, de la prothèse implantable par la Sécurité Sociale. </li>
+  </ul>
+  <textarea id="answer_redac1_2" rows="10" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac1_2', 4)">Valider</button>
+    <div id="scoreBlock_redac1_2" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac1_2" min="0" max="4" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac1_2">/4</span>
+      </label>
+      <span id="redacScoreDisplay_redac1_2" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac1_2" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong><br>
+    •Vibration via pilier ou implant actif, ou augmentation des mouvements de vibration naturelle de la chaine ossiculaire via iom.<br>
+    •En iom plutôt général (longue 30-60 min) et en osseux plutôt local (courte).<br>
+    •Cutanées/non intégration pour angarge ossuex, infection/troubles du goût/ déplacement/Mauvais couplage pour IOM.<br>
+    •IOM (sauf sentio), ancrage osseux et bonebridge 100% pris en charge.
+  </div>
+</div>
+
+<!-- Cas clinique 2 -->
+<div class="question-redac" style="margin-bottom: 30px;">
+  <h3>Cas clinique 2</h3>
+  <p>
+    Madame B., âgée de 25 ans, présente une surdité évolutive bilatérale depuis l’enfance avec des épisodes de fluctuations auditives des deux côtés. Elle continue d’utiliser des prothèses auditives des 2 côtés, mais avec un bénéfice limité à gauche et une gêne importante du fait des épisodes de fluctuations auditives. La patiente décrit par ailleurs des épisodes de vertiges intermittents. L’audiogramme retrouve une surdité profonde bilatérale prédominant à gauche.
+  </p>
+</div>
+
+<!-- Question 2.1 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>2.1	Selon les critères de la Haute Autorité de Santé, l’implantation cochléaire est-elle indiquée chez cette patiente ? Argumentez.</h4>
+  <textarea id="answer_redac2_1" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac2_1', 1)">Valider</button>
+    <div id="scoreBlock_redac2_1" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac2_1" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac2_1">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac2_1" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac2_1" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Oui du côté gauche car on a une surdité fluctuante à droite avec retentissement majeur sur la communication.
+  </div>
+</div>
+
+<!-- Question 2.2 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>2.2	Le scanner des rochers retrouve une malformation bilatérale des oreilles internes associant une dilatation de l’aqueduc du vestibule et une malformation cochléaire (syndrome de Mondini). Quel bilan demandez-vous et dans quel but ?</h4>
+  <textarea id="answer_redac2_2" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac2_2', 1)">Valider</button>
+    <div id="scoreBlock_redac2_2" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac2_2" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac2_2">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac2_2" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac2_2" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Bilan génétique avec recherche d’un syndrome de pendred pour confirmer une atteinte génétique et évaluer le risque de transmission à la descendance.
+  </div>
+</div>
+
+<!-- Question 2.3 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>2.3	Le staff pluridisciplinaire prend finalement la décision d’implanter cette patiente à gauche. Vous lui donnez un rendez-vous avec la psychologue. Citez 3 points qui sont nécessaires sur le plan psychologique pour envisager une implantation dans de bonnes conditions.</h4>
+  <textarea id="answer_redac2_3" rows="10" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac2_3', 1)">Valider</button>
+    <div id="scoreBlock_redac2_3" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac2_3" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac2_3">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac2_3" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac2_3" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> • Etre en capacité de suffisamment prendre en compte la réalité de la surdité pour envisager la réhabilitation par implantation (ne pas être en position de déni ou de deuil massif…) <br>• Avoir des attentes adaptées aux possibilités de l’implant (ne pas présenter d’attentes irréalistes, de type réparation magique de la surdité…) <br>• Intégrer le projet d’implant à un projet personnel investi (ne pas tout attendre de l’implant, pouvoir se projeter dans l’avenir avec l’implant, avoir un projet personnel, professionnel, familial donnant sens à l’implantation…) <br>• Etre en capacité de comprendre et d’intégrer l’information relative à l’implant de façon à pouvoir se positionner clairement (pas de demande exclusive de l’entourage, problème des barrages cognitifs, linguistiques…) <br>• Avoir un investissement de la relation, et de la communication orale (projet non adapté en l’absence d’une communication minimale, ou en cas de communication gestuelle exclusive… Problématiques psychiatriques…) <br>• Etre en capacité d’accepter toutes les spécificités de l’implantation (chirurgie, partie interne, visibilité majorée de la surdité, sons différents…) ainsi que les contraintes liées au suivi (reprise ou démarrage d’une rééducation, suivi à l’hôpital…) <br>• Etre disponible psychiquement au projet d’implant au moment où il est proposé par l’équipe (pas de problématique personnelle, familiale… faisant obstacle à un investissement du projet par le patient
+  </div>
+</div>
+
+<!-- Question 2.4 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>2.4	Les suites opératoires sont simples. A 2 ans post-implantation, la patiente est très satisfaite du résultat et souhaite envisager une implantation à droite car son audition a baissé. Selon les critères de la Haute Autorité de Santé, l’implantation cochléaire controlatérale sera-t-elle prise en charge par la Sécurité Sociale ? Qu’expliquez-vous à la patiente quant au bénéfice possible de l’implantation controlatérale ?</h4>
+  <textarea id="answer_redac2_4" rows="8" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac2_4', 2)">Valider</button>
+    <div id="scoreBlock_redac2_4" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac2_4" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac2_4">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac2_4" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac2_4" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Oui, prise en charge possible car moins de 50% à 60dB – amélioration dans le bruit et de la localisation sonore – performance asymétrqiue dans 50% des cas.
+  </div>
+</div>
+
+<!-- Cas clinique 3 -->
+<div class="question-redac" style="margin-bottom: 30px;">
+  <h3>Cas clinique 3</h3>
+  <p>
+    Madame R âgée de 70 ans a bénéficié d’une implantation cochléaire séquentielle en 2010 à droite raison d’une surdité évolutive bilatérale d’étiologie inconnue. Elle garde une audition résiduelle à gauche avec un bénéfice audioprothétique satisfaisant. Le dernier bilan de 2016 montre un bon bénéfice de l’implant cochléaire droit. 
+    La patiente vient consulter en Février 2017 en raison de la survenue de grésillements du côté de l’implant cochléaire depuis plusieurs semaines qui s’aggravent avec baisse des performances.
+  </p>
+</div>
+
+<!-- Question 3.1 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>3.1	Quelle conduite à tenir pour le régleur de l’implant cochléaire ?</h4>
+  <textarea id="answer_redac3_1" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac3_1', 2)">Valider</button>
+    <div id="scoreBlock_redac3_1" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac3_1" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac3_1">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac3_1" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac3_1" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Vérifier câble antenne, processeur, micro, impédance (électrodes en court-circuit), processeur de prêt pour voir si amélioration.
+  </div>
+</div>
+
+<!-- Question 3.2 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>3.2	S’il y a suspicion d’un problème au niveau de la partie interne, faut-il demander un examen radiologique ou seulement un test d’intégrité ? Justifier.</h4>
+  <textarea id="answer_redac3_2" rows="6" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac3_2', 2)">Valider</button>
+    <div id="scoreBlock_redac3_2" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac3_2" min="0" max="2" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac3_2">/2</span>
+      </label>
+      <span id="redacScoreDisplay_redac3_2" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac3_2" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> Radiologique pour vérifier qu’il n’y a pas eu d’extrusion du porte électrode.
+  </div>
+</div>
+
+<!-- Question 3.3 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>3.3	Quelle est la durée de la garantie pour la partie interne ?</h4>
+  <textarea id="answer_redac3_3" rows="4" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac3_3', 1)">Valider</button>
+    <div id="scoreBlock_redac3_3" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac3_3" min="0" max="1" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac3_3">/1</span>
+      </label>
+      <span id="redacScoreDisplay_redac3_3" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac3_3" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong> 10 ans
+  </div>
+</div>
+
+<!-- Question 4 -->
+<div class="question-redac" style="margin-bottom: 20px;">
+  <h4>4.	Citer 5 points qui guident les centres d’implantation dans le choix de la marque de l’implant ?</h4>
+  <textarea id="answer_redac4" rows="10" cols="100" placeholder="Votre réponse ici..."></textarea><br><br>
+  <div style="display: flex; align-items: center;">
+    <button onclick="showCorrectionAndScoreInput('redac4', 5)">Valider</button>
+    <div id="scoreBlock_redac4" style="display: none; margin-left: 20px;">
+      <label>Votre score :
+        <input type="number" id="score_redac4" min="0" max="5" step="0.5" style="width: 60px;">
+        <span id="maxLabel_redac4">/5</span>
+      </label>
+      <span id="redacScoreDisplay_redac4" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+  </div>
+  <div class="correction" id="correction_redac4" style="display:none; margin-top: 10px; padding: 10px; border: 1px solid #ccc;">
+    <strong>Correction attendue :</strong><br>
+•Anatomie (taille de la cochlée et malformations) <br>•Etiologies : risque de stimulation faciale (type otospongiose, traumatisme) ou obstacle (type post-méningite, otospongiose, traumatisme, pathologie auto-immune) <br>•Audition résiduelle (électrode atraumatique, EAS, insertion robotisée) <br>•Marque de la prothèse controlatérale <br>•Système cros avec AB <br>•Type de processeur (bouton, contour) <br>•Mode de vie du patient (natation) <br>•Implant dans la même famille <br>•Souhait du patient <br>•Lieu de vie futur si déménagement (est-ce que la marque sera gérée à l’étranger)
+  </div>
+</div>
+
+<!-- BOUTONS RÉDACTIONNEL + GLOBAL -->
+<div style="margin-top: 30px;">
+  <button onclick="calculateRedacScore()">Score total questions rédactionnelles</button>
+  <span id="redacScoreDisplayFinal" style="margin-left: 10px; font-weight: bold;"></span>
+  <span id="redacScoreSur20" style="margin-left: 15px; font-weight: bold;"></span>
+  <br><br>
+  <button onclick="calculateGrandTotal()">Score total général</button>
+  <span id="globalScoreDisplay" style="margin-left: 10px; font-weight: bold;"></span>
+</div>
+
+<!-- SCRIPTS -->
 <script>
 let questionScores = {};
 
 function validateQuestion(qNumber, correctAnswers, explanations) {
-    const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
-    let score = 1;
-    let errors = 0;
-    let resultArea = document.getElementById(`result${qNumber}`);
-    resultArea.innerHTML = "";
+  const checkboxes = document.querySelectorAll(`#q${qNumber} input[type=checkbox]`);
+  let score = 1;
+  let errors = 0;
+  let resultArea = document.getElementById(`result${qNumber}`);
+  resultArea.innerHTML = "";
 
-    checkboxes.forEach((checkbox, idx) => {
-        const label = checkbox.parentNode;
-        const isChecked = checkbox.checked;
-        const shouldBeChecked = correctAnswers.includes(idx);
+  checkboxes.forEach((checkbox, idx) => {
+    const label = checkbox.parentNode;
+    const isChecked = checkbox.checked;
+    const shouldBeChecked = correctAnswers.includes(idx);
+    if (isChecked !== shouldBeChecked) errors++;
+    label.style.color = (isChecked === shouldBeChecked) ? 'green' : 'red';
+  });
 
-        if (isChecked !== shouldBeChecked) {
-            errors++;
-        }
+  if (errors === 0) score = 1;
+  else if (errors === 1) score = 0.5;
+  else score = 0;
 
-        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
-            label.style.color = 'green';
-        } else {
-            label.style.color = 'red';
-        }
-    });
+  questionScores[qNumber] = score;
 
-    if (errors === 0) {
-        score = 1;
-    } else if (errors === 1) {
-        score = 0.5;
-    } else {
-        score = 0;
-    }
-
-    questionScores[qNumber] = score;
-
-    resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
-
-    explanations.forEach((exp, idx) => {
-        const isChecked = checkboxes[idx].checked;
-        const shouldBeChecked = correctAnswers.includes(idx);
-
-        if ((shouldBeChecked && isChecked) || (!shouldBeChecked && !isChecked)) {
-            resultArea.innerHTML += `<p style="color:green;">✔️ ${exp}</p>`;
-        } else {
-            resultArea.innerHTML += `<p style="color:red;">❌ ${exp}</p>`;
-        }
-    });
+  resultArea.innerHTML = `<strong>Score pour cette question : ${score}/1</strong><br><br>`;
+  explanations.forEach((exp, idx) => {
+    const isChecked = checkboxes[idx].checked;
+    const shouldBeChecked = correctAnswers.includes(idx);
+    const itemLabel = (idx + 1).toString();
+    const prefix = exp.trim().startsWith(`${itemLabel}.`) ? '' : `${itemLabel}. `;
+    resultArea.innerHTML += `<p style="color:${(isChecked === shouldBeChecked) ? 'green' : 'red'};">${(isChecked === shouldBeChecked ? '✔️' : '❌')} ${prefix}${exp}</p>`;
+  });
 }
 
 function showTotalScore() {
-    let totalScore = 0;
-    for (const key in questionScores) {
-        totalScore += questionScores[key];
-    }
+  let totalScore = 0;
+  const qcmQuestions = Array.from(document.querySelectorAll(".question"))
+    .filter(div => div.id && div.id.startsWith("q") && !div.id.includes("redac"));
 
-    const totalQuestions = document.querySelectorAll(".question").length;
-    const scoreDetail = `${totalScore.toFixed(2)} / ${totalQuestions}`;
-    const scoreSur20 = ((totalScore / totalQuestions) * 20).toFixed(2);
+  qcmQuestions.forEach(div => {
+    const qNum = div.id.replace("q", "");
+    totalScore += questionScores[qNum] || 0;
+  });
 
-    document.getElementById("finalScore").innerText = `Score total : ${scoreDetail} — soit ${scoreSur20} / 20`;
+  const qcmCount = qcmQuestions.length;
+  const scoreSur20 = ((totalScore / qcmCount) * 20).toFixed(2);
 
-    window.latestScore = scoreSur20;
-    document.getElementById("exportBtn").style.display = "inline-block";
+  window.qcmScoreRaw = totalScore;
+  window.qcmCount = qcmCount;
+
+  document.getElementById("finalScore").innerText = `Score total QCM : ${totalScore.toFixed(2)} / ${qcmCount} — soit ${scoreSur20} / 20`;
+  window.latestScore = parseFloat(scoreSur20);
+  document.getElementById("exportBtn").style.display = "inline-block";
 }
-</script>
 
-<!-- Boutons score + export -->
-<div style="display: flex; align-items: center; gap: 20px; margin-top: 30px;">
-    <button onclick="showTotalScore()">Afficher le score total</button>
-    <div id="finalScore" style="font-weight: bold;"></div>
-    <button id="exportBtn" style="display: none;" onclick="exportErrorsToCSV()">Exporter les erreurs</button>
-</div>
+function showCorrectionAndScoreInput(id, maxScore) {
+  const correction = document.getElementById("correction_" + id);
+  if (correction) correction.style.display = "block";
 
-<script>
+  const scoreBlock = document.getElementById("scoreBlock_" + id);
+  const input = document.getElementById("score_" + id);
+  const label = document.getElementById("maxLabel_" + id);
+  if (scoreBlock && input && label) {
+    scoreBlock.style.display = "inline-flex";
+    input.setAttribute("max", maxScore);
+    label.innerText = "/" + maxScore;
+  }
+}
+
+function calculateRedacScore() {
+  const inputs = document.querySelectorAll("input[id^='score_redac']");
+  let total = 0;
+  let max = 0;
+  inputs.forEach(input => {
+    const val = parseFloat(input.value) || 0;
+    const maxVal = parseFloat(input.getAttribute("max")) || 0;
+    total += val;
+    max += maxVal;
+  });
+
+  window.redacScoreRaw = total;
+  window.redacMaxScore = max;
+
+  document.getElementById("redacScoreDisplayFinal").innerText =
+    `Score total questions rédactionnelles : ${total.toFixed(1)} / ${max}`;
+
+  const scoreSur20 = ((total / max) * 20).toFixed(2);
+  document.getElementById("redacScoreSur20").innerText = `— soit ${scoreSur20} / 20`;
+}
+
+function calculateGrandTotal() {
+  const qcmScore = window.qcmScoreRaw || 0;
+  const qcmCount = window.qcmCount || 0;
+  const redacScore = window.redacScoreRaw || 0;
+  const redacMaxScore = window.redacMaxScore || 0;
+
+  const totalScore = qcmScore + redacScore;
+  const totalMax = qcmCount + redacMaxScore;
+
+  const scoreSur20 = ((totalScore / totalMax) * 20).toFixed(2);
+  document.getElementById("globalScoreDisplay").innerText =
+    `Score total : ${totalScore.toFixed(1)} / ${totalMax} — soit ${scoreSur20} / 20`;
+}
+
 function exportErrorsToCSV() {
-    const now = new Date();
-    const dateString = now.toLocaleDateString('fr-FR');
-    const filename = document.title ? document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html" : "qcm_export.html";
+  const now = new Date();
+  const dateString = now.toLocaleDateString('fr-FR');
+  const filename = document.title ? document.title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html" : "qcm_export.html";
 
-    const questionDivs = document.querySelectorAll(".question");
-    const questionIds = Array.from(questionDivs).map(div => div.id.replace("q", ""));
+  const questionDivs = document.querySelectorAll(".question");
+  const questionIds = Array.from(questionDivs).map(div => div.id.replace("q", ""));
+  const sortedIds = questionIds.sort((a, b) => {
+    const parseId = id => parseFloat(id.replace(/[^0-9]/g, "") + (id.includes("bis") ? ".5" : ""));
+    return parseId(a) - parseId(b);
+  });
 
-    const sortedIds = questionIds.sort((a, b) => {
-        const parseId = id => parseFloat(id.replace(/[^0-9]/g, "") + (id.includes("bis") ? ".5" : ""));
-        return parseId(a) - parseId(b);
-    });
+  let csvRows = [["Nom du fichier", filename], [], ["", "Date de l'export", dateString], ["", "Score total", (window.latestScore ? window.latestScore + "/20" : "")], [], ["N° de question", "Items faux"]];
 
-    let csvRows = [];
-
-    // En-tête
-    csvRows.push(["Nom du fichier", filename]);
-    csvRows.push([]);
-    csvRows.push(["", "Date de l'export", dateString]);
- csvRows.push(["", "Score total", (window.latestScore ? window.latestScore + "/20" : "")]);
-   csvRows.push([]);
-
-    // Tableau des erreurs
-    csvRows.push(["N° de question", "Items faux"]);
-
-    sortedIds.forEach(qNum => {
-        const resultBlock = document.getElementById(`result${qNum}`);
-        let errors = [];
-
-        if (resultBlock) {
-            const explanations = resultBlock.querySelectorAll("p");
-            explanations.forEach(p => {
-                if (p.style.color === "red") {
-                    const match = p.innerText.match(/^❌\s?([A-E])/);
-                    if (match) errors.push(match[1]);
-                }
-            });
+  sortedIds.forEach(qNum => {
+    const resultBlock = document.getElementById(`result${qNum}`);
+    let errors = [];
+    if (resultBlock) {
+      const explanations = resultBlock.querySelectorAll("p");
+      explanations.forEach(p => {
+        if (p.style.color === "red") {
+          const match = p.innerText.match(/^❌\s?([1-5])/);
+          if (match) errors.push(match[1]);
         }
+      });
+    }
+    csvRows.push([qNum, errors.join(", ")]);
+  });
 
-        csvRows.push([qNum, errors.join(", ")]);
-    });
+  const csvContent = csvRows.map(row => row.join(";")).join("\n");
+  const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
 
-    const csvContent = csvRows.map(row => row.join(";")).join("\n");
-    const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
-
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = `${filename.replace('.html', '')}_export.csv`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `${filename.replace('.html', '')}_export.csv`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 </script>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</div>
 </body>
 </html>
